@@ -1,4 +1,4 @@
-# FIDO Alliance — Credential Schema Registry
+# FIDO Schemas — Verifiable Credential Schema Registry
 
 A **dual-format verifiable credential schema registry**: every credential type is published as
 both a **W3C Verifiable Credentials 2.0** JSON-LD credential and an **IETF SD-JWT VC**, from a
