@@ -1,0 +1,204 @@
+packages/examples/package.json
+  s_7dca8d2b95c344::t_38610984c8c173 2,4,16
+schemas/proof-of-employment/README.md
+  s_7dca8d2b95c344::t_253f427150b886 7
+schemas/boarding-pass/schema.json
+  s_7dca8d2b95c344::t_8ebc148b13e960 3
+schemas/phone-verification/sd-jwt-vc/example.json
+  s_7dca8d2b95c344::t_b38f379f313632 28,31-32,35,38-39,42,45-46,49
+  s_7dca8d2b95c344::t_2876b0fca9ca51 6-7
+schemas/bank-id/jsonld/example.json
+  s_7dca8d2b95c344::t_066aab32577ace 5
+schemas/education-certificate/sd-jwt-vc/example.json
+  s_7dca8d2b95c344::t_e8aaa3df4592ce 29,32-33,36,39-40,43,46-47,50,53-54,57,60-61,64
+  s_7dca8d2b95c344::t_8526d627e47a2c 7
+schemas/boarding-pass/jsonld/example.json
+  s_7dca8d2b95c344::t_71129f48aed410 8
+  s_7dca8d2b95c344::t_38d536194054ee 5
+schemas/education-certificate/jsonld/example.json
+  s_7dca8d2b95c344::t_5032b3ca6e5895 5
+schemas/proof-of-employment/sd-jwt-vc/vct-metadata.json
+  s_7dca8d2b95c344::t_d519237be14978 3,35
+schemas/education-certificate/jsonld/context.jsonld
+  s_7dca8d2b95c344::t_de5b6ad6c55409 2
+  s_7dca8d2b95c344::t_4aa41c1e2c92ed 6
+  s_7dca8d2b95c344::t_e06d404433b9e9 5
+  s_7dca8d2b95c344::t_d7f7127ea0dc92 8,12,16,19-20,22
+schemas/email-verification/schema.json
+  s_7dca8d2b95c344::t_8e8368b89b227a 3
+site/src/lib/content.ts
+  s_7dca8d2b95c344::t_af65b199d5320a 17,19
+schemas/employee-id/jsonld/example.json
+  s_7dca8d2b95c344::t_384c9248089c5f 5
+schemas/phone-verification/schema.json
+  s_7dca8d2b95c344::t_6c0bbea8cf1d63 3
+schemas/bank-id/README.md
+  s_7dca8d2b95c344::t_fe4abe9dda431a 8
+packages/schema-tools/src/bases.ts
+  s_7dca8d2b95c344::t_d5537e83f0f06b 8-9,16,19-20
+schemas/employee-id/schema.json
+  s_7dca8d2b95c344::t_b1b44fcc4f6ac8 3
+schemas/boarding-pass/jsonld/context.jsonld
+  s_7dca8d2b95c344::t_d95eb2bccdf466 8,11,13,16,18,22,25,27,30
+  s_7dca8d2b95c344::t_0e829ce1dbd4f7 2
+  s_7dca8d2b95c344::t_c60f1e941123d0 5
+  s_7dca8d2b95c344::t_b7e08c32d587ac 6
+schemas/bank-id/sd-jwt-vc/vct-metadata.json
+  s_7dca8d2b95c344::t_08099ec4c8909d 3,46
+schemas/email-verification/sd-jwt-vc/example.json
+  s_7dca8d2b95c344::t_3d1a04b80bc927 27,30-31,34,37-38,41
+  s_7dca8d2b95c344::t_302e483804882a 6-7
+PLAN.md
+  s_7dca8d2b95c344::t_aeb448bc4c89b1 17-18
+  s_7dca8d2b95c344::t_3efd0dbd4330b4 1
+  s_7dca8d2b95c344::t_2e58b3e56e2e3b 20
+packages/examples/src/selective-disclosure.ts
+  s_7dca8d2b95c344::t_28ae3305b763cc 9
+  s_7dca8d2b95c344::t_46f91b355acd86 35-36
+packages/examples/src/run-all.ts
+  s_7dca8d2b95c344::t_4f335612981741 10-11
+.github/workflows/ci.yml
+  s_7dca8d2b95c344::t_92fd9470a433c1 51
+schemas/education-certificate/schema.json
+  s_7dca8d2b95c344::t_231ddedafefe12 3
+schemas/proof-of-employment/schema.json
+  s_7dca8d2b95c344::t_a6bb9f76ca2dda 3
+schemas/age-verification/README.md
+  s_7dca8d2b95c344::t_7dde5ac4d40d4c 8
+schemas/employee-id/jsonld/context.jsonld
+  s_7dca8d2b95c344::t_aa83cdb0707f11 2
+  s_7dca8d2b95c344::t_c53c577a136473 5
+  s_7dca8d2b95c344::t_5dd7bb45510867 7,9,12-13,15
+  s_7dca8d2b95c344::t_4abe5918d75d72 6
+schemas/phone-verification/README.md
+  s_7dca8d2b95c344::t_f6790fd99f4365 7
+schemas/age-verification/sd-jwt-vc/example.json
+  s_7dca8d2b95c344::t_efdf7cad03fd77 28,31-32,35,38-39,42,45-46,49
+  s_7dca8d2b95c344::t_cda134ed7243f2 6-7
+schemas/employee-id/sd-jwt-vc/example.json
+  s_7dca8d2b95c344::t_ff9c405c8bd89e 7
+  s_7dca8d2b95c344::t_75a1f1ca7c8aee 29,32-33,36,39-40,43,46-47,50,53-54,57
+packages/examples/src/verify-sd-jwt-vc.ts
+  s_7dca8d2b95c344::t_8ea8f57294244a 62-63
+  s_7dca8d2b95c344::t_6d400b2d6cfcff 10
+schemas/email-verification/README.md
+  s_7dca8d2b95c344::t_71a40238fde0c5 6
+schemas/proof-of-employment/jsonld/context.jsonld
+  s_7dca8d2b95c344::t_774fbca5b2cea5 7,9,13,17
+  s_7dca8d2b95c344::t_fc2c76e52bbe17 6
+  s_7dca8d2b95c344::t_1efb8a61fbb237 5
+  s_7dca8d2b95c344::t_53360f7fe9a6a7 2
+schemas/boarding-pass/sd-jwt-vc/vct-metadata.json
+  s_7dca8d2b95c344::t_deec143dc13b2c 3,72
+schemas/email-verification/jsonld/context.jsonld
+  s_7dca8d2b95c344::t_835428e194c6cc 7,9,13
+  s_7dca8d2b95c344::t_5d5b6641865725 2
+  s_7dca8d2b95c344::t_5d582c058d011c 5
+  s_7dca8d2b95c344::t_49b954c147db5a 6
+schemas/phone-verification/jsonld/context.jsonld
+  s_7dca8d2b95c344::t_bcc5f1425c5b14 2
+  s_7dca8d2b95c344::t_d744d393c535b9 8,12,16,20
+  s_7dca8d2b95c344::t_fc2cc9251472ab 5
+  s_7dca8d2b95c344::t_75d775d1503e57 6
+site/tailwind.config.mjs
+  s_7dca8d2b95c344::t_9ed5224aaa10f2 7
+packages/examples/src/issue-sd-jwt-vc.ts
+  s_7dca8d2b95c344::t_77551ef7ebcf1b 10
+  s_7dca8d2b95c344::t_b867940aa0f218 60-61
+site/src/pages/docs/index.astro
+  s_7dca8d2b95c344::t_e23f11bb5c06a4 89
+  s_7dca8d2b95c344::t_4141d066ddf193 20
+CONTRIBUTING.md
+  s_7dca8d2b95c344::t_bdcba196e12501 3
+  s_7dca8d2b95c344::t_533f93359142e8 35-36
+schemas/proof-of-employment/sd-jwt-vc/example.json
+  s_7dca8d2b95c344::t_5d44bd55d2f1d7 7
+  s_7dca8d2b95c344::t_28a6a0e57da2c4 28,31-32,35,38-39,42,45-46,49
+site/package.json
+  s_7dca8d2b95c344::t_9b9528758f83a6 2,4,14
+schemas/email-verification/sd-jwt-vc/vct-metadata.json
+  s_7dca8d2b95c344::t_4554c968d5a78d 3,36
+packages/schema-tools/package.json
+  s_7dca8d2b95c344::t_74c853432bcd0d 2,4
+site/src/layouts/Base.astro
+  s_7dca8d2b95c344::t_d95ddf61581e7e 26
+  s_7dca8d2b95c344::t_30545fbab3cec3 68
+  s_7dca8d2b95c344::t_5dc7c92633fcd9 40-41
+  s_7dca8d2b95c344::t_7fb16e54822815 9
+LICENSE
+  s_7dca8d2b95c344::t_d96648f4802056 189
+schemas/proof-of-employment/jsonld/example.json
+  s_7dca8d2b95c344::t_d34e855d9d7c48 5
+schemas/bank-id/schema.json
+  s_7dca8d2b95c344::t_a1bb59a486acae 3
+packages/schema-tools/src/types.ts
+  s_7dca8d2b95c344::t_b922318bbbe945 2
+schemas/bank-id/sd-jwt-vc/example.json
+  s_7dca8d2b95c344::t_c9de2e02c73d09 7
+  s_7dca8d2b95c344::t_ade43c854132b1 29,32-33,36,39-40,43,46-47,50,53-54,57
+schemas/employee-id/sd-jwt-vc/vct-metadata.json
+  s_7dca8d2b95c344::t_36d543720e4922 3,40
+schemas/boarding-pass/sd-jwt-vc/example.json
+  s_7dca8d2b95c344::t_4d386a5e9fb1d5 33,36-37,40,43-44,47,50-51,54,57-58,61,64-65,68,71-72,75,78-79,82,85-86,89
+  s_7dca8d2b95c344::t_94078ba7683ce7 6
+  s_7dca8d2b95c344::t_105c9b8aa638d6 7
+schemas/age-verification/jsonld/context.jsonld
+  s_7dca8d2b95c344::t_115212508d2c7e 2
+  s_7dca8d2b95c344::t_0124b2d1943de0 6
+  s_7dca8d2b95c344::t_b4c015876ef448 8,12,16,20
+  s_7dca8d2b95c344::t_b2a5c47e98c797 5
+schemas/email-verification/jsonld/example.json
+  s_7dca8d2b95c344::t_169d913a31f4ef 5,8
+schemas/age-verification/jsonld/example.json
+  s_7dca8d2b95c344::t_df478258ef386c 5,8
+schemas/education-certificate/README.md
+  s_7dca8d2b95c344::t_dfe383f5ac01b4 6
+schemas/age-verification/sd-jwt-vc/vct-metadata.json
+  s_7dca8d2b95c344::t_abe5de4af1e766 3,41
+schemas/phone-verification/sd-jwt-vc/vct-metadata.json
+  s_7dca8d2b95c344::t_f9593af473b7ff 3,41
+schemas/education-certificate/sd-jwt-vc/vct-metadata.json
+  s_7dca8d2b95c344::t_594b12cca1b241 3,51
+scripts/build-registry.ts
+  s_7dca8d2b95c344::t_bde769452bd434 8-9
+schemas/boarding-pass/README.md
+  s_7dca8d2b95c344::t_5d761b485f8f2d 6
+README.md
+  s_7dca8d2b95c344::t_ee3bcf2ff2db33 1
+  s_7dca8d2b95c344::t_4149ae447fcb3b 58-59
+  s_7dca8d2b95c344::t_5b8495f4690ad3 82
+  s_7dca8d2b95c344::t_f71765fee55af8 68
+package.json
+  s_7dca8d2b95c344::t_2b5dc77e241f0e 2,5,19-20
+schemas/phone-verification/jsonld/example.json
+  s_7dca8d2b95c344::t_008f515648d0ed 5,8
+schemas/employee-id/README.md
+  s_7dca8d2b95c344::t_9788adb512aa49 6
+site/public/logo.svg
+  s_7dca8d2b95c344::t_98002f286b6a50 1-2,10
+schemas/bank-id/jsonld/context.jsonld
+  s_7dca8d2b95c344::t_f12ef59f89b7d7 5
+  s_7dca8d2b95c344::t_8fb9de69782123 6
+  s_7dca8d2b95c344::t_dac3afaf9587f3 2
+  s_7dca8d2b95c344::t_27039cc0099fab 8,12,15,17,21
+schemas/age-verification/schema.json
+  s_7dca8d2b95c344::t_85b3b62d93e0d4 3
+packages/examples/src/issue-jsonld.ts
+  s_7dca8d2b95c344::t_75df7a26f8e4f5 32,34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "4880b4cdfc4983df235a62ffd082ddfab08275a5",
+  "prompts": {},
+  "sessions": {
+    "s_7dca8d2b95c344": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "b7107137-31b6-4b5f-aa31-d420d1395e9f",
+        "model": "claude-opus-4-8-thinking-high"
+      },
+      "human_author": "Eran Haggiag <eran@glideidentity.com>"
+    }
+  }
+}
