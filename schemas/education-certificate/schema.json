@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.glideidentity.app/schemas/education-certificate.schema.json",
+  "$id": "https://schemas.fido.example/schemas/education-certificate.schema.json",
   "$comment": "Claim set for Education Certificate. JSON Schema Draft 2020-12.",
   "title": "Education Certificate claim set",
   "type": "object",

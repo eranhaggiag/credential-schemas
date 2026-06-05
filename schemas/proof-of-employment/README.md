@@ -4,7 +4,7 @@ A verifiable "employed at" claim — current staff or alumni — that deliberate
 salary or compensation data**.
 
 - **JSON-LD type:** `ProofOfEmploymentCredential`
-- **SD-JWT VC `vct`:** `https://schemas.glideidentity.app/vct/proof-of-employment`
+- **SD-JWT VC `vct`:** `https://schemas.fido.example/vct/proof-of-employment`
 - **Spec targets:** W3C VCDM 2.0 (15 May 2025) · SD-JWT VC draft-16 · RFC 9901
 
 ## Claims

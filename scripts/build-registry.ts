@@ -5,8 +5,8 @@
  * never hand-edited. Run: `pnpm build:registry`.
  *
  * vct / @context URLs derive from configurable bases (env-overridable):
- *   GLIDE_CONTEXT_BASE (default https://schemas.glideidentity.app/contexts/)
- *   GLIDE_VCT_BASE     (default https://schemas.glideidentity.app/vct/)
+ *   FIDO_CONTEXT_BASE (default https://schemas.fido.example/contexts/)
+ *   FIDO_VCT_BASE     (default https://schemas.fido.example/vct/)
  */
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';

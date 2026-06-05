@@ -3,7 +3,7 @@
 A verifiable flight boarding pass.
 
 - **JSON-LD type:** `BoardingPassCredential`
-- **SD-JWT VC `vct`:** `https://schemas.glideidentity.app/vct/boarding-pass`
+- **SD-JWT VC `vct`:** `https://schemas.fido.example/vct/boarding-pass`
 - **Spec targets:** W3C VCDM 2.0 (15 May 2025) · SD-JWT VC draft-16 · RFC 9901
 
 ## Claims

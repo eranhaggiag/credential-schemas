@@ -1,7 +1,7 @@
 {
-  "name": "@glide/schema-tools",
+  "name": "@fido/schema-tools",
   "version": "0.1.0",
-  "description": "Load, resolve, and validate Glide Identity credential schemas.",
+  "description": "Load, resolve, and validate FIDO Alliance credential schemas.",
   "license": "Apache-2.0",
   "type": "module",
   "main": "./src/index.ts",

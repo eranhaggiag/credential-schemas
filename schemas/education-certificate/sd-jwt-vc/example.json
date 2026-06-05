@@ -4,7 +4,7 @@
   "sealed": true,
   "issuerSignedPayload": {
     "iss": "https://registrar.northbridge.example",
-    "vct": "https://schemas.glideidentity.app/vct/education-certificate",
+    "vct": "https://schemas.fido.example/vct/education-certificate",
     "iat": 1721001600,
     "cnf": {
       "jwk": {
@@ -16,56 +16,56 @@
     },
     "_sd_alg": "sha-256",
     "_sd": [
-      "35sk89psjzqRB6nY_9zdt7nHplmausEAVo0vpoAVW0w",
-      "XvA6SzEyDhWrmp8qAXm2AZMV4ZXrgnHz5HuKunvEU_Y",
-      "_3qrGGh4NHZYySir43uYbZWg2m6-ttTYwtsDM3CWH8g",
-      "jSecF2HJr6GlQtSS1Ls6s6DKCz0cmsj73efFwZsO83s",
-      "tw4lIv_LJUCYwKABmqa23-bVkU6SZyt0y9a5V9nKzGE",
-      "v5z4pe9M5xcIKg3jM9TpqfefPBur3AUWBQKSmUeUpb4"
+      "4phf9vIPcaI1pBXrAfD3Lp5VkzSa2f7ouAxMbj0UXsI",
+      "Ogb4Ro5EZyqWWmdD6yr7KbGuvhGHdnQUR_IdC1Vileg",
+      "RsuxeQDO-QKKC9SPfL7Ont9IbknFh0_jYwUf7Vpu_SE",
+      "i8ocOM5UW-VCZXI3D2tW-ailx4dMbr2RJmzXcQRrDLQ",
+      "m0XFp5ANJ6B3CpNLUPy98ePxXuuDla9zJxWNbshItlo",
+      "o0Dh3_ApCCMWBXkQj0Tr3zuk8T0Y98IUp3iVxkWdP2M"
     ]
   },
   "disclosures": [
     {
-      "salt": "glide-edu-salt-inst00001",
+      "salt": "fido-edu-salt-inst00001",
       "claim": "institution",
       "value": "Northbridge University",
-      "encoded": "WyJnbGlkZS1lZHUtc2FsdC1pbnN0MDAwMDEiLCJpbnN0aXR1dGlvbiIsIk5vcnRoYnJpZGdlIFVuaXZlcnNpdHkiXQ",
-      "digest": "v5z4pe9M5xcIKg3jM9TpqfefPBur3AUWBQKSmUeUpb4"
+      "encoded": "WyJmaWRvLWVkdS1zYWx0LWluc3QwMDAwMSIsImluc3RpdHV0aW9uIiwiTm9ydGhicmlkZ2UgVW5pdmVyc2l0eSJd",
+      "digest": "o0Dh3_ApCCMWBXkQj0Tr3zuk8T0Y98IUp3iVxkWdP2M"
     },
     {
-      "salt": "glide-edu-salt-credname0",
+      "salt": "fido-edu-salt-credname0",
       "claim": "credential_name",
       "value": "Bachelor of Science",
-      "encoded": "WyJnbGlkZS1lZHUtc2FsdC1jcmVkbmFtZTAiLCJjcmVkZW50aWFsX25hbWUiLCJCYWNoZWxvciBvZiBTY2llbmNlIl0",
-      "digest": "_3qrGGh4NHZYySir43uYbZWg2m6-ttTYwtsDM3CWH8g"
+      "encoded": "WyJmaWRvLWVkdS1zYWx0LWNyZWRuYW1lMCIsImNyZWRlbnRpYWxfbmFtZSIsIkJhY2hlbG9yIG9mIFNjaWVuY2UiXQ",
+      "digest": "m0XFp5ANJ6B3CpNLUPy98ePxXuuDla9zJxWNbshItlo"
     },
     {
-      "salt": "glide-edu-salt-field0001",
+      "salt": "fido-edu-salt-field0001",
       "claim": "field_of_study",
       "value": "Computer Science",
-      "encoded": "WyJnbGlkZS1lZHUtc2FsdC1maWVsZDAwMDEiLCJmaWVsZF9vZl9zdHVkeSIsIkNvbXB1dGVyIFNjaWVuY2UiXQ",
-      "digest": "tw4lIv_LJUCYwKABmqa23-bVkU6SZyt0y9a5V9nKzGE"
+      "encoded": "WyJmaWRvLWVkdS1zYWx0LWZpZWxkMDAwMSIsImZpZWxkX29mX3N0dWR5IiwiQ29tcHV0ZXIgU2NpZW5jZSJd",
+      "digest": "i8ocOM5UW-VCZXI3D2tW-ailx4dMbr2RJmzXcQRrDLQ"
     },
     {
-      "salt": "glide-edu-salt-award001",
+      "salt": "fido-edu-salt-award001",
       "claim": "award_date",
       "value": "2024-07-12",
-      "encoded": "WyJnbGlkZS1lZHUtc2FsdC1hd2FyZDAwMSIsImF3YXJkX2RhdGUiLCIyMDI0LTA3LTEyIl0",
-      "digest": "35sk89psjzqRB6nY_9zdt7nHplmausEAVo0vpoAVW0w"
+      "encoded": "WyJmaWRvLWVkdS1zYWx0LWF3YXJkMDAxIiwiYXdhcmRfZGF0ZSIsIjIwMjQtMDctMTIiXQ",
+      "digest": "4phf9vIPcaI1pBXrAfD3Lp5VkzSa2f7ouAxMbj0UXsI"
     },
     {
-      "salt": "glide-edu-salt-grade001",
+      "salt": "fido-edu-salt-grade001",
       "claim": "grade",
       "value": "First Class Honours",
-      "encoded": "WyJnbGlkZS1lZHUtc2FsdC1ncmFkZTAwMSIsImdyYWRlIiwiRmlyc3QgQ2xhc3MgSG9ub3VycyJd",
-      "digest": "jSecF2HJr6GlQtSS1Ls6s6DKCz0cmsj73efFwZsO83s"
+      "encoded": "WyJmaWRvLWVkdS1zYWx0LWdyYWRlMDAxIiwiZ3JhZGUiLCJGaXJzdCBDbGFzcyBIb25vdXJzIl0",
+      "digest": "RsuxeQDO-QKKC9SPfL7Ont9IbknFh0_jYwUf7Vpu_SE"
     },
     {
-      "salt": "glide-edu-salt-accred01",
+      "salt": "fido-edu-salt-accred01",
       "claim": "accreditation_body",
       "value": "Northbridge National Accreditation Council",
-      "encoded": "WyJnbGlkZS1lZHUtc2FsdC1hY2NyZWQwMSIsImFjY3JlZGl0YXRpb25fYm9keSIsIk5vcnRoYnJpZGdlIE5hdGlvbmFsIEFjY3JlZGl0YXRpb24gQ291bmNpbCJd",
-      "digest": "XvA6SzEyDhWrmp8qAXm2AZMV4ZXrgnHz5HuKunvEU_Y"
+      "encoded": "WyJmaWRvLWVkdS1zYWx0LWFjY3JlZDAxIiwiYWNjcmVkaXRhdGlvbl9ib2R5IiwiTm9ydGhicmlkZ2UgTmF0aW9uYWwgQWNjcmVkaXRhdGlvbiBDb3VuY2lsIl0",
+      "digest": "Ogb4Ro5EZyqWWmdD6yr7KbGuvhGHdnQUR_IdC1Vileg"
     }
   ],
   "presentation": {
@@ -77,5 +77,5 @@
       "award_date"
     ]
   },
-  "combinedIssuance": "<issuer-signed-jwt>~WyJnbGlkZS1lZHUtc2FsdC1pbnN0MDAwMDEiLCJpbnN0aXR1dGlvbiIsIk5vcnRoYnJpZGdlIFVuaXZlcnNpdHkiXQ~WyJnbGlkZS1lZHUtc2FsdC1jcmVkbmFtZTAiLCJjcmVkZW50aWFsX25hbWUiLCJCYWNoZWxvciBvZiBTY2llbmNlIl0~WyJnbGlkZS1lZHUtc2FsdC1maWVsZDAwMDEiLCJmaWVsZF9vZl9zdHVkeSIsIkNvbXB1dGVyIFNjaWVuY2UiXQ~WyJnbGlkZS1lZHUtc2FsdC1hd2FyZDAwMSIsImF3YXJkX2RhdGUiLCIyMDI0LTA3LTEyIl0~WyJnbGlkZS1lZHUtc2FsdC1ncmFkZTAwMSIsImdyYWRlIiwiRmlyc3QgQ2xhc3MgSG9ub3VycyJd~WyJnbGlkZS1lZHUtc2FsdC1hY2NyZWQwMSIsImFjY3JlZGl0YXRpb25fYm9keSIsIk5vcnRoYnJpZGdlIE5hdGlvbmFsIEFjY3JlZGl0YXRpb24gQ291bmNpbCJd~"
+  "combinedIssuance": "<issuer-signed-jwt>~WyJmaWRvLWVkdS1zYWx0LWluc3QwMDAwMSIsImluc3RpdHV0aW9uIiwiTm9ydGhicmlkZ2UgVW5pdmVyc2l0eSJd~WyJmaWRvLWVkdS1zYWx0LWNyZWRuYW1lMCIsImNyZWRlbnRpYWxfbmFtZSIsIkJhY2hlbG9yIG9mIFNjaWVuY2UiXQ~WyJmaWRvLWVkdS1zYWx0LWZpZWxkMDAwMSIsImZpZWxkX29mX3N0dWR5IiwiQ29tcHV0ZXIgU2NpZW5jZSJd~WyJmaWRvLWVkdS1zYWx0LWF3YXJkMDAxIiwiYXdhcmRfZGF0ZSIsIjIwMjQtMDctMTIiXQ~WyJmaWRvLWVkdS1zYWx0LWdyYWRlMDAxIiwiZ3JhZGUiLCJGaXJzdCBDbGFzcyBIb25vdXJzIl0~WyJmaWRvLWVkdS1zYWx0LWFjY3JlZDAxIiwiYWNjcmVkaXRhdGlvbl9ib2R5IiwiTm9ydGhicmlkZ2UgTmF0aW9uYWwgQWNjcmVkaXRhdGlvbiBDb3VuY2lsIl0~"
 }

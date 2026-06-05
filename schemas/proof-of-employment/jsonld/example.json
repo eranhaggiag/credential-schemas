@@ -2,7 +2,7 @@
   "$comment": "Example W3C VC 2.0 Proof of Employment (alumni) credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).",
   "@context": [
     "https://www.w3.org/ns/credentials/v2",
-    "https://schemas.glideidentity.app/contexts/proof-of-employment.jsonld"
+    "https://schemas.fido.example/contexts/proof-of-employment.jsonld"
   ],
   "type": ["VerifiableCredential", "ProofOfEmploymentCredential"],
   "issuer": "https://hr.globex.example",

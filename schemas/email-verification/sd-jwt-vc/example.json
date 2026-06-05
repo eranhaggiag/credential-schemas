@@ -3,8 +3,8 @@
   "spec": "draft-ietf-oauth-sd-jwt-vc-16",
   "sealed": true,
   "issuerSignedPayload": {
-    "iss": "https://verify.glideidentity.app",
-    "vct": "https://schemas.glideidentity.app/vct/email-verification",
+    "iss": "https://verify.fido.example",
+    "vct": "https://schemas.fido.example/vct/email-verification",
     "iat": 1773317700,
     "exp": 1789208100,
     "cnf": {
@@ -17,32 +17,32 @@
     },
     "_sd_alg": "sha-256",
     "_sd": [
-      "B_ODYo_vqo0Ztb_beH7nUdPNRjW2s0Q4bdRqpFW80eo",
-      "VINQha_gGaWuJiaEz1i6Pa9TbVTXyFNbP8o5sx1rG6I",
-      "lY4BYUUyoPHjUBlJjYHmmPsXuJgOPMWjgna2eeppWX4"
+      "AY1lLQ4yAkNr56xM-0q7nO2-6pJF25BV10KGz6FsHTA",
+      "ELDuVXOiWHGkZ0QV4vP5KpJPkMIsJEFfq5ElDQ3Fue0",
+      "INJLDv7W6xazE_QjasQdquJXtmxuoid0OX3ymYHzgig"
     ]
   },
   "disclosures": [
     {
-      "salt": "glide-email-salt-addr01",
+      "salt": "fido-email-salt-addr01",
       "claim": "email",
       "value": "jordan.avery@example.com",
-      "encoded": "WyJnbGlkZS1lbWFpbC1zYWx0LWFkZHIwMSIsImVtYWlsIiwiam9yZGFuLmF2ZXJ5QGV4YW1wbGUuY29tIl0",
-      "digest": "lY4BYUUyoPHjUBlJjYHmmPsXuJgOPMWjgna2eeppWX4"
+      "encoded": "WyJmaWRvLWVtYWlsLXNhbHQtYWRkcjAxIiwiZW1haWwiLCJqb3JkYW4uYXZlcnlAZXhhbXBsZS5jb20iXQ",
+      "digest": "AY1lLQ4yAkNr56xM-0q7nO2-6pJF25BV10KGz6FsHTA"
     },
     {
-      "salt": "glide-email-salt-method",
+      "salt": "fido-email-salt-method",
       "claim": "verification_method",
       "value": "link_click",
-      "encoded": "WyJnbGlkZS1lbWFpbC1zYWx0LW1ldGhvZCIsInZlcmlmaWNhdGlvbl9tZXRob2QiLCJsaW5rX2NsaWNrIl0",
-      "digest": "B_ODYo_vqo0Ztb_beH7nUdPNRjW2s0Q4bdRqpFW80eo"
+      "encoded": "WyJmaWRvLWVtYWlsLXNhbHQtbWV0aG9kIiwidmVyaWZpY2F0aW9uX21ldGhvZCIsImxpbmtfY2xpY2siXQ",
+      "digest": "INJLDv7W6xazE_QjasQdquJXtmxuoid0OX3ymYHzgig"
     },
     {
-      "salt": "glide-email-salt-vat001",
+      "salt": "fido-email-salt-vat001",
       "claim": "verified_at",
       "value": "2026-03-12T08:15:00Z",
-      "encoded": "WyJnbGlkZS1lbWFpbC1zYWx0LXZhdDAwMSIsInZlcmlmaWVkX2F0IiwiMjAyNi0wMy0xMlQwODoxNTowMFoiXQ",
-      "digest": "VINQha_gGaWuJiaEz1i6Pa9TbVTXyFNbP8o5sx1rG6I"
+      "encoded": "WyJmaWRvLWVtYWlsLXNhbHQtdmF0MDAxIiwidmVyaWZpZWRfYXQiLCIyMDI2LTAzLTEyVDA4OjE1OjAwWiJd",
+      "digest": "ELDuVXOiWHGkZ0QV4vP5KpJPkMIsJEFfq5ElDQ3Fue0"
     }
   ],
   "presentation": {
@@ -51,5 +51,5 @@
       "email"
     ]
   },
-  "combinedIssuance": "<issuer-signed-jwt>~WyJnbGlkZS1lbWFpbC1zYWx0LWFkZHIwMSIsImVtYWlsIiwiam9yZGFuLmF2ZXJ5QGV4YW1wbGUuY29tIl0~WyJnbGlkZS1lbWFpbC1zYWx0LW1ldGhvZCIsInZlcmlmaWNhdGlvbl9tZXRob2QiLCJsaW5rX2NsaWNrIl0~WyJnbGlkZS1lbWFpbC1zYWx0LXZhdDAwMSIsInZlcmlmaWVkX2F0IiwiMjAyNi0wMy0xMlQwODoxNTowMFoiXQ~"
+  "combinedIssuance": "<issuer-signed-jwt>~WyJmaWRvLWVtYWlsLXNhbHQtYWRkcjAxIiwiZW1haWwiLCJqb3JkYW4uYXZlcnlAZXhhbXBsZS5jb20iXQ~WyJmaWRvLWVtYWlsLXNhbHQtbWV0aG9kIiwidmVyaWZpY2F0aW9uX21ldGhvZCIsImxpbmtfY2xpY2siXQ~WyJmaWRvLWVtYWlsLXNhbHQtdmF0MDAxIiwidmVyaWZpZWRfYXQiLCIyMDI2LTAzLTEyVDA4OjE1OjAwWiJd~"
 }

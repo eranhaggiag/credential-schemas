@@ -23,7 +23,7 @@ importers:
 
   packages/examples:
     dependencies:
-      '@glide/schema-tools':
+      '@fido/schema-tools':
         specifier: workspace:*
         version: link:../schema-tools
     devDependencies:
@@ -55,7 +55,7 @@ importers:
 
   site:
     dependencies:
-      '@glide/schema-tools':
+      '@fido/schema-tools':
         specifier: workspace:*
         version: link:../packages/schema-tools
     devDependencies:

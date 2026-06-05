@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.glideidentity.app/schemas/bank-id.schema.json",
+  "$id": "https://schemas.fido.example/schemas/bank-id.schema.json",
   "$comment": "Claim set for Bank ID. Carries a national-ID *linkage flag* only — never the national ID itself. JSON Schema Draft 2020-12.",
   "title": "Bank ID claim set",
   "type": "object",

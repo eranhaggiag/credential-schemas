@@ -3,8 +3,8 @@
   "registryVersion": "1.0.0",
   "generatedAt": "2026-06-05",
   "bases": {
-    "contextBase": "https://schemas.glideidentity.app/contexts/",
-    "vctBase": "https://schemas.glideidentity.app/vct/"
+    "contextBase": "https://schemas.fido.example/contexts/",
+    "vctBase": "https://schemas.fido.example/vct/"
   },
   "specs": {
     "w3cVcDataModel": "W3C VC Data Model 2.0 (Recommendation, 15 May 2025)",
@@ -18,8 +18,8 @@
       "name": "Employee ID",
       "description": "Employer-issued workforce credential: employer, employee ID, role, department, and employment status.",
       "version": "1.0.0",
-      "vct": "https://schemas.glideidentity.app/vct/employee-id",
-      "context": "https://schemas.glideidentity.app/contexts/employee-id.jsonld",
+      "vct": "https://schemas.fido.example/vct/employee-id",
+      "context": "https://schemas.fido.example/contexts/employee-id.jsonld",
       "specs": {
         "w3cVcDataModel": "W3C VC Data Model 2.0 (Recommendation, 15 May 2025)",
         "sdJwtVc": "draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026)",
@@ -40,8 +40,8 @@
       "name": "Proof of Employment",
       "description": "Verifiable 'employed at' claim (current or former / alumni) without exposing salary or compensation.",
       "version": "1.0.0",
-      "vct": "https://schemas.glideidentity.app/vct/proof-of-employment",
-      "context": "https://schemas.glideidentity.app/contexts/proof-of-employment.jsonld",
+      "vct": "https://schemas.fido.example/vct/proof-of-employment",
+      "context": "https://schemas.fido.example/contexts/proof-of-employment.jsonld",
       "specs": {
         "w3cVcDataModel": "W3C VC Data Model 2.0 (Recommendation, 15 May 2025)",
         "sdJwtVc": "draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026)",
@@ -62,8 +62,8 @@
       "name": "Bank ID",
       "description": "Bank-issued identity credential with verified KYC level and jurisdiction. Carries a national-ID linkage flag, never the national ID itself.",
       "version": "1.0.0",
-      "vct": "https://schemas.glideidentity.app/vct/bank-id",
-      "context": "https://schemas.glideidentity.app/contexts/bank-id.jsonld",
+      "vct": "https://schemas.fido.example/vct/bank-id",
+      "context": "https://schemas.fido.example/contexts/bank-id.jsonld",
       "specs": {
         "w3cVcDataModel": "W3C VC Data Model 2.0 (Recommendation, 15 May 2025)",
         "sdJwtVc": "draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026)",
@@ -84,8 +84,8 @@
       "name": "Phone Number Verification",
       "description": "Cryptographic proof of control over an E.164 phone number (not a live OTP).",
       "version": "1.0.0",
-      "vct": "https://schemas.glideidentity.app/vct/phone-verification",
-      "context": "https://schemas.glideidentity.app/contexts/phone-verification.jsonld",
+      "vct": "https://schemas.fido.example/vct/phone-verification",
+      "context": "https://schemas.fido.example/contexts/phone-verification.jsonld",
       "specs": {
         "w3cVcDataModel": "W3C VC Data Model 2.0 (Recommendation, 15 May 2025)",
         "sdJwtVc": "draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026)",
@@ -106,8 +106,8 @@
       "name": "Email Verification",
       "description": "Proof of control over an email address.",
       "version": "1.0.0",
-      "vct": "https://schemas.glideidentity.app/vct/email-verification",
-      "context": "https://schemas.glideidentity.app/contexts/email-verification.jsonld",
+      "vct": "https://schemas.fido.example/vct/email-verification",
+      "context": "https://schemas.fido.example/contexts/email-verification.jsonld",
       "specs": {
         "w3cVcDataModel": "W3C VC Data Model 2.0 (Recommendation, 15 May 2025)",
         "sdJwtVc": "draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026)",
@@ -128,8 +128,8 @@
       "name": "Age Verification",
       "description": "Proves a holder's age via boolean age-over predicates and/or a selectively disclosable birthdate. Designed so a holder can present only a predicate (e.g. age_over_18) without revealing birthdate.",
       "version": "1.0.0",
-      "vct": "https://schemas.glideidentity.app/vct/age-verification",
-      "context": "https://schemas.glideidentity.app/contexts/age-verification.jsonld",
+      "vct": "https://schemas.fido.example/vct/age-verification",
+      "context": "https://schemas.fido.example/contexts/age-verification.jsonld",
       "specs": {
         "w3cVcDataModel": "W3C VC Data Model 2.0 (Recommendation, 15 May 2025)",
         "sdJwtVc": "draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026)",
@@ -150,8 +150,8 @@
       "name": "Education Certificate",
       "description": "An academic credential: institution, degree, field of study, award date, optional grade, and accreditation body.",
       "version": "1.0.0",
-      "vct": "https://schemas.glideidentity.app/vct/education-certificate",
-      "context": "https://schemas.glideidentity.app/contexts/education-certificate.jsonld",
+      "vct": "https://schemas.fido.example/vct/education-certificate",
+      "context": "https://schemas.fido.example/contexts/education-certificate.jsonld",
       "specs": {
         "w3cVcDataModel": "W3C VC Data Model 2.0 (Recommendation, 15 May 2025)",
         "sdJwtVc": "draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026)",
@@ -172,8 +172,8 @@
       "name": "Boarding Pass",
       "description": "A flight boarding pass: passenger, carrier, flight, route, departure, seat, boarding group, and disclosable PNR.",
       "version": "1.0.0",
-      "vct": "https://schemas.glideidentity.app/vct/boarding-pass",
-      "context": "https://schemas.glideidentity.app/contexts/boarding-pass.jsonld",
+      "vct": "https://schemas.fido.example/vct/boarding-pass",
+      "context": "https://schemas.fido.example/contexts/boarding-pass.jsonld",
       "specs": {
         "w3cVcDataModel": "W3C VC Data Model 2.0 (Recommendation, 15 May 2025)",
         "sdJwtVc": "draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026)",

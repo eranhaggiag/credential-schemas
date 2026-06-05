@@ -14,9 +14,9 @@ import {
   type Registry,
   type RegistryEntry,
   type VctMetadata,
-} from '@glide/schema-tools';
+} from '@fido/schema-tools';
 
-export type { RegistryEntry } from '@glide/schema-tools';
+export type { RegistryEntry } from '@fido/schema-tools';
 
 export interface ClaimRow {
   name: string;

@@ -1,23 +1,23 @@
 {
-  "$comment": "Glide Identity — Phone Number Verification JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.",
+  "$comment": "FIDO Alliance — Phone Number Verification JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.",
   "@context": {
     "@protected": true,
-    "PhoneVerificationCredential": "https://schemas.glideidentity.app/contexts/phone-verification.jsonld#PhoneVerificationCredential",
-    "glide": "https://schemas.glideidentity.app/vocab#",
+    "PhoneVerificationCredential": "https://schemas.fido.example/contexts/phone-verification.jsonld#PhoneVerificationCredential",
+    "fido": "https://schemas.fido.example/vocab#",
     "phone_number": {
-      "@id": "glide:phone_number",
+      "@id": "fido:phone_number",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "verification_method": {
-      "@id": "glide:verification_method",
+      "@id": "fido:verification_method",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "verified_at": {
-      "@id": "glide:verified_at",
+      "@id": "fido:verified_at",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "carrier_attested": {
-      "@id": "glide:carrier_attested",
+      "@id": "fido:carrier_attested",
       "@type": "http://www.w3.org/2001/XMLSchema#boolean"
     }
   }

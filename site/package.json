@@ -1,7 +1,7 @@
 {
-  "name": "@glide/site",
+  "name": "@fido/site",
   "version": "0.1.0",
-  "description": "All-in-one docs, registry browser, and demo site for Glide credential schemas.",
+  "description": "All-in-one docs, registry browser, and demo site for FIDO Alliance credential schemas.",
   "license": "Apache-2.0",
   "type": "module",
   "scripts": {
@@ -11,7 +11,7 @@
     "typecheck": "astro check"
   },
   "dependencies": {
-    "@glide/schema-tools": "workspace:*"
+    "@fido/schema-tools": "workspace:*"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",

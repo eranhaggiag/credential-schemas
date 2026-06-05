@@ -1,5 +1,5 @@
 /**
- * Shared types for the Glide Identity credential schema registry.
+ * Shared types for the FIDO Alliance credential schema registry.
  *
  * The registry is the single machine-readable index of every credential type and the
  * paths to its dual-format artifacts (W3C VC 2.0 JSON-LD + IETF SD-JWT VC).

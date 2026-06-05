@@ -6,7 +6,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Dual-format verifiable credential schemas (W3C VC 2.0 + SD-JWT VC) for Glide Identity.' } = Astro.props;
+const { title, description = 'Dual-format verifiable credential schemas (W3C VC 2.0 + SD-JWT VC) for the FIDO Alliance.' } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const here = Astro.url.pathname.replace(/\/$/, '');
 
@@ -23,7 +23,7 @@ const isActive = (m: string) => (m === '' ? here === base.replace(/\/$/, '') : h
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} · Glide Schemas</title>
+    <title>{title} · FIDO Alliance Schemas</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href={`${base}logo.svg`.replace(/\/\//g, '/')} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,8 +37,8 @@ const isActive = (m: string) => (m === '' ? here === base.replace(/\/$/, '') : h
     <header class="sticky top-0 z-20 border-b border-white/10 bg-brand-900/70 backdrop-blur">
       <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href={base} class="flex items-center gap-3">
-          <img src={`${base}logo.svg`.replace(/\/\//g, '/')} alt="Glide Identity" class="h-7 w-7" />
-          <span class="font-heading text-white">Glide <span class="text-white/60">Schemas</span></span>
+          <img src={`${base}logo.svg`.replace(/\/\//g, '/')} alt="FIDO Alliance" class="h-7 w-7" />
+          <span class="font-heading text-white">FIDO Alliance <span class="text-white/60">Schemas</span></span>
         </a>
         <nav class="flex items-center gap-1 text-sm">
           {
@@ -65,7 +65,7 @@ const isActive = (m: string) => (m === '' ? here === base.replace(/\/$/, '') : h
     <footer class="border-t border-white/10">
       <div class="mx-auto max-w-6xl px-6 py-8 text-sm text-white/50">
         <p>
-          Glide Identity credential schemas · Apache-2.0 · W3C VC 2.0 + SD-JWT VC (draft-16).
+          FIDO Alliance credential schemas · Apache-2.0 · W3C VC 2.0 + SD-JWT VC (draft-16).
           Examples use fake data.
         </p>
       </div>

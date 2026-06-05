@@ -1,6 +1,6 @@
 {
   "$comment": "SD-JWT VC Type Metadata for Bank ID. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.",
-  "vct": "https://schemas.glideidentity.app/vct/bank-id",
+  "vct": "https://schemas.fido.example/vct/bank-id",
   "name": "Bank ID",
   "description": "Bank-issued identity credential with verified KYC level and jurisdiction. Carries a national-ID linkage flag, never the national ID itself.",
   "display": [
@@ -43,5 +43,5 @@
       "display": [{ "lang": "en-US", "label": "National ID linked" }]
     }
   ],
-  "schema_uri": "https://schemas.glideidentity.app/schemas/bank-id.schema.json"
+  "schema_uri": "https://schemas.fido.example/schemas/bank-id.schema.json"
 }

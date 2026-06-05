@@ -1,24 +1,24 @@
 {
-  "$comment": "Glide Identity — Bank ID JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.",
+  "$comment": "FIDO Alliance — Bank ID JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.",
   "@context": {
     "@protected": true,
-    "BankIdCredential": "https://schemas.glideidentity.app/contexts/bank-id.jsonld#BankIdCredential",
-    "glide": "https://schemas.glideidentity.app/vocab#",
+    "BankIdCredential": "https://schemas.fido.example/contexts/bank-id.jsonld#BankIdCredential",
+    "fido": "https://schemas.fido.example/vocab#",
     "issuing_institution": {
-      "@id": "glide:issuing_institution",
+      "@id": "fido:issuing_institution",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "account_holder_name": {
-      "@id": "glide:account_holder_name",
+      "@id": "fido:account_holder_name",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
-    "kyc_level": { "@id": "glide:kyc_level", "@type": "http://www.w3.org/2001/XMLSchema#string" },
+    "kyc_level": { "@id": "fido:kyc_level", "@type": "http://www.w3.org/2001/XMLSchema#string" },
     "jurisdiction": {
-      "@id": "glide:jurisdiction",
+      "@id": "fido:jurisdiction",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "national_id_linked": {
-      "@id": "glide:national_id_linked",
+      "@id": "fido:national_id_linked",
       "@type": "http://www.w3.org/2001/XMLSchema#boolean"
     }
   }

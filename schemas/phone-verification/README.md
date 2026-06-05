@@ -4,7 +4,7 @@ A credential attesting **cryptographic proof of control** over an E.164 phone nu
 one-time live OTP. The holder demonstrated control once; the credential is reusable.
 
 - **JSON-LD type:** `PhoneVerificationCredential`
-- **SD-JWT VC `vct`:** `https://schemas.glideidentity.app/vct/phone-verification`
+- **SD-JWT VC `vct`:** `https://schemas.fido.example/vct/phone-verification`
 - **Spec targets:** W3C VCDM 2.0 (15 May 2025) · SD-JWT VC draft-16 · RFC 9901
 
 ## Claims

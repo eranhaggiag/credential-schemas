@@ -1,7 +1,7 @@
 {
-  "name": "@glide/examples",
+  "name": "@fido/examples",
   "version": "0.1.0",
-  "description": "Runnable issuance, verification, and selective-disclosure examples for Glide credential schemas.",
+  "description": "Runnable issuance, verification, and selective-disclosure examples for FIDO Alliance credential schemas.",
   "license": "Apache-2.0",
   "type": "module",
   "scripts": {
@@ -13,7 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@glide/schema-tools": "workspace:*"
+    "@fido/schema-tools": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.7.0",

@@ -6,7 +6,7 @@
  * `_sd` but cannot learn the values. This is how a holder presents only `age_over_18`.
  */
 // #region present
-import { parseDisclosure } from '@glide/schema-tools';
+import { parseDisclosure } from '@fido/schema-tools';
 import { issueSdJwtVc, type IssuedSdJwtVc } from './issue-sd-jwt-vc.js';
 
 export interface Presentation {
@@ -32,8 +32,8 @@ export function present(issued: IssuedSdJwtVc, reveal: string[]): Presentation {
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const issued = issueSdJwtVc({
-    iss: 'https://issuer.glideidentity.app',
-    vct: 'https://schemas.glideidentity.app/vct/age-verification',
+    iss: 'https://issuer.fido.example',
+    vct: 'https://schemas.fido.example/vct/age-verification',
     cnf: { jwk: { kty: 'EC', crv: 'P-256', x: '…', y: '…' } },
     iat: 1768467600,
     claims: { birthdate: '2000-05-17', age_over_18: true, age_over_21: true },

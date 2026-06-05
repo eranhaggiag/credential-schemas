@@ -1,16 +1,16 @@
 {
-  "$comment": "Glide Identity — Email Verification JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.",
+  "$comment": "FIDO Alliance — Email Verification JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.",
   "@context": {
     "@protected": true,
-    "EmailVerificationCredential": "https://schemas.glideidentity.app/contexts/email-verification.jsonld#EmailVerificationCredential",
-    "glide": "https://schemas.glideidentity.app/vocab#",
-    "email": { "@id": "glide:email", "@type": "http://www.w3.org/2001/XMLSchema#string" },
+    "EmailVerificationCredential": "https://schemas.fido.example/contexts/email-verification.jsonld#EmailVerificationCredential",
+    "fido": "https://schemas.fido.example/vocab#",
+    "email": { "@id": "fido:email", "@type": "http://www.w3.org/2001/XMLSchema#string" },
     "verification_method": {
-      "@id": "glide:verification_method",
+      "@id": "fido:verification_method",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "verified_at": {
-      "@id": "glide:verified_at",
+      "@id": "fido:verified_at",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     }
   }

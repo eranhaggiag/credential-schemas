@@ -3,8 +3,8 @@
   "spec": "draft-ietf-oauth-sd-jwt-vc-16",
   "sealed": true,
   "issuerSignedPayload": {
-    "iss": "https://checkin.glide-air.example",
-    "vct": "https://schemas.glideidentity.app/vct/boarding-pass",
+    "iss": "https://checkin.skyhaven-air.example",
+    "vct": "https://schemas.fido.example/vct/boarding-pass",
     "iat": 1781935200,
     "exp": 1781955900,
     "cnf": {
@@ -17,80 +17,80 @@
     },
     "_sd_alg": "sha-256",
     "_sd": [
-      "245G3gUEVHp4PHn-2Wyafnjy-uhhIw5X2ey_pSBxKew",
-      "8Ae9N23Lj-IyxDu0BJAR7wyNTpoiK_tQ1QFjVsDJuW8",
-      "F83LZWiZeqytizbouilhLa-6NfE85nGZ-sagyVjQQ64",
-      "Oxwccs4L27Ds5rW8fvbilPbwbbCTFAj8uy9D_i2SfAM",
-      "RZq6npH-deUdTmkC77XGy13dx8IwZ-DYN5U33uMVhI0",
-      "hUQqj-3jF5KKwnVEjSLibPFNMIYRHZRP3A4l32DF2n0",
-      "mtGR87P2FznZfkKiXBLocGQD6lmOZqGSd2XzEc6krSs",
-      "mz-jnJs3eblAxj-WKo08Vp-IJdgp21BrW8TMZKPnlbU",
-      "p0VxvIO0plZqub6dKw0z83Yk2IwLOkOxTj3K8xf9G34"
+      "0O-lmn78qPosDtqjPPvcmloyE1FKcMnZM9g2gS15pLM",
+      "CIhqBXJsk_xVG1UZnh7vuofAZLgVabfsv9Nal0ZuUro",
+      "D-XWnvG-rjRuUE4LXcDceDQwPd9ozniUOjER9kQQ4TQ",
+      "IKkmiD3skBRzxjJxf80Y80E-KdjjEej_6iKVhv3YaFY",
+      "NzXXelZokQ0hHGQB9CKsPmWll8gRdm_M3qkuiqWikYs",
+      "PKUq4c_joZleaHjcoYTc_QI8vpEuvVD1-Z8JTIOCWJs",
+      "Xvk9o7AxqSdPyX5YgauD3Mavvrufzv9Qr6FnnE_rn_M",
+      "pO83SgINogwOK7iNioliaGvA6bq2JrreJkcpSQcY9yQ",
+      "t7cHgGWVAcY2XomRR_ZxUbCsleLJmAZzm832GSefz2A"
     ]
   },
   "disclosures": [
     {
-      "salt": "glide-bp-salt-passenger0",
+      "salt": "fido-bp-salt-passenger0",
       "claim": "passenger_name",
       "value": "AVERY/JORDAN",
-      "encoded": "WyJnbGlkZS1icC1zYWx0LXBhc3NlbmdlcjAiLCJwYXNzZW5nZXJfbmFtZSIsIkFWRVJZL0pPUkRBTiJd",
-      "digest": "245G3gUEVHp4PHn-2Wyafnjy-uhhIw5X2ey_pSBxKew"
+      "encoded": "WyJmaWRvLWJwLXNhbHQtcGFzc2VuZ2VyMCIsInBhc3Nlbmdlcl9uYW1lIiwiQVZFUlkvSk9SREFOIl0",
+      "digest": "IKkmiD3skBRzxjJxf80Y80E-KdjjEej_6iKVhv3YaFY"
     },
     {
-      "salt": "glide-bp-salt-carrier001",
+      "salt": "fido-bp-salt-carrier001",
       "claim": "carrier",
       "value": "GA",
-      "encoded": "WyJnbGlkZS1icC1zYWx0LWNhcnJpZXIwMDEiLCJjYXJyaWVyIiwiR0EiXQ",
-      "digest": "mtGR87P2FznZfkKiXBLocGQD6lmOZqGSd2XzEc6krSs"
+      "encoded": "WyJmaWRvLWJwLXNhbHQtY2FycmllcjAwMSIsImNhcnJpZXIiLCJHQSJd",
+      "digest": "t7cHgGWVAcY2XomRR_ZxUbCsleLJmAZzm832GSefz2A"
     },
     {
-      "salt": "glide-bp-salt-flight0001",
+      "salt": "fido-bp-salt-flight0001",
       "claim": "flight_number",
       "value": "GA417",
-      "encoded": "WyJnbGlkZS1icC1zYWx0LWZsaWdodDAwMDEiLCJmbGlnaHRfbnVtYmVyIiwiR0E0MTciXQ",
-      "digest": "8Ae9N23Lj-IyxDu0BJAR7wyNTpoiK_tQ1QFjVsDJuW8"
+      "encoded": "WyJmaWRvLWJwLXNhbHQtZmxpZ2h0MDAwMSIsImZsaWdodF9udW1iZXIiLCJHQTQxNyJd",
+      "digest": "CIhqBXJsk_xVG1UZnh7vuofAZLgVabfsv9Nal0ZuUro"
     },
     {
-      "salt": "glide-bp-salt-origin0001",
+      "salt": "fido-bp-salt-origin0001",
       "claim": "origin",
       "value": "ARN",
-      "encoded": "WyJnbGlkZS1icC1zYWx0LW9yaWdpbjAwMDEiLCJvcmlnaW4iLCJBUk4iXQ",
-      "digest": "mz-jnJs3eblAxj-WKo08Vp-IJdgp21BrW8TMZKPnlbU"
+      "encoded": "WyJmaWRvLWJwLXNhbHQtb3JpZ2luMDAwMSIsIm9yaWdpbiIsIkFSTiJd",
+      "digest": "pO83SgINogwOK7iNioliaGvA6bq2JrreJkcpSQcY9yQ"
     },
     {
-      "salt": "glide-bp-salt-dest00001",
+      "salt": "fido-bp-salt-dest00001",
       "claim": "destination",
       "value": "LHR",
-      "encoded": "WyJnbGlkZS1icC1zYWx0LWRlc3QwMDAwMSIsImRlc3RpbmF0aW9uIiwiTEhSIl0",
-      "digest": "F83LZWiZeqytizbouilhLa-6NfE85nGZ-sagyVjQQ64"
+      "encoded": "WyJmaWRvLWJwLXNhbHQtZGVzdDAwMDAxIiwiZGVzdGluYXRpb24iLCJMSFIiXQ",
+      "digest": "Xvk9o7AxqSdPyX5YgauD3Mavvrufzv9Qr6FnnE_rn_M"
     },
     {
-      "salt": "glide-bp-salt-deptime01",
+      "salt": "fido-bp-salt-deptime01",
       "claim": "departure_time",
       "value": "2026-06-20T09:45:00+02:00",
-      "encoded": "WyJnbGlkZS1icC1zYWx0LWRlcHRpbWUwMSIsImRlcGFydHVyZV90aW1lIiwiMjAyNi0wNi0yMFQwOTo0NTowMCswMjowMCJd",
-      "digest": "RZq6npH-deUdTmkC77XGy13dx8IwZ-DYN5U33uMVhI0"
+      "encoded": "WyJmaWRvLWJwLXNhbHQtZGVwdGltZTAxIiwiZGVwYXJ0dXJlX3RpbWUiLCIyMDI2LTA2LTIwVDA5OjQ1OjAwKzAyOjAwIl0",
+      "digest": "NzXXelZokQ0hHGQB9CKsPmWll8gRdm_M3qkuiqWikYs"
     },
     {
-      "salt": "glide-bp-salt-seat00001",
+      "salt": "fido-bp-salt-seat00001",
       "claim": "seat",
       "value": "14C",
-      "encoded": "WyJnbGlkZS1icC1zYWx0LXNlYXQwMDAwMSIsInNlYXQiLCIxNEMiXQ",
-      "digest": "hUQqj-3jF5KKwnVEjSLibPFNMIYRHZRP3A4l32DF2n0"
+      "encoded": "WyJmaWRvLWJwLXNhbHQtc2VhdDAwMDAxIiwic2VhdCIsIjE0QyJd",
+      "digest": "D-XWnvG-rjRuUE4LXcDceDQwPd9ozniUOjER9kQQ4TQ"
     },
     {
-      "salt": "glide-bp-salt-group0001",
+      "salt": "fido-bp-salt-group0001",
       "claim": "boarding_group",
       "value": "B",
-      "encoded": "WyJnbGlkZS1icC1zYWx0LWdyb3VwMDAwMSIsImJvYXJkaW5nX2dyb3VwIiwiQiJd",
-      "digest": "Oxwccs4L27Ds5rW8fvbilPbwbbCTFAj8uy9D_i2SfAM"
+      "encoded": "WyJmaWRvLWJwLXNhbHQtZ3JvdXAwMDAxIiwiYm9hcmRpbmdfZ3JvdXAiLCJCIl0",
+      "digest": "0O-lmn78qPosDtqjPPvcmloyE1FKcMnZM9g2gS15pLM"
     },
     {
-      "salt": "glide-bp-salt-pnr000001",
+      "salt": "fido-bp-salt-pnr000001",
       "claim": "pnr",
       "value": "X4F2QJ",
-      "encoded": "WyJnbGlkZS1icC1zYWx0LXBucjAwMDAwMSIsInBuciIsIlg0RjJRSiJd",
-      "digest": "p0VxvIO0plZqub6dKw0z83Yk2IwLOkOxTj3K8xf9G34"
+      "encoded": "WyJmaWRvLWJwLXNhbHQtcG5yMDAwMDAxIiwicG5yIiwiWDRGMlFKIl0",
+      "digest": "PKUq4c_joZleaHjcoYTc_QI8vpEuvVD1-Z8JTIOCWJs"
     }
   ],
   "presentation": {
@@ -105,5 +105,5 @@
       "boarding_group"
     ]
   },
-  "combinedIssuance": "<issuer-signed-jwt>~WyJnbGlkZS1icC1zYWx0LXBhc3NlbmdlcjAiLCJwYXNzZW5nZXJfbmFtZSIsIkFWRVJZL0pPUkRBTiJd~WyJnbGlkZS1icC1zYWx0LWNhcnJpZXIwMDEiLCJjYXJyaWVyIiwiR0EiXQ~WyJnbGlkZS1icC1zYWx0LWZsaWdodDAwMDEiLCJmbGlnaHRfbnVtYmVyIiwiR0E0MTciXQ~WyJnbGlkZS1icC1zYWx0LW9yaWdpbjAwMDEiLCJvcmlnaW4iLCJBUk4iXQ~WyJnbGlkZS1icC1zYWx0LWRlc3QwMDAwMSIsImRlc3RpbmF0aW9uIiwiTEhSIl0~WyJnbGlkZS1icC1zYWx0LWRlcHRpbWUwMSIsImRlcGFydHVyZV90aW1lIiwiMjAyNi0wNi0yMFQwOTo0NTowMCswMjowMCJd~WyJnbGlkZS1icC1zYWx0LXNlYXQwMDAwMSIsInNlYXQiLCIxNEMiXQ~WyJnbGlkZS1icC1zYWx0LWdyb3VwMDAwMSIsImJvYXJkaW5nX2dyb3VwIiwiQiJd~WyJnbGlkZS1icC1zYWx0LXBucjAwMDAwMSIsInBuciIsIlg0RjJRSiJd~"
+  "combinedIssuance": "<issuer-signed-jwt>~WyJmaWRvLWJwLXNhbHQtcGFzc2VuZ2VyMCIsInBhc3Nlbmdlcl9uYW1lIiwiQVZFUlkvSk9SREFOIl0~WyJmaWRvLWJwLXNhbHQtY2FycmllcjAwMSIsImNhcnJpZXIiLCJHQSJd~WyJmaWRvLWJwLXNhbHQtZmxpZ2h0MDAwMSIsImZsaWdodF9udW1iZXIiLCJHQTQxNyJd~WyJmaWRvLWJwLXNhbHQtb3JpZ2luMDAwMSIsIm9yaWdpbiIsIkFSTiJd~WyJmaWRvLWJwLXNhbHQtZGVzdDAwMDAxIiwiZGVzdGluYXRpb24iLCJMSFIiXQ~WyJmaWRvLWJwLXNhbHQtZGVwdGltZTAxIiwiZGVwYXJ0dXJlX3RpbWUiLCIyMDI2LTA2LTIwVDA5OjQ1OjAwKzAyOjAwIl0~WyJmaWRvLWJwLXNhbHQtc2VhdDAwMDAxIiwic2VhdCIsIjE0QyJd~WyJmaWRvLWJwLXNhbHQtZ3JvdXAwMDAxIiwiYm9hcmRpbmdfZ3JvdXAiLCJCIl0~WyJmaWRvLWJwLXNhbHQtcG5yMDAwMDAxIiwicG5yIiwiWDRGMlFKIl0~"
 }

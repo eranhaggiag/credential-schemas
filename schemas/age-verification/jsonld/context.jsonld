@@ -1,23 +1,23 @@
 {
-  "$comment": "Glide Identity — Age Verification JSON-LD context. Targets W3C Verifiable Credentials Data Model 2.0 (W3C Recommendation, 15 May 2025). Use alongside the base context https://www.w3.org/ns/credentials/v2.",
+  "$comment": "FIDO Alliance — Age Verification JSON-LD context. Targets W3C Verifiable Credentials Data Model 2.0 (W3C Recommendation, 15 May 2025). Use alongside the base context https://www.w3.org/ns/credentials/v2.",
   "@context": {
     "@protected": true,
-    "AgeVerificationCredential": "https://schemas.glideidentity.app/contexts/age-verification.jsonld#AgeVerificationCredential",
-    "glide": "https://schemas.glideidentity.app/vocab#",
+    "AgeVerificationCredential": "https://schemas.fido.example/contexts/age-verification.jsonld#AgeVerificationCredential",
+    "fido": "https://schemas.fido.example/vocab#",
     "birthdate": {
-      "@id": "glide:birthdate",
+      "@id": "fido:birthdate",
       "@type": "http://www.w3.org/2001/XMLSchema#date"
     },
     "age_over_13": {
-      "@id": "glide:age_over_13",
+      "@id": "fido:age_over_13",
       "@type": "http://www.w3.org/2001/XMLSchema#boolean"
     },
     "age_over_18": {
-      "@id": "glide:age_over_18",
+      "@id": "fido:age_over_18",
       "@type": "http://www.w3.org/2001/XMLSchema#boolean"
     },
     "age_over_21": {
-      "@id": "glide:age_over_21",
+      "@id": "fido:age_over_21",
       "@type": "http://www.w3.org/2001/XMLSchema#boolean"
     }
   }

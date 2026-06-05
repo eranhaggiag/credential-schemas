@@ -2,7 +2,7 @@
   "$comment": "Example W3C VC 2.0 Education Certificate credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).",
   "@context": [
     "https://www.w3.org/ns/credentials/v2",
-    "https://schemas.glideidentity.app/contexts/education-certificate.jsonld"
+    "https://schemas.fido.example/contexts/education-certificate.jsonld"
   ],
   "type": ["VerifiableCredential", "EducationCertificateCredential"],
   "issuer": "https://registrar.northbridge.example",

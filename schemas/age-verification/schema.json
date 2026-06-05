@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.glideidentity.app/schemas/age-verification.schema.json",
+  "$id": "https://schemas.fido.example/schemas/age-verification.schema.json",
   "$comment": "Claim set for the Age Verification credential. Shared by the W3C VC 2.0 (credentialSubject) and SD-JWT VC (disclosed payload) representations. JSON Schema Draft 2020-12.",
   "title": "Age Verification claim set",
   "type": "object",

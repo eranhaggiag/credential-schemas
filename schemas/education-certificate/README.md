@@ -3,7 +3,7 @@
 A verifiable academic credential.
 
 - **JSON-LD type:** `EducationCertificateCredential`
-- **SD-JWT VC `vct`:** `https://schemas.glideidentity.app/vct/education-certificate`
+- **SD-JWT VC `vct`:** `https://schemas.fido.example/vct/education-certificate`
 - **Spec targets:** W3C VCDM 2.0 (15 May 2025) · SD-JWT VC draft-16 · RFC 9901
 
 ## Claims

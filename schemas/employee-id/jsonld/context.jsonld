@@ -1,18 +1,18 @@
 {
-  "$comment": "Glide Identity — Employee ID JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.",
+  "$comment": "FIDO Alliance — Employee ID JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.",
   "@context": {
     "@protected": true,
-    "EmployeeIdCredential": "https://schemas.glideidentity.app/contexts/employee-id.jsonld#EmployeeIdCredential",
-    "glide": "https://schemas.glideidentity.app/vocab#",
-    "employer": { "@id": "glide:employer", "@type": "http://www.w3.org/2001/XMLSchema#string" },
+    "EmployeeIdCredential": "https://schemas.fido.example/contexts/employee-id.jsonld#EmployeeIdCredential",
+    "fido": "https://schemas.fido.example/vocab#",
+    "employer": { "@id": "fido:employer", "@type": "http://www.w3.org/2001/XMLSchema#string" },
     "employee_id": {
-      "@id": "glide:employee_id",
+      "@id": "fido:employee_id",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
-    "job_title": { "@id": "glide:job_title", "@type": "http://www.w3.org/2001/XMLSchema#string" },
-    "department": { "@id": "glide:department", "@type": "http://www.w3.org/2001/XMLSchema#string" },
+    "job_title": { "@id": "fido:job_title", "@type": "http://www.w3.org/2001/XMLSchema#string" },
+    "department": { "@id": "fido:department", "@type": "http://www.w3.org/2001/XMLSchema#string" },
     "employment_status": {
-      "@id": "glide:employment_status",
+      "@id": "fido:employment_status",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     }
   }

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.glideidentity.app/schemas/phone-verification.schema.json",
+  "$id": "https://schemas.fido.example/schemas/phone-verification.schema.json",
   "$comment": "Claim set for Phone Number Verification. Represents cryptographic proof of control, not a live OTP. JSON Schema Draft 2020-12.",
   "title": "Phone Number Verification claim set",
   "type": "object",

@@ -1,4 +1,4 @@
-# Glide Identity — Credential Schema Registry
+# FIDO Alliance — Credential Schema Registry
 
 A **dual-format verifiable credential schema registry**: every credential type is published as
 both a **W3C Verifiable Credentials 2.0** JSON-LD credential and an **IETF SD-JWT VC**, from a
@@ -53,10 +53,10 @@ scripts/                 build-registry, seal-examples, validate
 
 `vct` and `@context` URLs derive from two env-overridable bases so a fork can repoint everything:
 
-| Env var              | Default                                       |
-| -------------------- | --------------------------------------------- |
-| `GLIDE_VCT_BASE`     | `https://schemas.glideidentity.app/vct/`      |
-| `GLIDE_CONTEXT_BASE` | `https://schemas.glideidentity.app/contexts/` |
+| Env var             | Default                                  |
+| ------------------- | ---------------------------------------- |
+| `FIDO_VCT_BASE`     | `https://schemas.fido.example/vct/`      |
+| `FIDO_CONTEXT_BASE` | `https://schemas.fido.example/contexts/` |
 
 ## Usage
 
@@ -65,7 +65,7 @@ pnpm install
 pnpm build:registry   # regenerate schemas/registry.json from the tree
 pnpm seal             # compute SD-JWT VC disclosure digests in examples (idempotent)
 pnpm validate         # every example must validate against its schema.json
-pnpm --filter @glide/examples all   # issue → present age_over_18 → verify
+pnpm --filter @fido/examples all   # issue → present age_over_18 → verify
 pnpm dev:site         # run the website locally
 SITE_BASE=/pocs/ pnpm build:site    # static build for GitHub Pages
 ```
@@ -79,7 +79,7 @@ plain static files with no server. Three sections: **Landing**, **Schema registr
 (auto-generated from `registry.json`), and **Developer docs** (snippets pulled from
 `packages/examples`). The registry browser hardcodes no schema list.
 
-> The logo at `site/public/logo.svg` is a placeholder — drop in the official Glide asset.
+> The logo at `site/public/logo.svg` is a placeholder — drop in the official FIDO Alliance asset.
 
 ## Validation guarantee
 

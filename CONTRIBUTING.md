@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping improve the Glide Identity credential schema registry.
+Thanks for helping improve the FIDO Alliance credential schema registry.
 
 ## Ground rules
 
@@ -32,8 +32,8 @@ Thanks for helping improve the Glide Identity credential schema registry.
 `vct` and `@context` URLs derive from two bases, overridable via environment variables so a
 fork can repoint them:
 
-- `GLIDE_CONTEXT_BASE` (default `https://schemas.glideidentity.app/contexts/`)
-- `GLIDE_VCT_BASE` (default `https://schemas.glideidentity.app/vct/`)
+- `FIDO_CONTEXT_BASE` (default `https://schemas.fido.example/contexts/`)
+- `FIDO_VCT_BASE` (default `https://schemas.fido.example/vct/`)
 
 Never hardcode these URLs in UI or schema-tools — resolve them from `registry.json`.
 

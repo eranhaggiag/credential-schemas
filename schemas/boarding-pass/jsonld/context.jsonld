@@ -1,32 +1,32 @@
 {
-  "$comment": "Glide Identity — Boarding Pass JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.",
+  "$comment": "FIDO Alliance — Boarding Pass JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.",
   "@context": {
     "@protected": true,
-    "BoardingPassCredential": "https://schemas.glideidentity.app/contexts/boarding-pass.jsonld#BoardingPassCredential",
-    "glide": "https://schemas.glideidentity.app/vocab#",
+    "BoardingPassCredential": "https://schemas.fido.example/contexts/boarding-pass.jsonld#BoardingPassCredential",
+    "fido": "https://schemas.fido.example/vocab#",
     "passenger_name": {
-      "@id": "glide:passenger_name",
+      "@id": "fido:passenger_name",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
-    "carrier": { "@id": "glide:carrier", "@type": "http://www.w3.org/2001/XMLSchema#string" },
+    "carrier": { "@id": "fido:carrier", "@type": "http://www.w3.org/2001/XMLSchema#string" },
     "flight_number": {
-      "@id": "glide:flight_number",
+      "@id": "fido:flight_number",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
-    "origin": { "@id": "glide:origin", "@type": "http://www.w3.org/2001/XMLSchema#string" },
+    "origin": { "@id": "fido:origin", "@type": "http://www.w3.org/2001/XMLSchema#string" },
     "destination": {
-      "@id": "glide:destination",
+      "@id": "fido:destination",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "departure_time": {
-      "@id": "glide:departure_time",
+      "@id": "fido:departure_time",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
-    "seat": { "@id": "glide:seat", "@type": "http://www.w3.org/2001/XMLSchema#string" },
+    "seat": { "@id": "fido:seat", "@type": "http://www.w3.org/2001/XMLSchema#string" },
     "boarding_group": {
-      "@id": "glide:boarding_group",
+      "@id": "fido:boarding_group",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
-    "pnr": { "@id": "glide:pnr", "@type": "http://www.w3.org/2001/XMLSchema#string" }
+    "pnr": { "@id": "fido:pnr", "@type": "http://www.w3.org/2001/XMLSchema#string" }
   }
 }

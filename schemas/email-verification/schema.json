@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.glideidentity.app/schemas/email-verification.schema.json",
+  "$id": "https://schemas.fido.example/schemas/email-verification.schema.json",
   "$comment": "Claim set for Email Verification. JSON Schema Draft 2020-12.",
   "title": "Email Verification claim set",
   "type": "object",

@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Glide brand palette.
+        // FIDO Alliance brand palette.
         brand: {
           // dark purple/blue gradient stops
           900: '#0b0a1f',

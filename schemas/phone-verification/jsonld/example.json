@@ -2,10 +2,10 @@
   "$comment": "Example W3C VC 2.0 Phone Number Verification credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).",
   "@context": [
     "https://www.w3.org/ns/credentials/v2",
-    "https://schemas.glideidentity.app/contexts/phone-verification.jsonld"
+    "https://schemas.fido.example/contexts/phone-verification.jsonld"
   ],
   "type": ["VerifiableCredential", "PhoneVerificationCredential"],
-  "issuer": "https://verify.glideidentity.app",
+  "issuer": "https://verify.fido.example",
   "validFrom": "2026-03-10T14:30:00Z",
   "validUntil": "2026-09-10T14:30:00Z",
   "credentialSubject": {

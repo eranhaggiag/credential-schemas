@@ -4,7 +4,7 @@
   "sealed": true,
   "issuerSignedPayload": {
     "iss": "https://id.firstmeridian.example",
-    "vct": "https://schemas.glideidentity.app/vct/bank-id",
+    "vct": "https://schemas.fido.example/vct/bank-id",
     "iat": 1768903200,
     "exp": 1863511200,
     "cnf": {
@@ -17,48 +17,48 @@
     },
     "_sd_alg": "sha-256",
     "_sd": [
-      "B6hcH_TWhJ2KTFgfkOSy00vEV0kEtXNVK8XWSdzNE54",
-      "MHnopf5c9-J2ZxGNJepY66xaoAPe8Y3c0PAStZj8ymQ",
-      "ji81rSeKLYZ7J1vWiFY28fpN1hKAb7umsKUc-6-mqVM",
-      "pL_azo5pcd8SeK4ahzUNKkc3AEHVfmPLqKzyohLUF3I",
-      "xOcalakukHoN_dDgN2Wxe0b1ECSWLxiRCQkN6IESzjs"
+      "-YgUiTcRl_JPGt9tFY96PZtqdbtCKIWWYWKQ8U39CYI",
+      "1RAevSycVXLmpr8Gggv1zzb6IVffLmelpE2_zhbSIpg",
+      "4uPsQ0qzdiMd51h-rO2L9yHDQ1nZoxaShtzZNsm4r4k",
+      "SA52n_uGwaaDvHxWppOL3N0NeVO7fjAeINhgz5HUEMI",
+      "yUwRTXFCnJSmnFRX4xHtqPNm3kODKsc0LaFm-dENmmQ"
     ]
   },
   "disclosures": [
     {
-      "salt": "glide-bank-salt-inst0001",
+      "salt": "fido-bank-salt-inst0001",
       "claim": "issuing_institution",
       "value": "First Meridian Bank",
-      "encoded": "WyJnbGlkZS1iYW5rLXNhbHQtaW5zdDAwMDEiLCJpc3N1aW5nX2luc3RpdHV0aW9uIiwiRmlyc3QgTWVyaWRpYW4gQmFuayJd",
-      "digest": "ji81rSeKLYZ7J1vWiFY28fpN1hKAb7umsKUc-6-mqVM"
+      "encoded": "WyJmaWRvLWJhbmstc2FsdC1pbnN0MDAwMSIsImlzc3VpbmdfaW5zdGl0dXRpb24iLCJGaXJzdCBNZXJpZGlhbiBCYW5rIl0",
+      "digest": "-YgUiTcRl_JPGt9tFY96PZtqdbtCKIWWYWKQ8U39CYI"
     },
     {
-      "salt": "glide-bank-salt-holder01",
+      "salt": "fido-bank-salt-holder01",
       "claim": "account_holder_name",
       "value": "Jordan Avery",
-      "encoded": "WyJnbGlkZS1iYW5rLXNhbHQtaG9sZGVyMDEiLCJhY2NvdW50X2hvbGRlcl9uYW1lIiwiSm9yZGFuIEF2ZXJ5Il0",
-      "digest": "B6hcH_TWhJ2KTFgfkOSy00vEV0kEtXNVK8XWSdzNE54"
+      "encoded": "WyJmaWRvLWJhbmstc2FsdC1ob2xkZXIwMSIsImFjY291bnRfaG9sZGVyX25hbWUiLCJKb3JkYW4gQXZlcnkiXQ",
+      "digest": "1RAevSycVXLmpr8Gggv1zzb6IVffLmelpE2_zhbSIpg"
     },
     {
-      "salt": "glide-bank-salt-kyc00001",
+      "salt": "fido-bank-salt-kyc00001",
       "claim": "kyc_level",
       "value": "enhanced",
-      "encoded": "WyJnbGlkZS1iYW5rLXNhbHQta3ljMDAwMDEiLCJreWNfbGV2ZWwiLCJlbmhhbmNlZCJd",
-      "digest": "xOcalakukHoN_dDgN2Wxe0b1ECSWLxiRCQkN6IESzjs"
+      "encoded": "WyJmaWRvLWJhbmstc2FsdC1reWMwMDAwMSIsImt5Y19sZXZlbCIsImVuaGFuY2VkIl0",
+      "digest": "4uPsQ0qzdiMd51h-rO2L9yHDQ1nZoxaShtzZNsm4r4k"
     },
     {
-      "salt": "glide-bank-salt-juris001",
+      "salt": "fido-bank-salt-juris001",
       "claim": "jurisdiction",
       "value": "SE",
-      "encoded": "WyJnbGlkZS1iYW5rLXNhbHQtanVyaXMwMDEiLCJqdXJpc2RpY3Rpb24iLCJTRSJd",
-      "digest": "MHnopf5c9-J2ZxGNJepY66xaoAPe8Y3c0PAStZj8ymQ"
+      "encoded": "WyJmaWRvLWJhbmstc2FsdC1qdXJpczAwMSIsImp1cmlzZGljdGlvbiIsIlNFIl0",
+      "digest": "SA52n_uGwaaDvHxWppOL3N0NeVO7fjAeINhgz5HUEMI"
     },
     {
-      "salt": "glide-bank-salt-natidlnk",
+      "salt": "fido-bank-salt-natidlnk",
       "claim": "national_id_linked",
       "value": true,
-      "encoded": "WyJnbGlkZS1iYW5rLXNhbHQtbmF0aWRsbmsiLCJuYXRpb25hbF9pZF9saW5rZWQiLHRydWVd",
-      "digest": "pL_azo5pcd8SeK4ahzUNKkc3AEHVfmPLqKzyohLUF3I"
+      "encoded": "WyJmaWRvLWJhbmstc2FsdC1uYXRpZGxuayIsIm5hdGlvbmFsX2lkX2xpbmtlZCIsdHJ1ZV0",
+      "digest": "yUwRTXFCnJSmnFRX4xHtqPNm3kODKsc0LaFm-dENmmQ"
     }
   ],
   "presentation": {
@@ -69,5 +69,5 @@
       "jurisdiction"
     ]
   },
-  "combinedIssuance": "<issuer-signed-jwt>~WyJnbGlkZS1iYW5rLXNhbHQtaW5zdDAwMDEiLCJpc3N1aW5nX2luc3RpdHV0aW9uIiwiRmlyc3QgTWVyaWRpYW4gQmFuayJd~WyJnbGlkZS1iYW5rLXNhbHQtaG9sZGVyMDEiLCJhY2NvdW50X2hvbGRlcl9uYW1lIiwiSm9yZGFuIEF2ZXJ5Il0~WyJnbGlkZS1iYW5rLXNhbHQta3ljMDAwMDEiLCJreWNfbGV2ZWwiLCJlbmhhbmNlZCJd~WyJnbGlkZS1iYW5rLXNhbHQtanVyaXMwMDEiLCJqdXJpc2RpY3Rpb24iLCJTRSJd~WyJnbGlkZS1iYW5rLXNhbHQtbmF0aWRsbmsiLCJuYXRpb25hbF9pZF9saW5rZWQiLHRydWVd~"
+  "combinedIssuance": "<issuer-signed-jwt>~WyJmaWRvLWJhbmstc2FsdC1pbnN0MDAwMSIsImlzc3VpbmdfaW5zdGl0dXRpb24iLCJGaXJzdCBNZXJpZGlhbiBCYW5rIl0~WyJmaWRvLWJhbmstc2FsdC1ob2xkZXIwMSIsImFjY291bnRfaG9sZGVyX25hbWUiLCJKb3JkYW4gQXZlcnkiXQ~WyJmaWRvLWJhbmstc2FsdC1reWMwMDAwMSIsImt5Y19sZXZlbCIsImVuaGFuY2VkIl0~WyJmaWRvLWJhbmstc2FsdC1qdXJpczAwMSIsImp1cmlzZGljdGlvbiIsIlNFIl0~WyJmaWRvLWJhbmstc2FsdC1uYXRpZGxuayIsIm5hdGlvbmFsX2lkX2xpbmtlZCIsdHJ1ZV0~"
 }

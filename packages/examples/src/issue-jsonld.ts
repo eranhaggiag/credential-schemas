@@ -29,9 +29,9 @@ export function issueJsonLd(input: JsonLdInput): Record<string, unknown> {
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const vc = issueJsonLd({
-    contextUrl: 'https://schemas.glideidentity.app/contexts/age-verification.jsonld',
+    contextUrl: 'https://schemas.fido.example/contexts/age-verification.jsonld',
     type: 'AgeVerificationCredential',
-    issuer: 'https://issuer.glideidentity.app',
+    issuer: 'https://issuer.fido.example',
     validFrom: '2026-01-15T09:00:00Z',
     validUntil: '2027-01-15T09:00:00Z',
     subjectId: 'did:example:holder-age-0001',

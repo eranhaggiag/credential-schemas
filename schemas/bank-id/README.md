@@ -5,7 +5,7 @@ jurisdiction. It can attest that a national ID was linked at the bank **without 
 national ID number itself**.
 
 - **JSON-LD type:** `BankIdCredential`
-- **SD-JWT VC `vct`:** `https://schemas.glideidentity.app/vct/bank-id`
+- **SD-JWT VC `vct`:** `https://schemas.fido.example/vct/bank-id`
 - **Spec targets:** W3C VCDM 2.0 (15 May 2025) · SD-JWT VC draft-16 · RFC 9901
 
 ## Claims

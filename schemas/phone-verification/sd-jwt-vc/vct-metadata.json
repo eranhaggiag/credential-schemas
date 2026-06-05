@@ -1,6 +1,6 @@
 {
   "$comment": "SD-JWT VC Type Metadata for Phone Number Verification. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.",
-  "vct": "https://schemas.glideidentity.app/vct/phone-verification",
+  "vct": "https://schemas.fido.example/vct/phone-verification",
   "name": "Phone Number Verification",
   "description": "Cryptographic proof of control over an E.164 phone number (not a live OTP).",
   "display": [
@@ -38,5 +38,5 @@
       "display": [{ "lang": "en-US", "label": "Carrier attested" }]
     }
   ],
-  "schema_uri": "https://schemas.glideidentity.app/schemas/phone-verification.schema.json"
+  "schema_uri": "https://schemas.fido.example/schemas/phone-verification.schema.json"
 }

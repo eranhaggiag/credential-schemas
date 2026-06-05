@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.glideidentity.app/schemas/boarding-pass.schema.json",
+  "$id": "https://schemas.fido.example/schemas/boarding-pass.schema.json",
   "$comment": "Claim set for Boarding Pass. IATA codes validated by pattern. JSON Schema Draft 2020-12.",
   "title": "Boarding Pass claim set",
   "type": "object",

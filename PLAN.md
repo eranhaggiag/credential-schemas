@@ -1,4 +1,4 @@
-# PLAN — Glide Identity Credential Schema Registry
+# PLAN — FIDO Alliance Credential Schema Registry
 
 A dual-format verifiable credential schema registry (W3C VC 2.0 JSON-LD **and** IETF SD-JWT VC)
 plus an all-in-one documentation / browser / demo website.
@@ -14,10 +14,10 @@ plus an all-in-one documentation / browser / demo website.
 
 ## Configurable bases
 
-- `contextBase` = `https://schemas.glideidentity.app/contexts/`
-- `vctBase` = `https://schemas.glideidentity.app/vct/`
+- `contextBase` = `https://schemas.fido.example/contexts/`
+- `vctBase` = `https://schemas.fido.example/vct/`
 
-Both env-overridable (`GLIDE_CONTEXT_BASE`, `GLIDE_VCT_BASE`) in `scripts/build-registry.ts`.
+Both env-overridable (`FIDO_CONTEXT_BASE`, `FIDO_VCT_BASE`) in `scripts/build-registry.ts`.
 
 ## The eight credential types
 

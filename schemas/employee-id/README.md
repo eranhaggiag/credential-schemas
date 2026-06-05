@@ -3,7 +3,7 @@
 Employer-issued workforce identity credential.
 
 - **JSON-LD type:** `EmployeeIdCredential`
-- **SD-JWT VC `vct`:** `https://schemas.glideidentity.app/vct/employee-id`
+- **SD-JWT VC `vct`:** `https://schemas.fido.example/vct/employee-id`
 - **Spec targets:** W3C VCDM 2.0 (15 May 2025) · SD-JWT VC draft-16 · RFC 9901
 
 ## Claims

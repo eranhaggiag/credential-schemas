@@ -1,6 +1,6 @@
 {
   "$comment": "SD-JWT VC Type Metadata for Age Verification. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), built on RFC 9901. The `sd` values follow draft-16 §claims: 'always' = issuer MUST make selectively disclosable, 'allowed' = MAY, 'never' = MUST NOT.",
-  "vct": "https://schemas.glideidentity.app/vct/age-verification",
+  "vct": "https://schemas.fido.example/vct/age-verification",
   "name": "Age Verification",
   "description": "Proves a holder's age via boolean age-over predicates and/or a selectively disclosable birthdate. Designed so a holder can present only a predicate (e.g. age_over_18) without revealing birthdate.",
   "display": [
@@ -38,5 +38,5 @@
       "display": [{ "lang": "en-US", "label": "Over 21" }]
     }
   ],
-  "schema_uri": "https://schemas.glideidentity.app/schemas/age-verification.schema.json"
+  "schema_uri": "https://schemas.fido.example/schemas/age-verification.schema.json"
 }

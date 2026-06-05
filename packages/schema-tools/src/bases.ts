@@ -5,19 +5,19 @@
  * should hardcode the production URLs.
  */
 
-export const DEFAULT_CONTEXT_BASE = 'https://schemas.glideidentity.app/contexts/';
-export const DEFAULT_VCT_BASE = 'https://schemas.glideidentity.app/vct/';
+export const DEFAULT_CONTEXT_BASE = 'https://schemas.fido.example/contexts/';
+export const DEFAULT_VCT_BASE = 'https://schemas.fido.example/vct/';
 
 export interface Bases {
   contextBase: string;
   vctBase: string;
 }
 
-/** Read bases from the environment, falling back to Glide defaults. */
+/** Read bases from the environment, falling back to FIDO Alliance defaults. */
 export function resolveBases(env: Record<string, string | undefined> = process.env): Bases {
   return {
-    contextBase: ensureTrailingSlash(env.GLIDE_CONTEXT_BASE ?? DEFAULT_CONTEXT_BASE),
-    vctBase: ensureTrailingSlash(env.GLIDE_VCT_BASE ?? DEFAULT_VCT_BASE),
+    contextBase: ensureTrailingSlash(env.FIDO_CONTEXT_BASE ?? DEFAULT_CONTEXT_BASE),
+    vctBase: ensureTrailingSlash(env.FIDO_VCT_BASE ?? DEFAULT_VCT_BASE),
   };
 }
 

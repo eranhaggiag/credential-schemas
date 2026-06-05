@@ -7,7 +7,7 @@
  * management step layered on top per draft-ietf-oauth-sd-jwt-vc-16.
  */
 // #region issue
-import { SD_ALG, makeObjectDisclosure } from '@glide/schema-tools';
+import { SD_ALG, makeObjectDisclosure } from '@fido/schema-tools';
 
 export interface IssueInput {
   iss: string;
@@ -57,8 +57,8 @@ export function issueSdJwtVc(input: IssueInput): IssuedSdJwtVc {
 // Demo when run directly.
 if (import.meta.url === `file://${process.argv[1]}`) {
   const issued = issueSdJwtVc({
-    iss: 'https://issuer.glideidentity.app',
-    vct: 'https://schemas.glideidentity.app/vct/age-verification',
+    iss: 'https://issuer.fido.example',
+    vct: 'https://schemas.fido.example/vct/age-verification',
     cnf: { jwk: { kty: 'EC', crv: 'P-256', x: '…', y: '…' } },
     iat: 1768467600,
     exp: 1800003600,

@@ -5,7 +5,7 @@ present a single boolean predicate (e.g. `age_over_18`) to a verifier without ev
 their birthdate.
 
 - **JSON-LD type:** `AgeVerificationCredential`
-- **SD-JWT VC `vct`:** `https://schemas.glideidentity.app/vct/age-verification`
+- **SD-JWT VC `vct`:** `https://schemas.fido.example/vct/age-verification`
 - **Spec targets:** W3C VCDM 2.0 (15 May 2025) · SD-JWT VC draft-16 (24 Apr 2026) · RFC 9901
 
 ## Claims

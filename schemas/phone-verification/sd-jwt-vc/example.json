@@ -3,8 +3,8 @@
   "spec": "draft-ietf-oauth-sd-jwt-vc-16",
   "sealed": true,
   "issuerSignedPayload": {
-    "iss": "https://verify.glideidentity.app",
-    "vct": "https://schemas.glideidentity.app/vct/phone-verification",
+    "iss": "https://verify.fido.example",
+    "vct": "https://schemas.fido.example/vct/phone-verification",
     "iat": 1773153000,
     "exp": 1789043400,
     "cnf": {
@@ -17,40 +17,40 @@
     },
     "_sd_alg": "sha-256",
     "_sd": [
-      "ATqH-ZvPT8r2RvuGb1o1x4D79hJp415wjjJIcYLaBrU",
-      "Sl-uJrMj1cpAJIZ_HbRELouL0oKHElgvuySm1R9b1Pc",
-      "v7Qpsxm-YvJMEUOs8GvHbMtLdt33EXr3LYSiX_p5Gwo",
-      "zbYgsmTWWJuuAfWFEg3O0qEgXnbssw7bzA20yWZ2oNM"
+      "8ql7LANf4eAts2rMtWYe7r7LWbvB7PIj3yQPfqCJ6h0",
+      "TvbM1JGh8NhCdQsc2_0U-_4f3KwhyLUS0hAhvcrC0rA",
+      "ikDPRQaUrC-12qkGddlk1ANrA0dnRAhFH7lHW0DfZ5A",
+      "sGLhNCZvieLk3CJtOpjMVHoY5pqUrPyhPvjgcUECYtc"
     ]
   },
   "disclosures": [
     {
-      "salt": "glide-phone-salt-number0",
+      "salt": "fido-phone-salt-number0",
       "claim": "phone_number",
       "value": "+14155550142",
-      "encoded": "WyJnbGlkZS1waG9uZS1zYWx0LW51bWJlcjAiLCJwaG9uZV9udW1iZXIiLCIrMTQxNTU1NTAxNDIiXQ",
-      "digest": "zbYgsmTWWJuuAfWFEg3O0qEgXnbssw7bzA20yWZ2oNM"
+      "encoded": "WyJmaWRvLXBob25lLXNhbHQtbnVtYmVyMCIsInBob25lX251bWJlciIsIisxNDE1NTU1MDE0MiJd",
+      "digest": "TvbM1JGh8NhCdQsc2_0U-_4f3KwhyLUS0hAhvcrC0rA"
     },
     {
-      "salt": "glide-phone-salt-method0",
+      "salt": "fido-phone-salt-method0",
       "claim": "verification_method",
       "value": "cryptographic_challenge",
-      "encoded": "WyJnbGlkZS1waG9uZS1zYWx0LW1ldGhvZDAiLCJ2ZXJpZmljYXRpb25fbWV0aG9kIiwiY3J5cHRvZ3JhcGhpY19jaGFsbGVuZ2UiXQ",
-      "digest": "ATqH-ZvPT8r2RvuGb1o1x4D79hJp415wjjJIcYLaBrU"
+      "encoded": "WyJmaWRvLXBob25lLXNhbHQtbWV0aG9kMCIsInZlcmlmaWNhdGlvbl9tZXRob2QiLCJjcnlwdG9ncmFwaGljX2NoYWxsZW5nZSJd",
+      "digest": "sGLhNCZvieLk3CJtOpjMVHoY5pqUrPyhPvjgcUECYtc"
     },
     {
-      "salt": "glide-phone-salt-vat0001",
+      "salt": "fido-phone-salt-vat0001",
       "claim": "verified_at",
       "value": "2026-03-10T14:30:00Z",
-      "encoded": "WyJnbGlkZS1waG9uZS1zYWx0LXZhdDAwMDEiLCJ2ZXJpZmllZF9hdCIsIjIwMjYtMDMtMTBUMTQ6MzA6MDBaIl0",
-      "digest": "v7Qpsxm-YvJMEUOs8GvHbMtLdt33EXr3LYSiX_p5Gwo"
+      "encoded": "WyJmaWRvLXBob25lLXNhbHQtdmF0MDAwMSIsInZlcmlmaWVkX2F0IiwiMjAyNi0wMy0xMFQxNDozMDowMFoiXQ",
+      "digest": "ikDPRQaUrC-12qkGddlk1ANrA0dnRAhFH7lHW0DfZ5A"
     },
     {
-      "salt": "glide-phone-salt-carrier",
+      "salt": "fido-phone-salt-carrier",
       "claim": "carrier_attested",
       "value": true,
-      "encoded": "WyJnbGlkZS1waG9uZS1zYWx0LWNhcnJpZXIiLCJjYXJyaWVyX2F0dGVzdGVkIix0cnVlXQ",
-      "digest": "Sl-uJrMj1cpAJIZ_HbRELouL0oKHElgvuySm1R9b1Pc"
+      "encoded": "WyJmaWRvLXBob25lLXNhbHQtY2FycmllciIsImNhcnJpZXJfYXR0ZXN0ZWQiLHRydWVd",
+      "digest": "8ql7LANf4eAts2rMtWYe7r7LWbvB7PIj3yQPfqCJ6h0"
     }
   ],
   "presentation": {
@@ -60,5 +60,5 @@
       "carrier_attested"
     ]
   },
-  "combinedIssuance": "<issuer-signed-jwt>~WyJnbGlkZS1waG9uZS1zYWx0LW51bWJlcjAiLCJwaG9uZV9udW1iZXIiLCIrMTQxNTU1NTAxNDIiXQ~WyJnbGlkZS1waG9uZS1zYWx0LW1ldGhvZDAiLCJ2ZXJpZmljYXRpb25fbWV0aG9kIiwiY3J5cHRvZ3JhcGhpY19jaGFsbGVuZ2UiXQ~WyJnbGlkZS1waG9uZS1zYWx0LXZhdDAwMDEiLCJ2ZXJpZmllZF9hdCIsIjIwMjYtMDMtMTBUMTQ6MzA6MDBaIl0~WyJnbGlkZS1waG9uZS1zYWx0LWNhcnJpZXIiLCJjYXJyaWVyX2F0dGVzdGVkIix0cnVlXQ~"
+  "combinedIssuance": "<issuer-signed-jwt>~WyJmaWRvLXBob25lLXNhbHQtbnVtYmVyMCIsInBob25lX251bWJlciIsIisxNDE1NTU1MDE0MiJd~WyJmaWRvLXBob25lLXNhbHQtbWV0aG9kMCIsInZlcmlmaWNhdGlvbl9tZXRob2QiLCJjcnlwdG9ncmFwaGljX2NoYWxsZW5nZSJd~WyJmaWRvLXBob25lLXNhbHQtdmF0MDAwMSIsInZlcmlmaWVkX2F0IiwiMjAyNi0wMy0xMFQxNDozMDowMFoiXQ~WyJmaWRvLXBob25lLXNhbHQtY2FycmllciIsImNhcnJpZXJfYXR0ZXN0ZWQiLHRydWVd~"
 }

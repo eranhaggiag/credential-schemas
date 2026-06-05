@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.glideidentity.app/schemas/proof-of-employment.schema.json",
+  "$id": "https://schemas.fido.example/schemas/proof-of-employment.schema.json",
   "$comment": "Claim set for Proof of Employment / Alumni ID. Deliberately omits salary/compensation — proves the employment relationship only. JSON Schema Draft 2020-12.",
   "title": "Proof of Employment claim set",
   "type": "object",

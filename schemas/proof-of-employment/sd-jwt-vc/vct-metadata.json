@@ -1,6 +1,6 @@
 {
   "$comment": "SD-JWT VC Type Metadata for Proof of Employment / Alumni ID. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.",
-  "vct": "https://schemas.glideidentity.app/vct/proof-of-employment",
+  "vct": "https://schemas.fido.example/vct/proof-of-employment",
   "name": "Proof of Employment",
   "description": "Verifiable 'employed at' claim (current or former / alumni) without exposing salary or compensation.",
   "display": [
@@ -32,5 +32,5 @@
       "display": [{ "lang": "en-US", "label": "End date" }]
     }
   ],
-  "schema_uri": "https://schemas.glideidentity.app/schemas/proof-of-employment.schema.json"
+  "schema_uri": "https://schemas.fido.example/schemas/proof-of-employment.schema.json"
 }

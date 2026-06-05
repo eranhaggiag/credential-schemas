@@ -1,6 +1,6 @@
 {
   "$comment": "SD-JWT VC Type Metadata for Boarding Pass. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.",
-  "vct": "https://schemas.glideidentity.app/vct/boarding-pass",
+  "vct": "https://schemas.fido.example/vct/boarding-pass",
   "name": "Boarding Pass",
   "description": "A flight boarding pass: passenger, carrier, flight, route, departure, seat, boarding group, and disclosable PNR.",
   "display": [
@@ -69,5 +69,5 @@
       ]
     }
   ],
-  "schema_uri": "https://schemas.glideidentity.app/schemas/boarding-pass.schema.json"
+  "schema_uri": "https://schemas.fido.example/schemas/boarding-pass.schema.json"
 }

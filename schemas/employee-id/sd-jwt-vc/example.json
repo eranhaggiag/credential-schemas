@@ -4,7 +4,7 @@
   "sealed": true,
   "issuerSignedPayload": {
     "iss": "https://hr.globex.example",
-    "vct": "https://schemas.glideidentity.app/vct/employee-id",
+    "vct": "https://schemas.fido.example/vct/employee-id",
     "iat": 1768467600,
     "exp": 1831539600,
     "cnf": {
@@ -17,48 +17,48 @@
     },
     "_sd_alg": "sha-256",
     "_sd": [
-      "0_nPbgxjldT4HFIA38cxmhctgi5NDlWr-WuqfAl_eSM",
-      "5JpF5jcSo3W9wJyJjJefeFVnpKyxz8U3c0i6XPba72M",
-      "HPmaM2IeS8vEaRg121PrUgR0TYz5cgY4i-3r5F7wX-E",
-      "PvmkU1ralkQrw8-XpKFWEhIZb0DdoQPmTG3GhqZFG6s",
-      "bXm6daAIyPwT6WPxRz0KG5WoGE_UVitfzfBGwplhOOI"
+      "CvwKabm5DiTRUlRy7bU7Nkipc_VsEm3VseX6--3DvSQ",
+      "ERpOPPe_vc-EE4PH9FZblmiJ-Z0nlCN2QkWQgOQxAFc",
+      "NVFzVxU95X6sAQMyg7WJbajdK6hgWXySM9UROzkjMTY",
+      "YKJYfmLlZGggs283yDWKE7nBwYdlCOCKrHZxHuPmHv4",
+      "wO679zT5CZdtmHuhneuYPf9OpR5g4y2bwsrgGS2IjoE"
     ]
   },
   "disclosures": [
     {
-      "salt": "glide-emp-salt-employer00",
+      "salt": "fido-emp-salt-employer00",
       "claim": "employer",
       "value": "Globex Corporation",
-      "encoded": "WyJnbGlkZS1lbXAtc2FsdC1lbXBsb3llcjAwIiwiZW1wbG95ZXIiLCJHbG9iZXggQ29ycG9yYXRpb24iXQ",
-      "digest": "5JpF5jcSo3W9wJyJjJefeFVnpKyxz8U3c0i6XPba72M"
+      "encoded": "WyJmaWRvLWVtcC1zYWx0LWVtcGxveWVyMDAiLCJlbXBsb3llciIsIkdsb2JleCBDb3Jwb3JhdGlvbiJd",
+      "digest": "ERpOPPe_vc-EE4PH9FZblmiJ-Z0nlCN2QkWQgOQxAFc"
     },
     {
-      "salt": "glide-emp-salt-empid00001",
+      "salt": "fido-emp-salt-empid00001",
       "claim": "employee_id",
       "value": "GBX-48217",
-      "encoded": "WyJnbGlkZS1lbXAtc2FsdC1lbXBpZDAwMDAxIiwiZW1wbG95ZWVfaWQiLCJHQlgtNDgyMTciXQ",
-      "digest": "0_nPbgxjldT4HFIA38cxmhctgi5NDlWr-WuqfAl_eSM"
+      "encoded": "WyJmaWRvLWVtcC1zYWx0LWVtcGlkMDAwMDEiLCJlbXBsb3llZV9pZCIsIkdCWC00ODIxNyJd",
+      "digest": "NVFzVxU95X6sAQMyg7WJbajdK6hgWXySM9UROzkjMTY"
     },
     {
-      "salt": "glide-emp-salt-title00001",
+      "salt": "fido-emp-salt-title00001",
       "claim": "job_title",
       "value": "Staff Software Engineer",
-      "encoded": "WyJnbGlkZS1lbXAtc2FsdC10aXRsZTAwMDAxIiwiam9iX3RpdGxlIiwiU3RhZmYgU29mdHdhcmUgRW5naW5lZXIiXQ",
-      "digest": "PvmkU1ralkQrw8-XpKFWEhIZb0DdoQPmTG3GhqZFG6s"
+      "encoded": "WyJmaWRvLWVtcC1zYWx0LXRpdGxlMDAwMDEiLCJqb2JfdGl0bGUiLCJTdGFmZiBTb2Z0d2FyZSBFbmdpbmVlciJd",
+      "digest": "YKJYfmLlZGggs283yDWKE7nBwYdlCOCKrHZxHuPmHv4"
     },
     {
-      "salt": "glide-emp-salt-dept000001",
+      "salt": "fido-emp-salt-dept000001",
       "claim": "department",
       "value": "Platform Engineering",
-      "encoded": "WyJnbGlkZS1lbXAtc2FsdC1kZXB0MDAwMDAxIiwiZGVwYXJ0bWVudCIsIlBsYXRmb3JtIEVuZ2luZWVyaW5nIl0",
-      "digest": "bXm6daAIyPwT6WPxRz0KG5WoGE_UVitfzfBGwplhOOI"
+      "encoded": "WyJmaWRvLWVtcC1zYWx0LWRlcHQwMDAwMDEiLCJkZXBhcnRtZW50IiwiUGxhdGZvcm0gRW5naW5lZXJpbmciXQ",
+      "digest": "wO679zT5CZdtmHuhneuYPf9OpR5g4y2bwsrgGS2IjoE"
     },
     {
-      "salt": "glide-emp-salt-status0001",
+      "salt": "fido-emp-salt-status0001",
       "claim": "employment_status",
       "value": "active",
-      "encoded": "WyJnbGlkZS1lbXAtc2FsdC1zdGF0dXMwMDAxIiwiZW1wbG95bWVudF9zdGF0dXMiLCJhY3RpdmUiXQ",
-      "digest": "HPmaM2IeS8vEaRg121PrUgR0TYz5cgY4i-3r5F7wX-E"
+      "encoded": "WyJmaWRvLWVtcC1zYWx0LXN0YXR1czAwMDEiLCJlbXBsb3ltZW50X3N0YXR1cyIsImFjdGl2ZSJd",
+      "digest": "CvwKabm5DiTRUlRy7bU7Nkipc_VsEm3VseX6--3DvSQ"
     }
   ],
   "presentation": {
@@ -68,5 +68,5 @@
       "employment_status"
     ]
   },
-  "combinedIssuance": "<issuer-signed-jwt>~WyJnbGlkZS1lbXAtc2FsdC1lbXBsb3llcjAwIiwiZW1wbG95ZXIiLCJHbG9iZXggQ29ycG9yYXRpb24iXQ~WyJnbGlkZS1lbXAtc2FsdC1lbXBpZDAwMDAxIiwiZW1wbG95ZWVfaWQiLCJHQlgtNDgyMTciXQ~WyJnbGlkZS1lbXAtc2FsdC10aXRsZTAwMDAxIiwiam9iX3RpdGxlIiwiU3RhZmYgU29mdHdhcmUgRW5naW5lZXIiXQ~WyJnbGlkZS1lbXAtc2FsdC1kZXB0MDAwMDAxIiwiZGVwYXJ0bWVudCIsIlBsYXRmb3JtIEVuZ2luZWVyaW5nIl0~WyJnbGlkZS1lbXAtc2FsdC1zdGF0dXMwMDAxIiwiZW1wbG95bWVudF9zdGF0dXMiLCJhY3RpdmUiXQ~"
+  "combinedIssuance": "<issuer-signed-jwt>~WyJmaWRvLWVtcC1zYWx0LWVtcGxveWVyMDAiLCJlbXBsb3llciIsIkdsb2JleCBDb3Jwb3JhdGlvbiJd~WyJmaWRvLWVtcC1zYWx0LWVtcGlkMDAwMDEiLCJlbXBsb3llZV9pZCIsIkdCWC00ODIxNyJd~WyJmaWRvLWVtcC1zYWx0LXRpdGxlMDAwMDEiLCJqb2JfdGl0bGUiLCJTdGFmZiBTb2Z0d2FyZSBFbmdpbmVlciJd~WyJmaWRvLWVtcC1zYWx0LWRlcHQwMDAwMDEiLCJkZXBhcnRtZW50IiwiUGxhdGZvcm0gRW5naW5lZXJpbmciXQ~WyJmaWRvLWVtcC1zYWx0LXN0YXR1czAwMDEiLCJlbXBsb3ltZW50X3N0YXR1cyIsImFjdGl2ZSJd~"
 }

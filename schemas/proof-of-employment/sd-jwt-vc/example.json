@@ -4,7 +4,7 @@
   "sealed": true,
   "issuerSignedPayload": {
     "iss": "https://hr.globex.example",
-    "vct": "https://schemas.glideidentity.app/vct/proof-of-employment",
+    "vct": "https://schemas.fido.example/vct/proof-of-employment",
     "iat": 1769904000,
     "exp": 1801440000,
     "cnf": {
@@ -17,40 +17,40 @@
     },
     "_sd_alg": "sha-256",
     "_sd": [
-      "AgdrOkazJtgPkNmuwn3qwbf7wm7PAcBbHibmlR2o3YQ",
-      "PNCnJloHCmiN0AS2uc9Kza6yT_Ted7vhb-6M2MyFs3U",
-      "Q_n62-kkPvH262_qnCW4tRfXpCb399mpZAmmyyYl8HA",
-      "dnh3dLqZk4OFpPUFKy45KfH5QZLjGt1iOusyi1J2Euw"
+      "8EGUdFrq_mBGwZRE1X-7o1sP0zHxk-IXDCWEyfmSgGk",
+      "GHz_9vBwYY0LXmjVI512ADLwS7cIsQi9Y06pqHuEpeQ",
+      "PRR82alt2YhxwgSDA719cg4CI-gJUNiwhrv13E7o0L0",
+      "YCKVFDKhnrGK9VEGPIiyThPwaTPG-mKnurN4PCzOoPg"
     ]
   },
   "disclosures": [
     {
-      "salt": "glide-poe-salt-employer00",
+      "salt": "fido-poe-salt-employer00",
       "claim": "employer",
       "value": "Globex Corporation",
-      "encoded": "WyJnbGlkZS1wb2Utc2FsdC1lbXBsb3llcjAwIiwiZW1wbG95ZXIiLCJHbG9iZXggQ29ycG9yYXRpb24iXQ",
-      "digest": "PNCnJloHCmiN0AS2uc9Kza6yT_Ted7vhb-6M2MyFs3U"
+      "encoded": "WyJmaWRvLXBvZS1zYWx0LWVtcGxveWVyMDAiLCJlbXBsb3llciIsIkdsb2JleCBDb3Jwb3JhdGlvbiJd",
+      "digest": "8EGUdFrq_mBGwZRE1X-7o1sP0zHxk-IXDCWEyfmSgGk"
     },
     {
-      "salt": "glide-poe-salt-status0001",
+      "salt": "fido-poe-salt-status0001",
       "claim": "status",
       "value": "former",
-      "encoded": "WyJnbGlkZS1wb2Utc2FsdC1zdGF0dXMwMDAxIiwic3RhdHVzIiwiZm9ybWVyIl0",
-      "digest": "AgdrOkazJtgPkNmuwn3qwbf7wm7PAcBbHibmlR2o3YQ"
+      "encoded": "WyJmaWRvLXBvZS1zYWx0LXN0YXR1czAwMDEiLCJzdGF0dXMiLCJmb3JtZXIiXQ",
+      "digest": "GHz_9vBwYY0LXmjVI512ADLwS7cIsQi9Y06pqHuEpeQ"
     },
     {
-      "salt": "glide-poe-salt-start00001",
+      "salt": "fido-poe-salt-start00001",
       "claim": "employment_start",
       "value": "2019-06-03",
-      "encoded": "WyJnbGlkZS1wb2Utc2FsdC1zdGFydDAwMDAxIiwiZW1wbG95bWVudF9zdGFydCIsIjIwMTktMDYtMDMiXQ",
-      "digest": "dnh3dLqZk4OFpPUFKy45KfH5QZLjGt1iOusyi1J2Euw"
+      "encoded": "WyJmaWRvLXBvZS1zYWx0LXN0YXJ0MDAwMDEiLCJlbXBsb3ltZW50X3N0YXJ0IiwiMjAxOS0wNi0wMyJd",
+      "digest": "YCKVFDKhnrGK9VEGPIiyThPwaTPG-mKnurN4PCzOoPg"
     },
     {
-      "salt": "glide-poe-salt-end0000001",
+      "salt": "fido-poe-salt-end0000001",
       "claim": "employment_end",
       "value": "2025-11-30",
-      "encoded": "WyJnbGlkZS1wb2Utc2FsdC1lbmQwMDAwMDAxIiwiZW1wbG95bWVudF9lbmQiLCIyMDI1LTExLTMwIl0",
-      "digest": "Q_n62-kkPvH262_qnCW4tRfXpCb399mpZAmmyyYl8HA"
+      "encoded": "WyJmaWRvLXBvZS1zYWx0LWVuZDAwMDAwMDEiLCJlbXBsb3ltZW50X2VuZCIsIjIwMjUtMTEtMzAiXQ",
+      "digest": "PRR82alt2YhxwgSDA719cg4CI-gJUNiwhrv13E7o0L0"
     }
   ],
   "presentation": {
@@ -60,5 +60,5 @@
       "status"
     ]
   },
-  "combinedIssuance": "<issuer-signed-jwt>~WyJnbGlkZS1wb2Utc2FsdC1lbXBsb3llcjAwIiwiZW1wbG95ZXIiLCJHbG9iZXggQ29ycG9yYXRpb24iXQ~WyJnbGlkZS1wb2Utc2FsdC1zdGF0dXMwMDAxIiwic3RhdHVzIiwiZm9ybWVyIl0~WyJnbGlkZS1wb2Utc2FsdC1zdGFydDAwMDAxIiwiZW1wbG95bWVudF9zdGFydCIsIjIwMTktMDYtMDMiXQ~WyJnbGlkZS1wb2Utc2FsdC1lbmQwMDAwMDAxIiwiZW1wbG95bWVudF9lbmQiLCIyMDI1LTExLTMwIl0~"
+  "combinedIssuance": "<issuer-signed-jwt>~WyJmaWRvLXBvZS1zYWx0LWVtcGxveWVyMDAiLCJlbXBsb3llciIsIkdsb2JleCBDb3Jwb3JhdGlvbiJd~WyJmaWRvLXBvZS1zYWx0LXN0YXR1czAwMDEiLCJzdGF0dXMiLCJmb3JtZXIiXQ~WyJmaWRvLXBvZS1zYWx0LXN0YXJ0MDAwMDEiLCJlbXBsb3ltZW50X3N0YXJ0IiwiMjAxOS0wNi0wMyJd~WyJmaWRvLXBvZS1zYWx0LWVuZDAwMDAwMDEiLCJlbXBsb3ltZW50X2VuZCIsIjIwMjUtMTEtMzAiXQ~"
 }
