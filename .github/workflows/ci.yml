@@ -54,7 +54,7 @@ jobs:
         run: pnpm build:site
         env:
           SITE_BASE: /credential-schemas/
-          SITE_URL: https://eranhaggiag.github.io
+          SITE_URL: https://glideidentity.github.io
 
       - name: Upload Pages artifact
         if: github.ref == 'refs/heads/main'
