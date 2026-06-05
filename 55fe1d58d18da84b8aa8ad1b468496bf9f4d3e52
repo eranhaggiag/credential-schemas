@@ -1,0 +1,19 @@
+.github/workflows/ci.yml
+  s_53624ce75637d0::t_0fbe8771c35d85 57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "55fe1d58d18da84b8aa8ad1b468496bf9f4d3e52",
+  "prompts": {},
+  "sessions": {
+    "s_53624ce75637d0": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "6e99196d-a851-4960-9145-bd34be0200c9",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Eran Haggiag <eran@glideidentity.com>"
+    }
+  }
+}
