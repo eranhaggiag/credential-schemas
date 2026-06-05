@@ -1,0 +1,368 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Proof of Employment · Glide Schemas</title><meta name="description" content="Verifiable 'employed at' claim (current or former / alumni) without exposing salary or compensation."><link rel="icon" type="image/svg+xml" href="/credential-schemas/logo.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/credential-schemas/_astro/index.Ba5BVslr.css"><script type="module" src="/credential-schemas/_astro/hoisted.D4-KJleG.js"></script></head> <body> <header class="sticky top-0 z-20 border-b border-white/10 bg-brand-900/70 backdrop-blur"> <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"> <a href="/credential-schemas/" class="flex items-center gap-3"> <img src="/credential-schemas/logo.svg" alt="Glide Identity" class="h-7 w-7"> <span class="font-heading text-white">Glide <span class="text-white/60">Schemas</span></span> </a> <nav class="flex items-center gap-1 text-sm"> <a href="/credential-schemas/" class="rounded-lg px-3 py-1.5 text-white/70 hover:text-white"> Home </a><a href="/credential-schemas/registry" class="rounded-lg px-3 py-1.5 text-white bg-white/10"> Schemas </a><a href="/credential-schemas/docs" class="rounded-lg px-3 py-1.5 text-white/70 hover:text-white"> Developer docs </a> </nav> </div> </header> <main class="mx-auto max-w-6xl px-6 py-12">  <a href="/credential-schemas/registry" class="text-sm text-white/60 hover:text-white">← All schemas</a> <header class="mt-4"> <h1 class="text-3xl">Proof of Employment</h1> <p class="mt-3 max-w-3xl text-white/70">Verifiable &#39;employed at&#39; claim (current or former / alumni) without exposing salary or compensation.</p> <div class="mt-4 grid gap-2 text-sm sm:grid-cols-2"> <div class="card px-4 py-3"> <div class="text-xs uppercase tracking-wide text-white/40">SD-JWT VC vct</div> <div class="mt-1 break-all font-grotesk accent">https://schemas.glideidentity.app/vct/proof-of-employment</div> </div> <div class="card px-4 py-3"> <div class="text-xs uppercase tracking-wide text-white/40">JSON-LD @context</div> <div class="mt-1 break-all font-grotesk text-white/80">https://schemas.glideidentity.app/contexts/proof-of-employment.jsonld</div> </div> </div> </header> <section class="mt-10"> <h2 class="text-2xl">Claims</h2> <div class="card mt-4 overflow-x-auto"> <table class="w-full text-left text-sm"> <thead class="border-b border-white/10 text-white/60"> <tr> <th class="px-4 py-3 font-medium">Claim</th> <th class="px-4 py-3 font-medium">Type</th> <th class="px-4 py-3 font-medium">Required</th> <th class="px-4 py-3 font-medium">Selectively disclosable</th> <th class="px-4 py-3 font-medium">Notes</th> </tr> </thead> <tbody> <tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">employer</td> <td class="px-4 py-3 text-white/70">string</td> <td class="px-4 py-3 text-white/70">Yes</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">Legal name of the employing organization.</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">status</td> <td class="px-4 py-3 text-white/70">enum(current | former)</td> <td class="px-4 py-3 text-white/70">Yes</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">Whether the holder is a current or former employee (alumni).</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">employment_start</td> <td class="px-4 py-3 text-white/70">string &lt;date&gt;</td> <td class="px-4 py-3 text-white/70">Yes</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">Employment start date.</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">employment_end</td> <td class="px-4 py-3 text-white/70">string &lt;date&gt;</td> <td class="px-4 py-3 text-white/70">No</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">Employment end date. Present only when status is &#39;former&#39;.</td> </tr> </tbody> </table> </div> <p class="mt-2 text-xs text-white/40">
+Auto-derived from <code>schema.json</code> + SD-JWT VC type metadata. <code>always</code> =
+      issuer MUST make selectively disclosable; <code>allowed</code> = MAY; <code>—</code> = not
+      individually disclosable.
+</p> </section> <section class="mt-12"> <h2 class="text-2xl">Examples</h2> <p class="mt-2 text-sm text-white/60">Both representations of the same fake credential.</p> <div class="mt-4"> <div class="format-tabs" data-format="jsonld"> <div class="mb-4 inline-flex rounded-xl border border-white/15 p-1 text-sm"> <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="jsonld" type="button">
+W3C VC 2.0 (JSON-LD)
+</button> <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="sdjwt" type="button">
+SD-JWT VC
+</button> <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="both" type="button">
+Side by side
+</button> </div> <div class="grid gap-6 md:grid-cols-2"> <div class="fmt-pane space-y-3" data-pane="jsonld"> <h3 class="text-sm text-white/70">W3C VC 2.0 — example credential</h3> <figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">jsonld/example.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;Example W3C VC 2.0 Proof of Employment (alumni) credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).&#34;,
+  &#34;@context&#34;: [
+    &#34;https://www.w3.org/ns/credentials/v2&#34;,
+    &#34;https://schemas.glideidentity.app/contexts/proof-of-employment.jsonld&#34;
+  ],
+  &#34;type&#34;: [&#34;VerifiableCredential&#34;, &#34;ProofOfEmploymentCredential&#34;],
+  &#34;issuer&#34;: &#34;https://hr.globex.example&#34;,
+  &#34;validFrom&#34;: &#34;2026-02-01T00:00:00Z&#34;,
+  &#34;credentialSubject&#34;: {
+    &#34;id&#34;: &#34;did:example:holder-poe-0001&#34;,
+    &#34;employer&#34;: &#34;Globex Corporation&#34;,
+    &#34;status&#34;: &#34;former&#34;,
+    &#34;employment_start&#34;: &#34;2019-06-03&#34;,
+    &#34;employment_end&#34;: &#34;2025-11-30&#34;
+  }
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;Example W3C VC 2.0 Proof of Employment (alumni) credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).&quot;,
+  &quot;@context&quot;: [
+    &quot;https://www.w3.org/ns/credentials/v2&quot;,
+    &quot;https://schemas.glideidentity.app/contexts/proof-of-employment.jsonld&quot;
+  ],
+  &quot;type&quot;: [&quot;VerifiableCredential&quot;, &quot;ProofOfEmploymentCredential&quot;],
+  &quot;issuer&quot;: &quot;https://hr.globex.example&quot;,
+  &quot;validFrom&quot;: &quot;2026-02-01T00:00:00Z&quot;,
+  &quot;credentialSubject&quot;: {
+    &quot;id&quot;: &quot;did:example:holder-poe-0001&quot;,
+    &quot;employer&quot;: &quot;Globex Corporation&quot;,
+    &quot;status&quot;: &quot;former&quot;,
+    &quot;employment_start&quot;: &quot;2019-06-03&quot;,
+    &quot;employment_end&quot;: &quot;2025-11-30&quot;
+  }
+}</code></pre> </figure>  <details class="card px-4 py-2 text-sm text-white/70"> <summary class="cursor-pointer">JSON-LD @context</summary> <div class="mt-3"><figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">jsonld/context.jsonld</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;Glide Identity — Proof of Employment JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.&#34;,
+  &#34;@context&#34;: {
+    &#34;@protected&#34;: true,
+    &#34;ProofOfEmploymentCredential&#34;: &#34;https://schemas.glideidentity.app/contexts/proof-of-employment.jsonld#ProofOfEmploymentCredential&#34;,
+    &#34;glide&#34;: &#34;https://schemas.glideidentity.app/vocab#&#34;,
+    &#34;employer&#34;: { &#34;@id&#34;: &#34;glide:employer&#34;, &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34; },
+    &#34;status&#34;: {
+      &#34;@id&#34;: &#34;glide:employment_relationship&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34;
+    },
+    &#34;employment_start&#34;: {
+      &#34;@id&#34;: &#34;glide:employment_start&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#date&#34;
+    },
+    &#34;employment_end&#34;: {
+      &#34;@id&#34;: &#34;glide:employment_end&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#date&#34;
+    }
+  }
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;Glide Identity — Proof of Employment JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.&quot;,
+  &quot;@context&quot;: {
+    &quot;@protected&quot;: true,
+    &quot;ProofOfEmploymentCredential&quot;: &quot;https://schemas.glideidentity.app/contexts/proof-of-employment.jsonld#ProofOfEmploymentCredential&quot;,
+    &quot;glide&quot;: &quot;https://schemas.glideidentity.app/vocab#&quot;,
+    &quot;employer&quot;: { &quot;@id&quot;: &quot;glide:employer&quot;, &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot; },
+    &quot;status&quot;: {
+      &quot;@id&quot;: &quot;glide:employment_relationship&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot;
+    },
+    &quot;employment_start&quot;: {
+      &quot;@id&quot;: &quot;glide:employment_start&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#date&quot;
+    },
+    &quot;employment_end&quot;: {
+      &quot;@id&quot;: &quot;glide:employment_end&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#date&quot;
+    }
+  }
+}</code></pre> </figure> </div> </details> </div> <div class="fmt-pane space-y-3" data-pane="sdjwt"> <h3 class="text-sm text-white/70">SD-JWT VC — decoded payload + disclosures</h3> <figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">sd-jwt-vc/example.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;Decoded SD-JWT VC for Proof of Employment (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Run `pnpm seal` to populate digests/_sd/combinedIssuance.&#34;,
+  &#34;spec&#34;: &#34;draft-ietf-oauth-sd-jwt-vc-16&#34;,
+  &#34;sealed&#34;: true,
+  &#34;issuerSignedPayload&#34;: {
+    &#34;iss&#34;: &#34;https://hr.globex.example&#34;,
+    &#34;vct&#34;: &#34;https://schemas.glideidentity.app/vct/proof-of-employment&#34;,
+    &#34;iat&#34;: 1769904000,
+    &#34;exp&#34;: 1801440000,
+    &#34;cnf&#34;: {
+      &#34;jwk&#34;: {
+        &#34;kty&#34;: &#34;EC&#34;,
+        &#34;crv&#34;: &#34;P-256&#34;,
+        &#34;x&#34;: &#34;TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc&#34;,
+        &#34;y&#34;: &#34;ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ&#34;
+      }
+    },
+    &#34;_sd_alg&#34;: &#34;sha-256&#34;,
+    &#34;_sd&#34;: [
+      &#34;AgdrOkazJtgPkNmuwn3qwbf7wm7PAcBbHibmlR2o3YQ&#34;,
+      &#34;PNCnJloHCmiN0AS2uc9Kza6yT_Ted7vhb-6M2MyFs3U&#34;,
+      &#34;Q_n62-kkPvH262_qnCW4tRfXpCb399mpZAmmyyYl8HA&#34;,
+      &#34;dnh3dLqZk4OFpPUFKy45KfH5QZLjGt1iOusyi1J2Euw&#34;
+    ]
+  },
+  &#34;disclosures&#34;: [
+    {
+      &#34;salt&#34;: &#34;glide-poe-salt-employer00&#34;,
+      &#34;claim&#34;: &#34;employer&#34;,
+      &#34;value&#34;: &#34;Globex Corporation&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1wb2Utc2FsdC1lbXBsb3llcjAwIiwiZW1wbG95ZXIiLCJHbG9iZXggQ29ycG9yYXRpb24iXQ&#34;,
+      &#34;digest&#34;: &#34;PNCnJloHCmiN0AS2uc9Kza6yT_Ted7vhb-6M2MyFs3U&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-poe-salt-status0001&#34;,
+      &#34;claim&#34;: &#34;status&#34;,
+      &#34;value&#34;: &#34;former&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1wb2Utc2FsdC1zdGF0dXMwMDAxIiwic3RhdHVzIiwiZm9ybWVyIl0&#34;,
+      &#34;digest&#34;: &#34;AgdrOkazJtgPkNmuwn3qwbf7wm7PAcBbHibmlR2o3YQ&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-poe-salt-start00001&#34;,
+      &#34;claim&#34;: &#34;employment_start&#34;,
+      &#34;value&#34;: &#34;2019-06-03&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1wb2Utc2FsdC1zdGFydDAwMDAxIiwiZW1wbG95bWVudF9zdGFydCIsIjIwMTktMDYtMDMiXQ&#34;,
+      &#34;digest&#34;: &#34;dnh3dLqZk4OFpPUFKy45KfH5QZLjGt1iOusyi1J2Euw&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-poe-salt-end0000001&#34;,
+      &#34;claim&#34;: &#34;employment_end&#34;,
+      &#34;value&#34;: &#34;2025-11-30&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1wb2Utc2FsdC1lbmQwMDAwMDAxIiwiZW1wbG95bWVudF9lbmQiLCIyMDI1LTExLTMwIl0&#34;,
+      &#34;digest&#34;: &#34;Q_n62-kkPvH262_qnCW4tRfXpCb399mpZAmmyyYl8HA&#34;
+    }
+  ],
+  &#34;presentation&#34;: {
+    &#34;$comment&#34;: &#34;Holder proves they are a former employee of Globex, revealing nothing about dates.&#34;,
+    &#34;discloses&#34;: [
+      &#34;employer&#34;,
+      &#34;status&#34;
+    ]
+  },
+  &#34;combinedIssuance&#34;: &#34;<issuer-signed-jwt>~WyJnbGlkZS1wb2Utc2FsdC1lbXBsb3llcjAwIiwiZW1wbG95ZXIiLCJHbG9iZXggQ29ycG9yYXRpb24iXQ~WyJnbGlkZS1wb2Utc2FsdC1zdGF0dXMwMDAxIiwic3RhdHVzIiwiZm9ybWVyIl0~WyJnbGlkZS1wb2Utc2FsdC1zdGFydDAwMDAxIiwiZW1wbG95bWVudF9zdGFydCIsIjIwMTktMDYtMDMiXQ~WyJnbGlkZS1wb2Utc2FsdC1lbmQwMDAwMDAxIiwiZW1wbG95bWVudF9lbmQiLCIyMDI1LTExLTMwIl0~&#34;
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;Decoded SD-JWT VC for Proof of Employment (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Run `pnpm seal` to populate digests/_sd/combinedIssuance.&quot;,
+  &quot;spec&quot;: &quot;draft-ietf-oauth-sd-jwt-vc-16&quot;,
+  &quot;sealed&quot;: true,
+  &quot;issuerSignedPayload&quot;: {
+    &quot;iss&quot;: &quot;https://hr.globex.example&quot;,
+    &quot;vct&quot;: &quot;https://schemas.glideidentity.app/vct/proof-of-employment&quot;,
+    &quot;iat&quot;: 1769904000,
+    &quot;exp&quot;: 1801440000,
+    &quot;cnf&quot;: {
+      &quot;jwk&quot;: {
+        &quot;kty&quot;: &quot;EC&quot;,
+        &quot;crv&quot;: &quot;P-256&quot;,
+        &quot;x&quot;: &quot;TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc&quot;,
+        &quot;y&quot;: &quot;ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ&quot;
+      }
+    },
+    &quot;_sd_alg&quot;: &quot;sha-256&quot;,
+    &quot;_sd&quot;: [
+      &quot;AgdrOkazJtgPkNmuwn3qwbf7wm7PAcBbHibmlR2o3YQ&quot;,
+      &quot;PNCnJloHCmiN0AS2uc9Kza6yT_Ted7vhb-6M2MyFs3U&quot;,
+      &quot;Q_n62-kkPvH262_qnCW4tRfXpCb399mpZAmmyyYl8HA&quot;,
+      &quot;dnh3dLqZk4OFpPUFKy45KfH5QZLjGt1iOusyi1J2Euw&quot;
+    ]
+  },
+  &quot;disclosures&quot;: [
+    {
+      &quot;salt&quot;: &quot;glide-poe-salt-employer00&quot;,
+      &quot;claim&quot;: &quot;employer&quot;,
+      &quot;value&quot;: &quot;Globex Corporation&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1wb2Utc2FsdC1lbXBsb3llcjAwIiwiZW1wbG95ZXIiLCJHbG9iZXggQ29ycG9yYXRpb24iXQ&quot;,
+      &quot;digest&quot;: &quot;PNCnJloHCmiN0AS2uc9Kza6yT_Ted7vhb-6M2MyFs3U&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-poe-salt-status0001&quot;,
+      &quot;claim&quot;: &quot;status&quot;,
+      &quot;value&quot;: &quot;former&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1wb2Utc2FsdC1zdGF0dXMwMDAxIiwic3RhdHVzIiwiZm9ybWVyIl0&quot;,
+      &quot;digest&quot;: &quot;AgdrOkazJtgPkNmuwn3qwbf7wm7PAcBbHibmlR2o3YQ&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-poe-salt-start00001&quot;,
+      &quot;claim&quot;: &quot;employment_start&quot;,
+      &quot;value&quot;: &quot;2019-06-03&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1wb2Utc2FsdC1zdGFydDAwMDAxIiwiZW1wbG95bWVudF9zdGFydCIsIjIwMTktMDYtMDMiXQ&quot;,
+      &quot;digest&quot;: &quot;dnh3dLqZk4OFpPUFKy45KfH5QZLjGt1iOusyi1J2Euw&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-poe-salt-end0000001&quot;,
+      &quot;claim&quot;: &quot;employment_end&quot;,
+      &quot;value&quot;: &quot;2025-11-30&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1wb2Utc2FsdC1lbmQwMDAwMDAxIiwiZW1wbG95bWVudF9lbmQiLCIyMDI1LTExLTMwIl0&quot;,
+      &quot;digest&quot;: &quot;Q_n62-kkPvH262_qnCW4tRfXpCb399mpZAmmyyYl8HA&quot;
+    }
+  ],
+  &quot;presentation&quot;: {
+    &quot;$comment&quot;: &quot;Holder proves they are a former employee of Globex, revealing nothing about dates.&quot;,
+    &quot;discloses&quot;: [
+      &quot;employer&quot;,
+      &quot;status&quot;
+    ]
+  },
+  &quot;combinedIssuance&quot;: &quot;&lt;issuer-signed-jwt&gt;~WyJnbGlkZS1wb2Utc2FsdC1lbXBsb3llcjAwIiwiZW1wbG95ZXIiLCJHbG9iZXggQ29ycG9yYXRpb24iXQ~WyJnbGlkZS1wb2Utc2FsdC1zdGF0dXMwMDAxIiwic3RhdHVzIiwiZm9ybWVyIl0~WyJnbGlkZS1wb2Utc2FsdC1zdGFydDAwMDAxIiwiZW1wbG95bWVudF9zdGFydCIsIjIwMTktMDYtMDMiXQ~WyJnbGlkZS1wb2Utc2FsdC1lbmQwMDAwMDAxIiwiZW1wbG95bWVudF9lbmQiLCIyMDI1LTExLTMwIl0~&quot;
+}</code></pre> </figure>  <details class="card px-4 py-2 text-sm text-white/70"> <summary class="cursor-pointer">VC Type Metadata</summary> <div class="mt-3"><figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">sd-jwt-vc/vct-metadata.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;SD-JWT VC Type Metadata for Proof of Employment / Alumni ID. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.&#34;,
+  &#34;vct&#34;: &#34;https://schemas.glideidentity.app/vct/proof-of-employment&#34;,
+  &#34;name&#34;: &#34;Proof of Employment&#34;,
+  &#34;description&#34;: &#34;Verifiable 'employed at' claim (current or former / alumni) without exposing salary or compensation.&#34;,
+  &#34;display&#34;: [
+    {
+      &#34;lang&#34;: &#34;en-US&#34;,
+      &#34;name&#34;: &#34;Proof of Employment&#34;,
+      &#34;description&#34;: &#34;Prove you work (or worked) somewhere — no salary attached.&#34;
+    }
+  ],
+  &#34;claims&#34;: [
+    {
+      &#34;path&#34;: [&#34;employer&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Employer&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;status&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Relationship&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;employment_start&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Start date&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;employment_end&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;End date&#34; }]
+    }
+  ],
+  &#34;schema_uri&#34;: &#34;https://schemas.glideidentity.app/schemas/proof-of-employment.schema.json&#34;
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;SD-JWT VC Type Metadata for Proof of Employment / Alumni ID. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.&quot;,
+  &quot;vct&quot;: &quot;https://schemas.glideidentity.app/vct/proof-of-employment&quot;,
+  &quot;name&quot;: &quot;Proof of Employment&quot;,
+  &quot;description&quot;: &quot;Verifiable &#39;employed at&#39; claim (current or former / alumni) without exposing salary or compensation.&quot;,
+  &quot;display&quot;: [
+    {
+      &quot;lang&quot;: &quot;en-US&quot;,
+      &quot;name&quot;: &quot;Proof of Employment&quot;,
+      &quot;description&quot;: &quot;Prove you work (or worked) somewhere — no salary attached.&quot;
+    }
+  ],
+  &quot;claims&quot;: [
+    {
+      &quot;path&quot;: [&quot;employer&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Employer&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;status&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Relationship&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;employment_start&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Start date&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;employment_end&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;End date&quot; }]
+    }
+  ],
+  &quot;schema_uri&quot;: &quot;https://schemas.glideidentity.app/schemas/proof-of-employment.schema.json&quot;
+}</code></pre> </figure> </div> </details> </div> </div> </div>  </div> </section> <section class="mt-12"> <h2 class="text-2xl">JSON Schema</h2> <p class="mt-2 text-sm text-white/60">
+The shared claim set both formats validate against (Draft 2020-12).
+</p> <div class="mt-4"> <figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">schema.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$schema&#34;: &#34;https://json-schema.org/draft/2020-12/schema&#34;,
+  &#34;$id&#34;: &#34;https://schemas.glideidentity.app/schemas/proof-of-employment.schema.json&#34;,
+  &#34;$comment&#34;: &#34;Claim set for Proof of Employment / Alumni ID. Deliberately omits salary/compensation — proves the employment relationship only. JSON Schema Draft 2020-12.&#34;,
+  &#34;title&#34;: &#34;Proof of Employment claim set&#34;,
+  &#34;type&#34;: &#34;object&#34;,
+  &#34;properties&#34;: {
+    &#34;employer&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;description&#34;: &#34;Legal name of the employing organization.&#34;,
+      &#34;examples&#34;: [&#34;Globex Corporation&#34;]
+    },
+    &#34;status&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;enum&#34;: [&#34;current&#34;, &#34;former&#34;],
+      &#34;description&#34;: &#34;Whether the holder is a current or former employee (alumni).&#34;
+    },
+    &#34;employment_start&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;format&#34;: &#34;date&#34;,
+      &#34;description&#34;: &#34;Employment start date.&#34;
+    },
+    &#34;employment_end&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;format&#34;: &#34;date&#34;,
+      &#34;description&#34;: &#34;Employment end date. Present only when status is 'former'.&#34;
+    }
+  },
+  &#34;required&#34;: [&#34;employer&#34;, &#34;status&#34;, &#34;employment_start&#34;],
+  &#34;allOf&#34;: [
+    {
+      &#34;$comment&#34;: &#34;A former employee must have an end date.&#34;,
+      &#34;if&#34;: { &#34;properties&#34;: { &#34;status&#34;: { &#34;const&#34;: &#34;former&#34; } } },
+      &#34;then&#34;: { &#34;required&#34;: [&#34;employment_end&#34;] }
+    }
+  ],
+  &#34;additionalProperties&#34;: false
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$schema&quot;: &quot;https://json-schema.org/draft/2020-12/schema&quot;,
+  &quot;$id&quot;: &quot;https://schemas.glideidentity.app/schemas/proof-of-employment.schema.json&quot;,
+  &quot;$comment&quot;: &quot;Claim set for Proof of Employment / Alumni ID. Deliberately omits salary/compensation — proves the employment relationship only. JSON Schema Draft 2020-12.&quot;,
+  &quot;title&quot;: &quot;Proof of Employment claim set&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;employer&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Legal name of the employing organization.&quot;,
+      &quot;examples&quot;: [&quot;Globex Corporation&quot;]
+    },
+    &quot;status&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;enum&quot;: [&quot;current&quot;, &quot;former&quot;],
+      &quot;description&quot;: &quot;Whether the holder is a current or former employee (alumni).&quot;
+    },
+    &quot;employment_start&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;format&quot;: &quot;date&quot;,
+      &quot;description&quot;: &quot;Employment start date.&quot;
+    },
+    &quot;employment_end&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;format&quot;: &quot;date&quot;,
+      &quot;description&quot;: &quot;Employment end date. Present only when status is &#39;former&#39;.&quot;
+    }
+  },
+  &quot;required&quot;: [&quot;employer&quot;, &quot;status&quot;, &quot;employment_start&quot;],
+  &quot;allOf&quot;: [
+    {
+      &quot;$comment&quot;: &quot;A former employee must have an end date.&quot;,
+      &quot;if&quot;: { &quot;properties&quot;: { &quot;status&quot;: { &quot;const&quot;: &quot;former&quot; } } },
+      &quot;then&quot;: { &quot;required&quot;: [&quot;employment_end&quot;] }
+    }
+  ],
+  &quot;additionalProperties&quot;: false
+}</code></pre> </figure>  </div> </section>  </main> <footer class="border-t border-white/10"> <div class="mx-auto max-w-6xl px-6 py-8 text-sm text-white/50"> <p>
+Glide Identity credential schemas · Apache-2.0 · W3C VC 2.0 + SD-JWT VC (draft-16).
+          Examples use fake data.
+</p> </div> </footer> </body></html>

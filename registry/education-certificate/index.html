@@ -1,0 +1,452 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Education Certificate · Glide Schemas</title><meta name="description" content="An academic credential: institution, degree, field of study, award date, optional grade, and accreditation body."><link rel="icon" type="image/svg+xml" href="/credential-schemas/logo.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/credential-schemas/_astro/index.Ba5BVslr.css"><script type="module" src="/credential-schemas/_astro/hoisted.D4-KJleG.js"></script></head> <body> <header class="sticky top-0 z-20 border-b border-white/10 bg-brand-900/70 backdrop-blur"> <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"> <a href="/credential-schemas/" class="flex items-center gap-3"> <img src="/credential-schemas/logo.svg" alt="Glide Identity" class="h-7 w-7"> <span class="font-heading text-white">Glide <span class="text-white/60">Schemas</span></span> </a> <nav class="flex items-center gap-1 text-sm"> <a href="/credential-schemas/" class="rounded-lg px-3 py-1.5 text-white/70 hover:text-white"> Home </a><a href="/credential-schemas/registry" class="rounded-lg px-3 py-1.5 text-white bg-white/10"> Schemas </a><a href="/credential-schemas/docs" class="rounded-lg px-3 py-1.5 text-white/70 hover:text-white"> Developer docs </a> </nav> </div> </header> <main class="mx-auto max-w-6xl px-6 py-12">  <a href="/credential-schemas/registry" class="text-sm text-white/60 hover:text-white">← All schemas</a> <header class="mt-4"> <h1 class="text-3xl">Education Certificate</h1> <p class="mt-3 max-w-3xl text-white/70">An academic credential: institution, degree, field of study, award date, optional grade, and accreditation body.</p> <div class="mt-4 grid gap-2 text-sm sm:grid-cols-2"> <div class="card px-4 py-3"> <div class="text-xs uppercase tracking-wide text-white/40">SD-JWT VC vct</div> <div class="mt-1 break-all font-grotesk accent">https://schemas.glideidentity.app/vct/education-certificate</div> </div> <div class="card px-4 py-3"> <div class="text-xs uppercase tracking-wide text-white/40">JSON-LD @context</div> <div class="mt-1 break-all font-grotesk text-white/80">https://schemas.glideidentity.app/contexts/education-certificate.jsonld</div> </div> </div> </header> <section class="mt-10"> <h2 class="text-2xl">Claims</h2> <div class="card mt-4 overflow-x-auto"> <table class="w-full text-left text-sm"> <thead class="border-b border-white/10 text-white/60"> <tr> <th class="px-4 py-3 font-medium">Claim</th> <th class="px-4 py-3 font-medium">Type</th> <th class="px-4 py-3 font-medium">Required</th> <th class="px-4 py-3 font-medium">Selectively disclosable</th> <th class="px-4 py-3 font-medium">Notes</th> </tr> </thead> <tbody> <tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">institution</td> <td class="px-4 py-3 text-white/70">string</td> <td class="px-4 py-3 text-white/70">Yes</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">Awarding institution.</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">credential_name</td> <td class="px-4 py-3 text-white/70">string</td> <td class="px-4 py-3 text-white/70">Yes</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">Degree / credential name.</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">field_of_study</td> <td class="px-4 py-3 text-white/70">string</td> <td class="px-4 py-3 text-white/70">No</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60"></td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">award_date</td> <td class="px-4 py-3 text-white/70">string &lt;date&gt;</td> <td class="px-4 py-3 text-white/70">Yes</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">Date the credential was awarded.</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">grade</td> <td class="px-4 py-3 text-white/70">string</td> <td class="px-4 py-3 text-white/70">No</td> <td class="px-4 py-3"> <span class="chip">always</span> </td> <td class="px-4 py-3 text-white/60">Final grade / classification. Optional and disclosable.</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">accreditation_body</td> <td class="px-4 py-3 text-white/70">string</td> <td class="px-4 py-3 text-white/70">No</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">Body that accredits the institution / programme.</td> </tr> </tbody> </table> </div> <p class="mt-2 text-xs text-white/40">
+Auto-derived from <code>schema.json</code> + SD-JWT VC type metadata. <code>always</code> =
+      issuer MUST make selectively disclosable; <code>allowed</code> = MAY; <code>—</code> = not
+      individually disclosable.
+</p> </section> <section class="mt-12"> <h2 class="text-2xl">Examples</h2> <p class="mt-2 text-sm text-white/60">Both representations of the same fake credential.</p> <div class="mt-4"> <div class="format-tabs" data-format="jsonld"> <div class="mb-4 inline-flex rounded-xl border border-white/15 p-1 text-sm"> <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="jsonld" type="button">
+W3C VC 2.0 (JSON-LD)
+</button> <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="sdjwt" type="button">
+SD-JWT VC
+</button> <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="both" type="button">
+Side by side
+</button> </div> <div class="grid gap-6 md:grid-cols-2"> <div class="fmt-pane space-y-3" data-pane="jsonld"> <h3 class="text-sm text-white/70">W3C VC 2.0 — example credential</h3> <figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">jsonld/example.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;Example W3C VC 2.0 Education Certificate credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).&#34;,
+  &#34;@context&#34;: [
+    &#34;https://www.w3.org/ns/credentials/v2&#34;,
+    &#34;https://schemas.glideidentity.app/contexts/education-certificate.jsonld&#34;
+  ],
+  &#34;type&#34;: [&#34;VerifiableCredential&#34;, &#34;EducationCertificateCredential&#34;],
+  &#34;issuer&#34;: &#34;https://registrar.northbridge.example&#34;,
+  &#34;validFrom&#34;: &#34;2024-07-15T00:00:00Z&#34;,
+  &#34;credentialSubject&#34;: {
+    &#34;id&#34;: &#34;did:example:holder-edu-0001&#34;,
+    &#34;institution&#34;: &#34;Northbridge University&#34;,
+    &#34;credential_name&#34;: &#34;Bachelor of Science&#34;,
+    &#34;field_of_study&#34;: &#34;Computer Science&#34;,
+    &#34;award_date&#34;: &#34;2024-07-12&#34;,
+    &#34;grade&#34;: &#34;First Class Honours&#34;,
+    &#34;accreditation_body&#34;: &#34;Northbridge National Accreditation Council&#34;
+  }
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;Example W3C VC 2.0 Education Certificate credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).&quot;,
+  &quot;@context&quot;: [
+    &quot;https://www.w3.org/ns/credentials/v2&quot;,
+    &quot;https://schemas.glideidentity.app/contexts/education-certificate.jsonld&quot;
+  ],
+  &quot;type&quot;: [&quot;VerifiableCredential&quot;, &quot;EducationCertificateCredential&quot;],
+  &quot;issuer&quot;: &quot;https://registrar.northbridge.example&quot;,
+  &quot;validFrom&quot;: &quot;2024-07-15T00:00:00Z&quot;,
+  &quot;credentialSubject&quot;: {
+    &quot;id&quot;: &quot;did:example:holder-edu-0001&quot;,
+    &quot;institution&quot;: &quot;Northbridge University&quot;,
+    &quot;credential_name&quot;: &quot;Bachelor of Science&quot;,
+    &quot;field_of_study&quot;: &quot;Computer Science&quot;,
+    &quot;award_date&quot;: &quot;2024-07-12&quot;,
+    &quot;grade&quot;: &quot;First Class Honours&quot;,
+    &quot;accreditation_body&quot;: &quot;Northbridge National Accreditation Council&quot;
+  }
+}</code></pre> </figure>  <details class="card px-4 py-2 text-sm text-white/70"> <summary class="cursor-pointer">JSON-LD @context</summary> <div class="mt-3"><figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">jsonld/context.jsonld</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;Glide Identity — Education Certificate JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.&#34;,
+  &#34;@context&#34;: {
+    &#34;@protected&#34;: true,
+    &#34;EducationCertificateCredential&#34;: &#34;https://schemas.glideidentity.app/contexts/education-certificate.jsonld#EducationCertificateCredential&#34;,
+    &#34;glide&#34;: &#34;https://schemas.glideidentity.app/vocab#&#34;,
+    &#34;institution&#34;: {
+      &#34;@id&#34;: &#34;glide:institution&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34;
+    },
+    &#34;credential_name&#34;: {
+      &#34;@id&#34;: &#34;glide:credential_name&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34;
+    },
+    &#34;field_of_study&#34;: {
+      &#34;@id&#34;: &#34;glide:field_of_study&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34;
+    },
+    &#34;award_date&#34;: { &#34;@id&#34;: &#34;glide:award_date&#34;, &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#date&#34; },
+    &#34;grade&#34;: { &#34;@id&#34;: &#34;glide:grade&#34;, &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34; },
+    &#34;accreditation_body&#34;: {
+      &#34;@id&#34;: &#34;glide:accreditation_body&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34;
+    }
+  }
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;Glide Identity — Education Certificate JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.&quot;,
+  &quot;@context&quot;: {
+    &quot;@protected&quot;: true,
+    &quot;EducationCertificateCredential&quot;: &quot;https://schemas.glideidentity.app/contexts/education-certificate.jsonld#EducationCertificateCredential&quot;,
+    &quot;glide&quot;: &quot;https://schemas.glideidentity.app/vocab#&quot;,
+    &quot;institution&quot;: {
+      &quot;@id&quot;: &quot;glide:institution&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot;
+    },
+    &quot;credential_name&quot;: {
+      &quot;@id&quot;: &quot;glide:credential_name&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot;
+    },
+    &quot;field_of_study&quot;: {
+      &quot;@id&quot;: &quot;glide:field_of_study&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot;
+    },
+    &quot;award_date&quot;: { &quot;@id&quot;: &quot;glide:award_date&quot;, &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#date&quot; },
+    &quot;grade&quot;: { &quot;@id&quot;: &quot;glide:grade&quot;, &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot; },
+    &quot;accreditation_body&quot;: {
+      &quot;@id&quot;: &quot;glide:accreditation_body&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot;
+    }
+  }
+}</code></pre> </figure> </div> </details> </div> <div class="fmt-pane space-y-3" data-pane="sdjwt"> <h3 class="text-sm text-white/70">SD-JWT VC — decoded payload + disclosures</h3> <figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">sd-jwt-vc/example.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;Decoded SD-JWT VC for Education Certificate (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Run `pnpm seal` to populate digests/_sd/combinedIssuance.&#34;,
+  &#34;spec&#34;: &#34;draft-ietf-oauth-sd-jwt-vc-16&#34;,
+  &#34;sealed&#34;: true,
+  &#34;issuerSignedPayload&#34;: {
+    &#34;iss&#34;: &#34;https://registrar.northbridge.example&#34;,
+    &#34;vct&#34;: &#34;https://schemas.glideidentity.app/vct/education-certificate&#34;,
+    &#34;iat&#34;: 1721001600,
+    &#34;cnf&#34;: {
+      &#34;jwk&#34;: {
+        &#34;kty&#34;: &#34;EC&#34;,
+        &#34;crv&#34;: &#34;P-256&#34;,
+        &#34;x&#34;: &#34;TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc&#34;,
+        &#34;y&#34;: &#34;ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ&#34;
+      }
+    },
+    &#34;_sd_alg&#34;: &#34;sha-256&#34;,
+    &#34;_sd&#34;: [
+      &#34;35sk89psjzqRB6nY_9zdt7nHplmausEAVo0vpoAVW0w&#34;,
+      &#34;XvA6SzEyDhWrmp8qAXm2AZMV4ZXrgnHz5HuKunvEU_Y&#34;,
+      &#34;_3qrGGh4NHZYySir43uYbZWg2m6-ttTYwtsDM3CWH8g&#34;,
+      &#34;jSecF2HJr6GlQtSS1Ls6s6DKCz0cmsj73efFwZsO83s&#34;,
+      &#34;tw4lIv_LJUCYwKABmqa23-bVkU6SZyt0y9a5V9nKzGE&#34;,
+      &#34;v5z4pe9M5xcIKg3jM9TpqfefPBur3AUWBQKSmUeUpb4&#34;
+    ]
+  },
+  &#34;disclosures&#34;: [
+    {
+      &#34;salt&#34;: &#34;glide-edu-salt-inst00001&#34;,
+      &#34;claim&#34;: &#34;institution&#34;,
+      &#34;value&#34;: &#34;Northbridge University&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1lZHUtc2FsdC1pbnN0MDAwMDEiLCJpbnN0aXR1dGlvbiIsIk5vcnRoYnJpZGdlIFVuaXZlcnNpdHkiXQ&#34;,
+      &#34;digest&#34;: &#34;v5z4pe9M5xcIKg3jM9TpqfefPBur3AUWBQKSmUeUpb4&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-edu-salt-credname0&#34;,
+      &#34;claim&#34;: &#34;credential_name&#34;,
+      &#34;value&#34;: &#34;Bachelor of Science&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1lZHUtc2FsdC1jcmVkbmFtZTAiLCJjcmVkZW50aWFsX25hbWUiLCJCYWNoZWxvciBvZiBTY2llbmNlIl0&#34;,
+      &#34;digest&#34;: &#34;_3qrGGh4NHZYySir43uYbZWg2m6-ttTYwtsDM3CWH8g&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-edu-salt-field0001&#34;,
+      &#34;claim&#34;: &#34;field_of_study&#34;,
+      &#34;value&#34;: &#34;Computer Science&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1lZHUtc2FsdC1maWVsZDAwMDEiLCJmaWVsZF9vZl9zdHVkeSIsIkNvbXB1dGVyIFNjaWVuY2UiXQ&#34;,
+      &#34;digest&#34;: &#34;tw4lIv_LJUCYwKABmqa23-bVkU6SZyt0y9a5V9nKzGE&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-edu-salt-award001&#34;,
+      &#34;claim&#34;: &#34;award_date&#34;,
+      &#34;value&#34;: &#34;2024-07-12&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1lZHUtc2FsdC1hd2FyZDAwMSIsImF3YXJkX2RhdGUiLCIyMDI0LTA3LTEyIl0&#34;,
+      &#34;digest&#34;: &#34;35sk89psjzqRB6nY_9zdt7nHplmausEAVo0vpoAVW0w&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-edu-salt-grade001&#34;,
+      &#34;claim&#34;: &#34;grade&#34;,
+      &#34;value&#34;: &#34;First Class Honours&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1lZHUtc2FsdC1ncmFkZTAwMSIsImdyYWRlIiwiRmlyc3QgQ2xhc3MgSG9ub3VycyJd&#34;,
+      &#34;digest&#34;: &#34;jSecF2HJr6GlQtSS1Ls6s6DKCz0cmsj73efFwZsO83s&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-edu-salt-accred01&#34;,
+      &#34;claim&#34;: &#34;accreditation_body&#34;,
+      &#34;value&#34;: &#34;Northbridge National Accreditation Council&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1lZHUtc2FsdC1hY2NyZWQwMSIsImFjY3JlZGl0YXRpb25fYm9keSIsIk5vcnRoYnJpZGdlIE5hdGlvbmFsIEFjY3JlZGl0YXRpb24gQ291bmNpbCJd&#34;,
+      &#34;digest&#34;: &#34;XvA6SzEyDhWrmp8qAXm2AZMV4ZXrgnHz5HuKunvEU_Y&#34;
+    }
+  ],
+  &#34;presentation&#34;: {
+    &#34;$comment&#34;: &#34;Holder proves the degree and field without revealing their grade.&#34;,
+    &#34;discloses&#34;: [
+      &#34;institution&#34;,
+      &#34;credential_name&#34;,
+      &#34;field_of_study&#34;,
+      &#34;award_date&#34;
+    ]
+  },
+  &#34;combinedIssuance&#34;: &#34;<issuer-signed-jwt>~WyJnbGlkZS1lZHUtc2FsdC1pbnN0MDAwMDEiLCJpbnN0aXR1dGlvbiIsIk5vcnRoYnJpZGdlIFVuaXZlcnNpdHkiXQ~WyJnbGlkZS1lZHUtc2FsdC1jcmVkbmFtZTAiLCJjcmVkZW50aWFsX25hbWUiLCJCYWNoZWxvciBvZiBTY2llbmNlIl0~WyJnbGlkZS1lZHUtc2FsdC1maWVsZDAwMDEiLCJmaWVsZF9vZl9zdHVkeSIsIkNvbXB1dGVyIFNjaWVuY2UiXQ~WyJnbGlkZS1lZHUtc2FsdC1hd2FyZDAwMSIsImF3YXJkX2RhdGUiLCIyMDI0LTA3LTEyIl0~WyJnbGlkZS1lZHUtc2FsdC1ncmFkZTAwMSIsImdyYWRlIiwiRmlyc3QgQ2xhc3MgSG9ub3VycyJd~WyJnbGlkZS1lZHUtc2FsdC1hY2NyZWQwMSIsImFjY3JlZGl0YXRpb25fYm9keSIsIk5vcnRoYnJpZGdlIE5hdGlvbmFsIEFjY3JlZGl0YXRpb24gQ291bmNpbCJd~&#34;
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;Decoded SD-JWT VC for Education Certificate (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Run `pnpm seal` to populate digests/_sd/combinedIssuance.&quot;,
+  &quot;spec&quot;: &quot;draft-ietf-oauth-sd-jwt-vc-16&quot;,
+  &quot;sealed&quot;: true,
+  &quot;issuerSignedPayload&quot;: {
+    &quot;iss&quot;: &quot;https://registrar.northbridge.example&quot;,
+    &quot;vct&quot;: &quot;https://schemas.glideidentity.app/vct/education-certificate&quot;,
+    &quot;iat&quot;: 1721001600,
+    &quot;cnf&quot;: {
+      &quot;jwk&quot;: {
+        &quot;kty&quot;: &quot;EC&quot;,
+        &quot;crv&quot;: &quot;P-256&quot;,
+        &quot;x&quot;: &quot;TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc&quot;,
+        &quot;y&quot;: &quot;ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ&quot;
+      }
+    },
+    &quot;_sd_alg&quot;: &quot;sha-256&quot;,
+    &quot;_sd&quot;: [
+      &quot;35sk89psjzqRB6nY_9zdt7nHplmausEAVo0vpoAVW0w&quot;,
+      &quot;XvA6SzEyDhWrmp8qAXm2AZMV4ZXrgnHz5HuKunvEU_Y&quot;,
+      &quot;_3qrGGh4NHZYySir43uYbZWg2m6-ttTYwtsDM3CWH8g&quot;,
+      &quot;jSecF2HJr6GlQtSS1Ls6s6DKCz0cmsj73efFwZsO83s&quot;,
+      &quot;tw4lIv_LJUCYwKABmqa23-bVkU6SZyt0y9a5V9nKzGE&quot;,
+      &quot;v5z4pe9M5xcIKg3jM9TpqfefPBur3AUWBQKSmUeUpb4&quot;
+    ]
+  },
+  &quot;disclosures&quot;: [
+    {
+      &quot;salt&quot;: &quot;glide-edu-salt-inst00001&quot;,
+      &quot;claim&quot;: &quot;institution&quot;,
+      &quot;value&quot;: &quot;Northbridge University&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1lZHUtc2FsdC1pbnN0MDAwMDEiLCJpbnN0aXR1dGlvbiIsIk5vcnRoYnJpZGdlIFVuaXZlcnNpdHkiXQ&quot;,
+      &quot;digest&quot;: &quot;v5z4pe9M5xcIKg3jM9TpqfefPBur3AUWBQKSmUeUpb4&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-edu-salt-credname0&quot;,
+      &quot;claim&quot;: &quot;credential_name&quot;,
+      &quot;value&quot;: &quot;Bachelor of Science&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1lZHUtc2FsdC1jcmVkbmFtZTAiLCJjcmVkZW50aWFsX25hbWUiLCJCYWNoZWxvciBvZiBTY2llbmNlIl0&quot;,
+      &quot;digest&quot;: &quot;_3qrGGh4NHZYySir43uYbZWg2m6-ttTYwtsDM3CWH8g&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-edu-salt-field0001&quot;,
+      &quot;claim&quot;: &quot;field_of_study&quot;,
+      &quot;value&quot;: &quot;Computer Science&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1lZHUtc2FsdC1maWVsZDAwMDEiLCJmaWVsZF9vZl9zdHVkeSIsIkNvbXB1dGVyIFNjaWVuY2UiXQ&quot;,
+      &quot;digest&quot;: &quot;tw4lIv_LJUCYwKABmqa23-bVkU6SZyt0y9a5V9nKzGE&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-edu-salt-award001&quot;,
+      &quot;claim&quot;: &quot;award_date&quot;,
+      &quot;value&quot;: &quot;2024-07-12&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1lZHUtc2FsdC1hd2FyZDAwMSIsImF3YXJkX2RhdGUiLCIyMDI0LTA3LTEyIl0&quot;,
+      &quot;digest&quot;: &quot;35sk89psjzqRB6nY_9zdt7nHplmausEAVo0vpoAVW0w&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-edu-salt-grade001&quot;,
+      &quot;claim&quot;: &quot;grade&quot;,
+      &quot;value&quot;: &quot;First Class Honours&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1lZHUtc2FsdC1ncmFkZTAwMSIsImdyYWRlIiwiRmlyc3QgQ2xhc3MgSG9ub3VycyJd&quot;,
+      &quot;digest&quot;: &quot;jSecF2HJr6GlQtSS1Ls6s6DKCz0cmsj73efFwZsO83s&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-edu-salt-accred01&quot;,
+      &quot;claim&quot;: &quot;accreditation_body&quot;,
+      &quot;value&quot;: &quot;Northbridge National Accreditation Council&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1lZHUtc2FsdC1hY2NyZWQwMSIsImFjY3JlZGl0YXRpb25fYm9keSIsIk5vcnRoYnJpZGdlIE5hdGlvbmFsIEFjY3JlZGl0YXRpb24gQ291bmNpbCJd&quot;,
+      &quot;digest&quot;: &quot;XvA6SzEyDhWrmp8qAXm2AZMV4ZXrgnHz5HuKunvEU_Y&quot;
+    }
+  ],
+  &quot;presentation&quot;: {
+    &quot;$comment&quot;: &quot;Holder proves the degree and field without revealing their grade.&quot;,
+    &quot;discloses&quot;: [
+      &quot;institution&quot;,
+      &quot;credential_name&quot;,
+      &quot;field_of_study&quot;,
+      &quot;award_date&quot;
+    ]
+  },
+  &quot;combinedIssuance&quot;: &quot;&lt;issuer-signed-jwt&gt;~WyJnbGlkZS1lZHUtc2FsdC1pbnN0MDAwMDEiLCJpbnN0aXR1dGlvbiIsIk5vcnRoYnJpZGdlIFVuaXZlcnNpdHkiXQ~WyJnbGlkZS1lZHUtc2FsdC1jcmVkbmFtZTAiLCJjcmVkZW50aWFsX25hbWUiLCJCYWNoZWxvciBvZiBTY2llbmNlIl0~WyJnbGlkZS1lZHUtc2FsdC1maWVsZDAwMDEiLCJmaWVsZF9vZl9zdHVkeSIsIkNvbXB1dGVyIFNjaWVuY2UiXQ~WyJnbGlkZS1lZHUtc2FsdC1hd2FyZDAwMSIsImF3YXJkX2RhdGUiLCIyMDI0LTA3LTEyIl0~WyJnbGlkZS1lZHUtc2FsdC1ncmFkZTAwMSIsImdyYWRlIiwiRmlyc3QgQ2xhc3MgSG9ub3VycyJd~WyJnbGlkZS1lZHUtc2FsdC1hY2NyZWQwMSIsImFjY3JlZGl0YXRpb25fYm9keSIsIk5vcnRoYnJpZGdlIE5hdGlvbmFsIEFjY3JlZGl0YXRpb24gQ291bmNpbCJd~&quot;
+}</code></pre> </figure>  <details class="card px-4 py-2 text-sm text-white/70"> <summary class="cursor-pointer">VC Type Metadata</summary> <div class="mt-3"><figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">sd-jwt-vc/vct-metadata.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;SD-JWT VC Type Metadata for Education Certificate. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.&#34;,
+  &#34;vct&#34;: &#34;https://schemas.glideidentity.app/vct/education-certificate&#34;,
+  &#34;name&#34;: &#34;Education Certificate&#34;,
+  &#34;description&#34;: &#34;An academic credential: institution, degree, field of study, award date, optional grade, and accreditation body.&#34;,
+  &#34;display&#34;: [
+    {
+      &#34;lang&#34;: &#34;en-US&#34;,
+      &#34;name&#34;: &#34;Education Certificate&#34;,
+      &#34;description&#34;: &#34;A verifiable academic credential.&#34;
+    }
+  ],
+  &#34;claims&#34;: [
+    {
+      &#34;path&#34;: [&#34;institution&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Institution&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;credential_name&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Credential&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;field_of_study&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Field of study&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;award_date&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Award date&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;grade&#34;],
+      &#34;sd&#34;: &#34;always&#34;,
+      &#34;display&#34;: [
+        {
+          &#34;lang&#34;: &#34;en-US&#34;,
+          &#34;label&#34;: &#34;Grade&#34;,
+          &#34;description&#34;: &#34;Optional; keep selectively disclosable.&#34;
+        }
+      ]
+    },
+    {
+      &#34;path&#34;: [&#34;accreditation_body&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Accreditation body&#34; }]
+    }
+  ],
+  &#34;schema_uri&#34;: &#34;https://schemas.glideidentity.app/schemas/education-certificate.schema.json&#34;
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;SD-JWT VC Type Metadata for Education Certificate. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.&quot;,
+  &quot;vct&quot;: &quot;https://schemas.glideidentity.app/vct/education-certificate&quot;,
+  &quot;name&quot;: &quot;Education Certificate&quot;,
+  &quot;description&quot;: &quot;An academic credential: institution, degree, field of study, award date, optional grade, and accreditation body.&quot;,
+  &quot;display&quot;: [
+    {
+      &quot;lang&quot;: &quot;en-US&quot;,
+      &quot;name&quot;: &quot;Education Certificate&quot;,
+      &quot;description&quot;: &quot;A verifiable academic credential.&quot;
+    }
+  ],
+  &quot;claims&quot;: [
+    {
+      &quot;path&quot;: [&quot;institution&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Institution&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;credential_name&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Credential&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;field_of_study&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Field of study&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;award_date&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Award date&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;grade&quot;],
+      &quot;sd&quot;: &quot;always&quot;,
+      &quot;display&quot;: [
+        {
+          &quot;lang&quot;: &quot;en-US&quot;,
+          &quot;label&quot;: &quot;Grade&quot;,
+          &quot;description&quot;: &quot;Optional; keep selectively disclosable.&quot;
+        }
+      ]
+    },
+    {
+      &quot;path&quot;: [&quot;accreditation_body&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Accreditation body&quot; }]
+    }
+  ],
+  &quot;schema_uri&quot;: &quot;https://schemas.glideidentity.app/schemas/education-certificate.schema.json&quot;
+}</code></pre> </figure> </div> </details> </div> </div> </div>  </div> </section> <section class="mt-12"> <h2 class="text-2xl">JSON Schema</h2> <p class="mt-2 text-sm text-white/60">
+The shared claim set both formats validate against (Draft 2020-12).
+</p> <div class="mt-4"> <figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">schema.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$schema&#34;: &#34;https://json-schema.org/draft/2020-12/schema&#34;,
+  &#34;$id&#34;: &#34;https://schemas.glideidentity.app/schemas/education-certificate.schema.json&#34;,
+  &#34;$comment&#34;: &#34;Claim set for Education Certificate. JSON Schema Draft 2020-12.&#34;,
+  &#34;title&#34;: &#34;Education Certificate claim set&#34;,
+  &#34;type&#34;: &#34;object&#34;,
+  &#34;properties&#34;: {
+    &#34;institution&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;description&#34;: &#34;Awarding institution.&#34;,
+      &#34;examples&#34;: [&#34;Northbridge University&#34;]
+    },
+    &#34;credential_name&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;description&#34;: &#34;Degree / credential name.&#34;,
+      &#34;examples&#34;: [&#34;Bachelor of Science&#34;]
+    },
+    &#34;field_of_study&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;examples&#34;: [&#34;Computer Science&#34;]
+    },
+    &#34;award_date&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;format&#34;: &#34;date&#34;,
+      &#34;description&#34;: &#34;Date the credential was awarded.&#34;
+    },
+    &#34;grade&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;description&#34;: &#34;Final grade / classification. Optional and disclosable.&#34;,
+      &#34;examples&#34;: [&#34;First Class Honours&#34;]
+    },
+    &#34;accreditation_body&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;description&#34;: &#34;Body that accredits the institution / programme.&#34;,
+      &#34;examples&#34;: [&#34;Northbridge National Accreditation Council&#34;]
+    }
+  },
+  &#34;required&#34;: [&#34;institution&#34;, &#34;credential_name&#34;, &#34;award_date&#34;],
+  &#34;additionalProperties&#34;: false
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$schema&quot;: &quot;https://json-schema.org/draft/2020-12/schema&quot;,
+  &quot;$id&quot;: &quot;https://schemas.glideidentity.app/schemas/education-certificate.schema.json&quot;,
+  &quot;$comment&quot;: &quot;Claim set for Education Certificate. JSON Schema Draft 2020-12.&quot;,
+  &quot;title&quot;: &quot;Education Certificate claim set&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;institution&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Awarding institution.&quot;,
+      &quot;examples&quot;: [&quot;Northbridge University&quot;]
+    },
+    &quot;credential_name&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Degree / credential name.&quot;,
+      &quot;examples&quot;: [&quot;Bachelor of Science&quot;]
+    },
+    &quot;field_of_study&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;examples&quot;: [&quot;Computer Science&quot;]
+    },
+    &quot;award_date&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;format&quot;: &quot;date&quot;,
+      &quot;description&quot;: &quot;Date the credential was awarded.&quot;
+    },
+    &quot;grade&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Final grade / classification. Optional and disclosable.&quot;,
+      &quot;examples&quot;: [&quot;First Class Honours&quot;]
+    },
+    &quot;accreditation_body&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Body that accredits the institution / programme.&quot;,
+      &quot;examples&quot;: [&quot;Northbridge National Accreditation Council&quot;]
+    }
+  },
+  &quot;required&quot;: [&quot;institution&quot;, &quot;credential_name&quot;, &quot;award_date&quot;],
+  &quot;additionalProperties&quot;: false
+}</code></pre> </figure>  </div> </section>  </main> <footer class="border-t border-white/10"> <div class="mx-auto max-w-6xl px-6 py-8 text-sm text-white/50"> <p>
+Glide Identity credential schemas · Apache-2.0 · W3C VC 2.0 + SD-JWT VC (draft-16).
+          Examples use fake data.
+</p> </div> </footer> </body></html>

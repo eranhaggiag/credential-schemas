@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developer docs · Glide Schemas</title><meta name="description" content="Dual-format verifiable credential schemas (W3C VC 2.0 + SD-JWT VC) for Glide Identity."><link rel="icon" type="image/svg+xml" href="/credential-schemas/logo.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/credential-schemas/_astro/index.Ba5BVslr.css"><script type="module" src="/credential-schemas/_astro/hoisted.CxHvLBDQ.js"></script></head> <body> <header class="sticky top-0 z-20 border-b border-white/10 bg-brand-900/70 backdrop-blur"> <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"> <a href="/credential-schemas/" class="flex items-center gap-3"> <img src="/credential-schemas/logo.svg" alt="Glide Identity" class="h-7 w-7"> <span class="font-heading text-white">Glide <span class="text-white/60">Schemas</span></span> </a> <nav class="flex items-center gap-1 text-sm"> <a href="/credential-schemas/" class="rounded-lg px-3 py-1.5 text-white/70 hover:text-white"> Home </a><a href="/credential-schemas/registry" class="rounded-lg px-3 py-1.5 text-white/70 hover:text-white"> Schemas </a><a href="/credential-schemas/docs" class="rounded-lg px-3 py-1.5 text-white bg-white/10"> Developer docs </a> </nav> </div> </header> <main class="mx-auto max-w-6xl px-6 py-12">  <h1 class="text-3xl">Developer docs</h1> <p class="mt-3 max-w-3xl text-white/70">
+How to issue and verify each format, present a subset of claims, and choose between them. Every
+    snippet below is extracted from the runnable <code>@glide/examples</code> package, so it stays
+    in sync with code.
+</p> <nav class="mt-6 flex flex-wrap gap-2 text-sm"> <a class="chip" href="#choosing">Choosing a format</a> <a class="chip" href="#sd-jwt">Issue SD-JWT VC</a> <a class="chip" href="#present">Selective disclosure</a> <a class="chip" href="#verify">Verify</a> <a class="chip" href="#jsonld">Issue JSON-LD</a> </nav> <section id="choosing" class="mt-12 scroll-mt-24"> <h2 class="text-2xl">Choosing a format</h2> <div class="mt-4 grid gap-4 md:grid-cols-2"> <div class="card p-5"> <h3 class="text-base">Reach for <span class="accent">SD-JWT VC</span> when…</h3> <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-white/70"> <li>You target the EUDI Wallet, OID4VCI, or OID4VP.</li> <li>You need compact, selectively disclosable credentials out of the box.</li> <li>You want predicate-style minimal disclosure (e.g. <code>age_over_18</code>).</li> </ul> </div> <div class="card p-5"> <h3 class="text-base">Reach for <span class="accent">W3C VC 2.0</span> when…</h3> <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-white/70"> <li>You operate in a linked-data / JSON-LD ecosystem.</li> <li>You need semantic interop and rich <code>@context</code> vocabularies.</li> <li>You rely on Data Integrity proofs or existing VC 2.0 tooling.</li> </ul> </div> </div> <p class="mt-4 text-sm text-white/60">
+Both come from the same JSON Schema claim set, so you can issue either (or both) without
+      redefining your data. See the <a class="accent" href="/credential-schemas/registry">registry</a> for each type.
+</p> </section> <section id="sd-jwt" class="mt-12 scroll-mt-24"> <h2 class="text-2xl">Issue an SD-JWT VC</h2> <p class="mt-2 text-sm text-white/60">
+Split the claim set into always-visible claims and selectively disclosable Disclosures; the
+      payload carries only digests in <code>_sd</code> (RFC 9901).
+</p> <div class="mt-4"><figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">issue-sd-jwt-vc.ts</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="import { SD_ALG, makeObjectDisclosure } from '@glide/schema-tools';
+
+export interface IssueInput {
+  iss: string;
+  vct: string;
+  /** Holder key for key binding (`cnf`). */
+  cnf: Record<string, unknown>;
+  iat: number;
+  exp?: number;
+  /** All credential claims. */
+  claims: Record<string, unknown>;
+  /** Which claim names to make selectively disclosable. The rest stay in cleartext. */
+  selectivelyDisclosable: string[];
+}
+
+export interface IssuedSdJwtVc {
+  payload: Record<string, unknown>;
+  disclosures: Array<{ encoded: string; claim: string }>;
+}
+
+export function issueSdJwtVc(input: IssueInput): IssuedSdJwtVc {
+  const sd: string[] = [];
+  const disclosures: Array<{ encoded: string; claim: string }> = [];
+  const payload: Record<string, unknown> = {
+    iss: input.iss,
+    vct: input.vct,
+    iat: input.iat,
+    ...(input.exp !== undefined ? { exp: input.exp } : {}),
+    cnf: input.cnf,
+    _sd_alg: SD_ALG,
+  };
+
+  for (const [claim, value] of Object.entries(input.claims)) {
+    if (input.selectivelyDisclosable.includes(claim)) {
+      const { disclosure, digest } = makeObjectDisclosure(claim, value);
+      sd.push(digest);
+      disclosures.push({ encoded: disclosure, claim });
+    } else {
+      payload[claim] = value; // always-visible claim
+    }
+  }
+
+  payload._sd = sd.sort(); // sorted so order leaks nothing
+  return { payload, disclosures };
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>import { SD_ALG, makeObjectDisclosure } from &#39;@glide/schema-tools&#39;;
+
+export interface IssueInput {
+  iss: string;
+  vct: string;
+  /** Holder key for key binding (`cnf`). */
+  cnf: Record&lt;string, unknown&gt;;
+  iat: number;
+  exp?: number;
+  /** All credential claims. */
+  claims: Record&lt;string, unknown&gt;;
+  /** Which claim names to make selectively disclosable. The rest stay in cleartext. */
+  selectivelyDisclosable: string[];
+}
+
+export interface IssuedSdJwtVc {
+  payload: Record&lt;string, unknown&gt;;
+  disclosures: Array&lt;{ encoded: string; claim: string }&gt;;
+}
+
+export function issueSdJwtVc(input: IssueInput): IssuedSdJwtVc {
+  const sd: string[] = [];
+  const disclosures: Array&lt;{ encoded: string; claim: string }&gt; = [];
+  const payload: Record&lt;string, unknown&gt; = {
+    iss: input.iss,
+    vct: input.vct,
+    iat: input.iat,
+    ...(input.exp !== undefined ? { exp: input.exp } : {}),
+    cnf: input.cnf,
+    _sd_alg: SD_ALG,
+  };
+
+  for (const [claim, value] of Object.entries(input.claims)) {
+    if (input.selectivelyDisclosable.includes(claim)) {
+      const { disclosure, digest } = makeObjectDisclosure(claim, value);
+      sd.push(digest);
+      disclosures.push({ encoded: disclosure, claim });
+    } else {
+      payload[claim] = value; // always-visible claim
+    }
+  }
+
+  payload._sd = sd.sort(); // sorted so order leaks nothing
+  return { payload, disclosures };
+}</code></pre> </figure> </div> </section> <section id="present" class="mt-12 scroll-mt-24"> <h2 class="text-2xl">Present only what's needed</h2> <p class="mt-2 text-sm text-white/60">
+The holder keeps the issuer-signed payload and sends only the Disclosures they choose.
+      Withheld claims remain digests the verifier cannot reverse.
+</p> <div class="mt-4"><figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">selective-disclosure.ts</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="import { parseDisclosure } from '@glide/schema-tools';
+import { issueSdJwtVc, type IssuedSdJwtVc } from './issue-sd-jwt-vc.js';
+
+export interface Presentation {
+  payload: Record<string, unknown>;
+  /** Only the Disclosures the holder chose to reveal. */
+  disclosures: string[];
+  /** Combined serialization: <jwt>~<disclosure>~…~ (JWS elided in this teaching example). */
+  combined: string;
+}
+
+/** Present only the named claims; everything else stays hidden. */
+export function present(issued: IssuedSdJwtVc, reveal: string[]): Presentation {
+  const disclosures = issued.disclosures
+    .filter((d) => reveal.includes(d.claim))
+    .map((d) => d.encoded);
+  return {
+    payload: issued.payload,
+    disclosures,
+    combined: `<issuer-signed-jwt>~${disclosures.join('~')}~`,
+  };
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>import { parseDisclosure } from &#39;@glide/schema-tools&#39;;
+import { issueSdJwtVc, type IssuedSdJwtVc } from &#39;./issue-sd-jwt-vc.js&#39;;
+
+export interface Presentation {
+  payload: Record&lt;string, unknown&gt;;
+  /** Only the Disclosures the holder chose to reveal. */
+  disclosures: string[];
+  /** Combined serialization: &lt;jwt&gt;~&lt;disclosure&gt;~…~ (JWS elided in this teaching example). */
+  combined: string;
+}
+
+/** Present only the named claims; everything else stays hidden. */
+export function present(issued: IssuedSdJwtVc, reveal: string[]): Presentation {
+  const disclosures = issued.disclosures
+    .filter((d) =&gt; reveal.includes(d.claim))
+    .map((d) =&gt; d.encoded);
+  return {
+    payload: issued.payload,
+    disclosures,
+    combined: `&lt;issuer-signed-jwt&gt;~${disclosures.join(&#39;~&#39;)}~`,
+  };
+}</code></pre> </figure> </div> </section> <section id="verify" class="mt-12 scroll-mt-24"> <h2 class="text-2xl">Verify a presentation</h2> <p class="mt-2 text-sm text-white/60">
+Each presented Disclosure must hash to a digest in <code>_sd</code>. (A production verifier
+      also checks the issuer signature, <code>vct</code>, validity, and key binding.)
+</p> <div class="mt-4"><figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">verify-sd-jwt-vc.ts</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="import { digest, parseDisclosure } from '@glide/schema-tools';
+
+const REGISTERED = new Set([
+  'iss',
+  'sub',
+  'aud',
+  'exp',
+  'nbf',
+  'iat',
+  'jti',
+  'vct',
+  'cnf',
+  'status',
+  '_sd',
+  '_sd_alg',
+]);
+
+export interface VerifyResult {
+  ok: boolean;
+  claims: Record<string, unknown>;
+  errors: string[];
+}
+
+export function verify(payload: Record<string, unknown>, disclosures: string[]): VerifyResult {
+  const errors: string[] = [];
+  const sdDigests = new Set((payload._sd as string[] | undefined) ?? []);
+  const claims: Record<string, unknown> = {};
+
+  // Cleartext (non-registered) claims are always present.
+  for (const [k, v] of Object.entries(payload)) {
+    if (!REGISTERED.has(k)) claims[k] = v;
+  }
+
+  // Each disclosure must hash to a digest the issuer signed into `_sd`.
+  for (const d of disclosures) {
+    if (!sdDigests.has(digest(d))) {
+      errors.push(`Disclosure not found in _sd: ${d}`);
+      continue;
+    }
+    const [, claim, value] = parseDisclosure(d);
+    claims[claim] = value;
+  }
+
+  return { ok: errors.length === 0, claims, errors };
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>import { digest, parseDisclosure } from &#39;@glide/schema-tools&#39;;
+
+const REGISTERED = new Set([
+  &#39;iss&#39;,
+  &#39;sub&#39;,
+  &#39;aud&#39;,
+  &#39;exp&#39;,
+  &#39;nbf&#39;,
+  &#39;iat&#39;,
+  &#39;jti&#39;,
+  &#39;vct&#39;,
+  &#39;cnf&#39;,
+  &#39;status&#39;,
+  &#39;_sd&#39;,
+  &#39;_sd_alg&#39;,
+]);
+
+export interface VerifyResult {
+  ok: boolean;
+  claims: Record&lt;string, unknown&gt;;
+  errors: string[];
+}
+
+export function verify(payload: Record&lt;string, unknown&gt;, disclosures: string[]): VerifyResult {
+  const errors: string[] = [];
+  const sdDigests = new Set((payload._sd as string[] | undefined) ?? []);
+  const claims: Record&lt;string, unknown&gt; = {};
+
+  // Cleartext (non-registered) claims are always present.
+  for (const [k, v] of Object.entries(payload)) {
+    if (!REGISTERED.has(k)) claims[k] = v;
+  }
+
+  // Each disclosure must hash to a digest the issuer signed into `_sd`.
+  for (const d of disclosures) {
+    if (!sdDigests.has(digest(d))) {
+      errors.push(`Disclosure not found in _sd: ${d}`);
+      continue;
+    }
+    const [, claim, value] = parseDisclosure(d);
+    claims[claim] = value;
+  }
+
+  return { ok: errors.length === 0, claims, errors };
+}</code></pre> </figure> </div> </section> <section id="jsonld" class="mt-12 scroll-mt-24"> <h2 class="text-2xl">Issue a W3C VC 2.0 (JSON-LD)</h2> <p class="mt-2 text-sm text-white/60">
+The same claims wrapped in the <code>credentials/v2</code> base context plus the type's
+      Glide context.
+</p> <div class="mt-4"><figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">issue-jsonld.ts</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="export interface JsonLdInput {
+  contextUrl: string;
+  type: string; // e.g. &#34;AgeVerificationCredential&#34;
+  issuer: string;
+  validFrom: string;
+  validUntil?: string;
+  subjectId: string;
+  claims: Record<string, unknown>;
+}
+
+export function issueJsonLd(input: JsonLdInput): Record<string, unknown> {
+  return {
+    '@context': ['https://www.w3.org/ns/credentials/v2', input.contextUrl],
+    type: ['VerifiableCredential', input.type],
+    issuer: input.issuer,
+    validFrom: input.validFrom,
+    ...(input.validUntil ? { validUntil: input.validUntil } : {}),
+    credentialSubject: { id: input.subjectId, ...input.claims },
+  };
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>export interface JsonLdInput {
+  contextUrl: string;
+  type: string; // e.g. &quot;AgeVerificationCredential&quot;
+  issuer: string;
+  validFrom: string;
+  validUntil?: string;
+  subjectId: string;
+  claims: Record&lt;string, unknown&gt;;
+}
+
+export function issueJsonLd(input: JsonLdInput): Record&lt;string, unknown&gt; {
+  return {
+    &#39;@context&#39;: [&#39;https://www.w3.org/ns/credentials/v2&#39;, input.contextUrl],
+    type: [&#39;VerifiableCredential&#39;, input.type],
+    issuer: input.issuer,
+    validFrom: input.validFrom,
+    ...(input.validUntil ? { validUntil: input.validUntil } : {}),
+    credentialSubject: { id: input.subjectId, ...input.claims },
+  };
+}</code></pre> </figure> </div> </section>  </main> <footer class="border-t border-white/10"> <div class="mx-auto max-w-6xl px-6 py-8 text-sm text-white/50"> <p>
+Glide Identity credential schemas · Apache-2.0 · W3C VC 2.0 + SD-JWT VC (draft-16).
+          Examples use fake data.
+</p> </div> </footer> </body></html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Boarding Pass · Glide Schemas</title><meta name="description" content="A flight boarding pass: passenger, carrier, flight, route, departure, seat, boarding group, and disclosable PNR."><link rel="icon" type="image/svg+xml" href="/credential-schemas/logo.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/credential-schemas/_astro/index.Ba5BVslr.css"><script type="module" src="/credential-schemas/_astro/hoisted.D4-KJleG.js"></script></head> <body> <header class="sticky top-0 z-20 border-b border-white/10 bg-brand-900/70 backdrop-blur"> <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"> <a href="/credential-schemas/" class="flex items-center gap-3"> <img src="/credential-schemas/logo.svg" alt="Glide Identity" class="h-7 w-7"> <span class="font-heading text-white">Glide <span class="text-white/60">Schemas</span></span> </a> <nav class="flex items-center gap-1 text-sm"> <a href="/credential-schemas/" class="rounded-lg px-3 py-1.5 text-white/70 hover:text-white"> Home </a><a href="/credential-schemas/registry" class="rounded-lg px-3 py-1.5 text-white bg-white/10"> Schemas </a><a href="/credential-schemas/docs" class="rounded-lg px-3 py-1.5 text-white/70 hover:text-white"> Developer docs </a> </nav> </div> </header> <main class="mx-auto max-w-6xl px-6 py-12">  <a href="/credential-schemas/registry" class="text-sm text-white/60 hover:text-white">← All schemas</a> <header class="mt-4"> <h1 class="text-3xl">Boarding Pass</h1> <p class="mt-3 max-w-3xl text-white/70">A flight boarding pass: passenger, carrier, flight, route, departure, seat, boarding group, and disclosable PNR.</p> <div class="mt-4 grid gap-2 text-sm sm:grid-cols-2"> <div class="card px-4 py-3"> <div class="text-xs uppercase tracking-wide text-white/40">SD-JWT VC vct</div> <div class="mt-1 break-all font-grotesk accent">https://schemas.glideidentity.app/vct/boarding-pass</div> </div> <div class="card px-4 py-3"> <div class="text-xs uppercase tracking-wide text-white/40">JSON-LD @context</div> <div class="mt-1 break-all font-grotesk text-white/80">https://schemas.glideidentity.app/contexts/boarding-pass.jsonld</div> </div> </div> </header> <section class="mt-10"> <h2 class="text-2xl">Claims</h2> <div class="card mt-4 overflow-x-auto"> <table class="w-full text-left text-sm"> <thead class="border-b border-white/10 text-white/60"> <tr> <th class="px-4 py-3 font-medium">Claim</th> <th class="px-4 py-3 font-medium">Type</th> <th class="px-4 py-3 font-medium">Required</th> <th class="px-4 py-3 font-medium">Selectively disclosable</th> <th class="px-4 py-3 font-medium">Notes</th> </tr> </thead> <tbody> <tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">passenger_name</td> <td class="px-4 py-3 text-white/70">string</td> <td class="px-4 py-3 text-white/70">Yes</td> <td class="px-4 py-3"> <span class="chip">always</span> </td> <td class="px-4 py-3 text-white/60"></td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">carrier</td> <td class="px-4 py-3 text-white/70">string</td> <td class="px-4 py-3 text-white/70">Yes</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">IATA airline designator (2 chars).</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">flight_number</td> <td class="px-4 py-3 text-white/70">string</td> <td class="px-4 py-3 text-white/70">Yes</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">Carrier code + numeric flight number.</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">origin</td> <td class="px-4 py-3 text-white/70">string &lt;iata-airport&gt;</td> <td class="px-4 py-3 text-white/70">Yes</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">IATA airport code of departure.</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">destination</td> <td class="px-4 py-3 text-white/70">string &lt;iata-airport&gt;</td> <td class="px-4 py-3 text-white/70">Yes</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">IATA airport code of arrival.</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">departure_time</td> <td class="px-4 py-3 text-white/70">string &lt;date-time&gt;</td> <td class="px-4 py-3 text-white/70">Yes</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">Scheduled departure (local time with offset).</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">seat</td> <td class="px-4 py-3 text-white/70">string</td> <td class="px-4 py-3 text-white/70">No</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60"></td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">boarding_group</td> <td class="px-4 py-3 text-white/70">string</td> <td class="px-4 py-3 text-white/70">No</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60"></td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">pnr</td> <td class="px-4 py-3 text-white/70">string</td> <td class="px-4 py-3 text-white/70">No</td> <td class="px-4 py-3"> <span class="chip">always</span> </td> <td class="px-4 py-3 text-white/60">Passenger Name Record / booking reference. Disclosable.</td> </tr> </tbody> </table> </div> <p class="mt-2 text-xs text-white/40">
+Auto-derived from <code>schema.json</code> + SD-JWT VC type metadata. <code>always</code> =
+      issuer MUST make selectively disclosable; <code>allowed</code> = MAY; <code>—</code> = not
+      individually disclosable.
+</p> </section> <section class="mt-12"> <h2 class="text-2xl">Examples</h2> <p class="mt-2 text-sm text-white/60">Both representations of the same fake credential.</p> <div class="mt-4"> <div class="format-tabs" data-format="jsonld"> <div class="mb-4 inline-flex rounded-xl border border-white/15 p-1 text-sm"> <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="jsonld" type="button">
+W3C VC 2.0 (JSON-LD)
+</button> <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="sdjwt" type="button">
+SD-JWT VC
+</button> <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="both" type="button">
+Side by side
+</button> </div> <div class="grid gap-6 md:grid-cols-2"> <div class="fmt-pane space-y-3" data-pane="jsonld"> <h3 class="text-sm text-white/70">W3C VC 2.0 — example credential</h3> <figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">jsonld/example.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;Example W3C VC 2.0 Boarding Pass credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).&#34;,
+  &#34;@context&#34;: [
+    &#34;https://www.w3.org/ns/credentials/v2&#34;,
+    &#34;https://schemas.glideidentity.app/contexts/boarding-pass.jsonld&#34;
+  ],
+  &#34;type&#34;: [&#34;VerifiableCredential&#34;, &#34;BoardingPassCredential&#34;],
+  &#34;issuer&#34;: &#34;https://checkin.glide-air.example&#34;,
+  &#34;validFrom&#34;: &#34;2026-06-20T06:00:00Z&#34;,
+  &#34;validUntil&#34;: &#34;2026-06-20T11:45:00Z&#34;,
+  &#34;credentialSubject&#34;: {
+    &#34;id&#34;: &#34;did:example:holder-bp-0001&#34;,
+    &#34;passenger_name&#34;: &#34;AVERY/JORDAN&#34;,
+    &#34;carrier&#34;: &#34;GA&#34;,
+    &#34;flight_number&#34;: &#34;GA417&#34;,
+    &#34;origin&#34;: &#34;ARN&#34;,
+    &#34;destination&#34;: &#34;LHR&#34;,
+    &#34;departure_time&#34;: &#34;2026-06-20T09:45:00+02:00&#34;,
+    &#34;seat&#34;: &#34;14C&#34;,
+    &#34;boarding_group&#34;: &#34;B&#34;,
+    &#34;pnr&#34;: &#34;X4F2QJ&#34;
+  }
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;Example W3C VC 2.0 Boarding Pass credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).&quot;,
+  &quot;@context&quot;: [
+    &quot;https://www.w3.org/ns/credentials/v2&quot;,
+    &quot;https://schemas.glideidentity.app/contexts/boarding-pass.jsonld&quot;
+  ],
+  &quot;type&quot;: [&quot;VerifiableCredential&quot;, &quot;BoardingPassCredential&quot;],
+  &quot;issuer&quot;: &quot;https://checkin.glide-air.example&quot;,
+  &quot;validFrom&quot;: &quot;2026-06-20T06:00:00Z&quot;,
+  &quot;validUntil&quot;: &quot;2026-06-20T11:45:00Z&quot;,
+  &quot;credentialSubject&quot;: {
+    &quot;id&quot;: &quot;did:example:holder-bp-0001&quot;,
+    &quot;passenger_name&quot;: &quot;AVERY/JORDAN&quot;,
+    &quot;carrier&quot;: &quot;GA&quot;,
+    &quot;flight_number&quot;: &quot;GA417&quot;,
+    &quot;origin&quot;: &quot;ARN&quot;,
+    &quot;destination&quot;: &quot;LHR&quot;,
+    &quot;departure_time&quot;: &quot;2026-06-20T09:45:00+02:00&quot;,
+    &quot;seat&quot;: &quot;14C&quot;,
+    &quot;boarding_group&quot;: &quot;B&quot;,
+    &quot;pnr&quot;: &quot;X4F2QJ&quot;
+  }
+}</code></pre> </figure>  <details class="card px-4 py-2 text-sm text-white/70"> <summary class="cursor-pointer">JSON-LD @context</summary> <div class="mt-3"><figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">jsonld/context.jsonld</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;Glide Identity — Boarding Pass JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.&#34;,
+  &#34;@context&#34;: {
+    &#34;@protected&#34;: true,
+    &#34;BoardingPassCredential&#34;: &#34;https://schemas.glideidentity.app/contexts/boarding-pass.jsonld#BoardingPassCredential&#34;,
+    &#34;glide&#34;: &#34;https://schemas.glideidentity.app/vocab#&#34;,
+    &#34;passenger_name&#34;: {
+      &#34;@id&#34;: &#34;glide:passenger_name&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34;
+    },
+    &#34;carrier&#34;: { &#34;@id&#34;: &#34;glide:carrier&#34;, &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34; },
+    &#34;flight_number&#34;: {
+      &#34;@id&#34;: &#34;glide:flight_number&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34;
+    },
+    &#34;origin&#34;: { &#34;@id&#34;: &#34;glide:origin&#34;, &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34; },
+    &#34;destination&#34;: {
+      &#34;@id&#34;: &#34;glide:destination&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34;
+    },
+    &#34;departure_time&#34;: {
+      &#34;@id&#34;: &#34;glide:departure_time&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#dateTime&#34;
+    },
+    &#34;seat&#34;: { &#34;@id&#34;: &#34;glide:seat&#34;, &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34; },
+    &#34;boarding_group&#34;: {
+      &#34;@id&#34;: &#34;glide:boarding_group&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34;
+    },
+    &#34;pnr&#34;: { &#34;@id&#34;: &#34;glide:pnr&#34;, &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34; }
+  }
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;Glide Identity — Boarding Pass JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.&quot;,
+  &quot;@context&quot;: {
+    &quot;@protected&quot;: true,
+    &quot;BoardingPassCredential&quot;: &quot;https://schemas.glideidentity.app/contexts/boarding-pass.jsonld#BoardingPassCredential&quot;,
+    &quot;glide&quot;: &quot;https://schemas.glideidentity.app/vocab#&quot;,
+    &quot;passenger_name&quot;: {
+      &quot;@id&quot;: &quot;glide:passenger_name&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot;
+    },
+    &quot;carrier&quot;: { &quot;@id&quot;: &quot;glide:carrier&quot;, &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot; },
+    &quot;flight_number&quot;: {
+      &quot;@id&quot;: &quot;glide:flight_number&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot;
+    },
+    &quot;origin&quot;: { &quot;@id&quot;: &quot;glide:origin&quot;, &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot; },
+    &quot;destination&quot;: {
+      &quot;@id&quot;: &quot;glide:destination&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot;
+    },
+    &quot;departure_time&quot;: {
+      &quot;@id&quot;: &quot;glide:departure_time&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#dateTime&quot;
+    },
+    &quot;seat&quot;: { &quot;@id&quot;: &quot;glide:seat&quot;, &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot; },
+    &quot;boarding_group&quot;: {
+      &quot;@id&quot;: &quot;glide:boarding_group&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot;
+    },
+    &quot;pnr&quot;: { &quot;@id&quot;: &quot;glide:pnr&quot;, &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot; }
+  }
+}</code></pre> </figure> </div> </details> </div> <div class="fmt-pane space-y-3" data-pane="sdjwt"> <h3 class="text-sm text-white/70">SD-JWT VC — decoded payload + disclosures</h3> <figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">sd-jwt-vc/example.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;Decoded SD-JWT VC for Boarding Pass (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Run `pnpm seal` to populate digests/_sd/combinedIssuance.&#34;,
+  &#34;spec&#34;: &#34;draft-ietf-oauth-sd-jwt-vc-16&#34;,
+  &#34;sealed&#34;: true,
+  &#34;issuerSignedPayload&#34;: {
+    &#34;iss&#34;: &#34;https://checkin.glide-air.example&#34;,
+    &#34;vct&#34;: &#34;https://schemas.glideidentity.app/vct/boarding-pass&#34;,
+    &#34;iat&#34;: 1781935200,
+    &#34;exp&#34;: 1781955900,
+    &#34;cnf&#34;: {
+      &#34;jwk&#34;: {
+        &#34;kty&#34;: &#34;EC&#34;,
+        &#34;crv&#34;: &#34;P-256&#34;,
+        &#34;x&#34;: &#34;TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc&#34;,
+        &#34;y&#34;: &#34;ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ&#34;
+      }
+    },
+    &#34;_sd_alg&#34;: &#34;sha-256&#34;,
+    &#34;_sd&#34;: [
+      &#34;245G3gUEVHp4PHn-2Wyafnjy-uhhIw5X2ey_pSBxKew&#34;,
+      &#34;8Ae9N23Lj-IyxDu0BJAR7wyNTpoiK_tQ1QFjVsDJuW8&#34;,
+      &#34;F83LZWiZeqytizbouilhLa-6NfE85nGZ-sagyVjQQ64&#34;,
+      &#34;Oxwccs4L27Ds5rW8fvbilPbwbbCTFAj8uy9D_i2SfAM&#34;,
+      &#34;RZq6npH-deUdTmkC77XGy13dx8IwZ-DYN5U33uMVhI0&#34;,
+      &#34;hUQqj-3jF5KKwnVEjSLibPFNMIYRHZRP3A4l32DF2n0&#34;,
+      &#34;mtGR87P2FznZfkKiXBLocGQD6lmOZqGSd2XzEc6krSs&#34;,
+      &#34;mz-jnJs3eblAxj-WKo08Vp-IJdgp21BrW8TMZKPnlbU&#34;,
+      &#34;p0VxvIO0plZqub6dKw0z83Yk2IwLOkOxTj3K8xf9G34&#34;
+    ]
+  },
+  &#34;disclosures&#34;: [
+    {
+      &#34;salt&#34;: &#34;glide-bp-salt-passenger0&#34;,
+      &#34;claim&#34;: &#34;passenger_name&#34;,
+      &#34;value&#34;: &#34;AVERY/JORDAN&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1icC1zYWx0LXBhc3NlbmdlcjAiLCJwYXNzZW5nZXJfbmFtZSIsIkFWRVJZL0pPUkRBTiJd&#34;,
+      &#34;digest&#34;: &#34;245G3gUEVHp4PHn-2Wyafnjy-uhhIw5X2ey_pSBxKew&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-bp-salt-carrier001&#34;,
+      &#34;claim&#34;: &#34;carrier&#34;,
+      &#34;value&#34;: &#34;GA&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1icC1zYWx0LWNhcnJpZXIwMDEiLCJjYXJyaWVyIiwiR0EiXQ&#34;,
+      &#34;digest&#34;: &#34;mtGR87P2FznZfkKiXBLocGQD6lmOZqGSd2XzEc6krSs&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-bp-salt-flight0001&#34;,
+      &#34;claim&#34;: &#34;flight_number&#34;,
+      &#34;value&#34;: &#34;GA417&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1icC1zYWx0LWZsaWdodDAwMDEiLCJmbGlnaHRfbnVtYmVyIiwiR0E0MTciXQ&#34;,
+      &#34;digest&#34;: &#34;8Ae9N23Lj-IyxDu0BJAR7wyNTpoiK_tQ1QFjVsDJuW8&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-bp-salt-origin0001&#34;,
+      &#34;claim&#34;: &#34;origin&#34;,
+      &#34;value&#34;: &#34;ARN&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1icC1zYWx0LW9yaWdpbjAwMDEiLCJvcmlnaW4iLCJBUk4iXQ&#34;,
+      &#34;digest&#34;: &#34;mz-jnJs3eblAxj-WKo08Vp-IJdgp21BrW8TMZKPnlbU&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-bp-salt-dest00001&#34;,
+      &#34;claim&#34;: &#34;destination&#34;,
+      &#34;value&#34;: &#34;LHR&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1icC1zYWx0LWRlc3QwMDAwMSIsImRlc3RpbmF0aW9uIiwiTEhSIl0&#34;,
+      &#34;digest&#34;: &#34;F83LZWiZeqytizbouilhLa-6NfE85nGZ-sagyVjQQ64&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-bp-salt-deptime01&#34;,
+      &#34;claim&#34;: &#34;departure_time&#34;,
+      &#34;value&#34;: &#34;2026-06-20T09:45:00+02:00&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1icC1zYWx0LWRlcHRpbWUwMSIsImRlcGFydHVyZV90aW1lIiwiMjAyNi0wNi0yMFQwOTo0NTowMCswMjowMCJd&#34;,
+      &#34;digest&#34;: &#34;RZq6npH-deUdTmkC77XGy13dx8IwZ-DYN5U33uMVhI0&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-bp-salt-seat00001&#34;,
+      &#34;claim&#34;: &#34;seat&#34;,
+      &#34;value&#34;: &#34;14C&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1icC1zYWx0LXNlYXQwMDAwMSIsInNlYXQiLCIxNEMiXQ&#34;,
+      &#34;digest&#34;: &#34;hUQqj-3jF5KKwnVEjSLibPFNMIYRHZRP3A4l32DF2n0&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-bp-salt-group0001&#34;,
+      &#34;claim&#34;: &#34;boarding_group&#34;,
+      &#34;value&#34;: &#34;B&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1icC1zYWx0LWdyb3VwMDAwMSIsImJvYXJkaW5nX2dyb3VwIiwiQiJd&#34;,
+      &#34;digest&#34;: &#34;Oxwccs4L27Ds5rW8fvbilPbwbbCTFAj8uy9D_i2SfAM&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-bp-salt-pnr000001&#34;,
+      &#34;claim&#34;: &#34;pnr&#34;,
+      &#34;value&#34;: &#34;X4F2QJ&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1icC1zYWx0LXBucjAwMDAwMSIsInBuciIsIlg0RjJRSiJd&#34;,
+      &#34;digest&#34;: &#34;p0VxvIO0plZqub6dKw0z83Yk2IwLOkOxTj3K8xf9G34&#34;
+    }
+  ],
+  &#34;presentation&#34;: {
+    &#34;$comment&#34;: &#34;At the gate the holder discloses flight + seat + group, not their name or PNR.&#34;,
+    &#34;discloses&#34;: [
+      &#34;carrier&#34;,
+      &#34;flight_number&#34;,
+      &#34;origin&#34;,
+      &#34;destination&#34;,
+      &#34;departure_time&#34;,
+      &#34;seat&#34;,
+      &#34;boarding_group&#34;
+    ]
+  },
+  &#34;combinedIssuance&#34;: &#34;<issuer-signed-jwt>~WyJnbGlkZS1icC1zYWx0LXBhc3NlbmdlcjAiLCJwYXNzZW5nZXJfbmFtZSIsIkFWRVJZL0pPUkRBTiJd~WyJnbGlkZS1icC1zYWx0LWNhcnJpZXIwMDEiLCJjYXJyaWVyIiwiR0EiXQ~WyJnbGlkZS1icC1zYWx0LWZsaWdodDAwMDEiLCJmbGlnaHRfbnVtYmVyIiwiR0E0MTciXQ~WyJnbGlkZS1icC1zYWx0LW9yaWdpbjAwMDEiLCJvcmlnaW4iLCJBUk4iXQ~WyJnbGlkZS1icC1zYWx0LWRlc3QwMDAwMSIsImRlc3RpbmF0aW9uIiwiTEhSIl0~WyJnbGlkZS1icC1zYWx0LWRlcHRpbWUwMSIsImRlcGFydHVyZV90aW1lIiwiMjAyNi0wNi0yMFQwOTo0NTowMCswMjowMCJd~WyJnbGlkZS1icC1zYWx0LXNlYXQwMDAwMSIsInNlYXQiLCIxNEMiXQ~WyJnbGlkZS1icC1zYWx0LWdyb3VwMDAwMSIsImJvYXJkaW5nX2dyb3VwIiwiQiJd~WyJnbGlkZS1icC1zYWx0LXBucjAwMDAwMSIsInBuciIsIlg0RjJRSiJd~&#34;
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;Decoded SD-JWT VC for Boarding Pass (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Run `pnpm seal` to populate digests/_sd/combinedIssuance.&quot;,
+  &quot;spec&quot;: &quot;draft-ietf-oauth-sd-jwt-vc-16&quot;,
+  &quot;sealed&quot;: true,
+  &quot;issuerSignedPayload&quot;: {
+    &quot;iss&quot;: &quot;https://checkin.glide-air.example&quot;,
+    &quot;vct&quot;: &quot;https://schemas.glideidentity.app/vct/boarding-pass&quot;,
+    &quot;iat&quot;: 1781935200,
+    &quot;exp&quot;: 1781955900,
+    &quot;cnf&quot;: {
+      &quot;jwk&quot;: {
+        &quot;kty&quot;: &quot;EC&quot;,
+        &quot;crv&quot;: &quot;P-256&quot;,
+        &quot;x&quot;: &quot;TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc&quot;,
+        &quot;y&quot;: &quot;ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ&quot;
+      }
+    },
+    &quot;_sd_alg&quot;: &quot;sha-256&quot;,
+    &quot;_sd&quot;: [
+      &quot;245G3gUEVHp4PHn-2Wyafnjy-uhhIw5X2ey_pSBxKew&quot;,
+      &quot;8Ae9N23Lj-IyxDu0BJAR7wyNTpoiK_tQ1QFjVsDJuW8&quot;,
+      &quot;F83LZWiZeqytizbouilhLa-6NfE85nGZ-sagyVjQQ64&quot;,
+      &quot;Oxwccs4L27Ds5rW8fvbilPbwbbCTFAj8uy9D_i2SfAM&quot;,
+      &quot;RZq6npH-deUdTmkC77XGy13dx8IwZ-DYN5U33uMVhI0&quot;,
+      &quot;hUQqj-3jF5KKwnVEjSLibPFNMIYRHZRP3A4l32DF2n0&quot;,
+      &quot;mtGR87P2FznZfkKiXBLocGQD6lmOZqGSd2XzEc6krSs&quot;,
+      &quot;mz-jnJs3eblAxj-WKo08Vp-IJdgp21BrW8TMZKPnlbU&quot;,
+      &quot;p0VxvIO0plZqub6dKw0z83Yk2IwLOkOxTj3K8xf9G34&quot;
+    ]
+  },
+  &quot;disclosures&quot;: [
+    {
+      &quot;salt&quot;: &quot;glide-bp-salt-passenger0&quot;,
+      &quot;claim&quot;: &quot;passenger_name&quot;,
+      &quot;value&quot;: &quot;AVERY/JORDAN&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1icC1zYWx0LXBhc3NlbmdlcjAiLCJwYXNzZW5nZXJfbmFtZSIsIkFWRVJZL0pPUkRBTiJd&quot;,
+      &quot;digest&quot;: &quot;245G3gUEVHp4PHn-2Wyafnjy-uhhIw5X2ey_pSBxKew&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-bp-salt-carrier001&quot;,
+      &quot;claim&quot;: &quot;carrier&quot;,
+      &quot;value&quot;: &quot;GA&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1icC1zYWx0LWNhcnJpZXIwMDEiLCJjYXJyaWVyIiwiR0EiXQ&quot;,
+      &quot;digest&quot;: &quot;mtGR87P2FznZfkKiXBLocGQD6lmOZqGSd2XzEc6krSs&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-bp-salt-flight0001&quot;,
+      &quot;claim&quot;: &quot;flight_number&quot;,
+      &quot;value&quot;: &quot;GA417&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1icC1zYWx0LWZsaWdodDAwMDEiLCJmbGlnaHRfbnVtYmVyIiwiR0E0MTciXQ&quot;,
+      &quot;digest&quot;: &quot;8Ae9N23Lj-IyxDu0BJAR7wyNTpoiK_tQ1QFjVsDJuW8&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-bp-salt-origin0001&quot;,
+      &quot;claim&quot;: &quot;origin&quot;,
+      &quot;value&quot;: &quot;ARN&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1icC1zYWx0LW9yaWdpbjAwMDEiLCJvcmlnaW4iLCJBUk4iXQ&quot;,
+      &quot;digest&quot;: &quot;mz-jnJs3eblAxj-WKo08Vp-IJdgp21BrW8TMZKPnlbU&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-bp-salt-dest00001&quot;,
+      &quot;claim&quot;: &quot;destination&quot;,
+      &quot;value&quot;: &quot;LHR&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1icC1zYWx0LWRlc3QwMDAwMSIsImRlc3RpbmF0aW9uIiwiTEhSIl0&quot;,
+      &quot;digest&quot;: &quot;F83LZWiZeqytizbouilhLa-6NfE85nGZ-sagyVjQQ64&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-bp-salt-deptime01&quot;,
+      &quot;claim&quot;: &quot;departure_time&quot;,
+      &quot;value&quot;: &quot;2026-06-20T09:45:00+02:00&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1icC1zYWx0LWRlcHRpbWUwMSIsImRlcGFydHVyZV90aW1lIiwiMjAyNi0wNi0yMFQwOTo0NTowMCswMjowMCJd&quot;,
+      &quot;digest&quot;: &quot;RZq6npH-deUdTmkC77XGy13dx8IwZ-DYN5U33uMVhI0&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-bp-salt-seat00001&quot;,
+      &quot;claim&quot;: &quot;seat&quot;,
+      &quot;value&quot;: &quot;14C&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1icC1zYWx0LXNlYXQwMDAwMSIsInNlYXQiLCIxNEMiXQ&quot;,
+      &quot;digest&quot;: &quot;hUQqj-3jF5KKwnVEjSLibPFNMIYRHZRP3A4l32DF2n0&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-bp-salt-group0001&quot;,
+      &quot;claim&quot;: &quot;boarding_group&quot;,
+      &quot;value&quot;: &quot;B&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1icC1zYWx0LWdyb3VwMDAwMSIsImJvYXJkaW5nX2dyb3VwIiwiQiJd&quot;,
+      &quot;digest&quot;: &quot;Oxwccs4L27Ds5rW8fvbilPbwbbCTFAj8uy9D_i2SfAM&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-bp-salt-pnr000001&quot;,
+      &quot;claim&quot;: &quot;pnr&quot;,
+      &quot;value&quot;: &quot;X4F2QJ&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1icC1zYWx0LXBucjAwMDAwMSIsInBuciIsIlg0RjJRSiJd&quot;,
+      &quot;digest&quot;: &quot;p0VxvIO0plZqub6dKw0z83Yk2IwLOkOxTj3K8xf9G34&quot;
+    }
+  ],
+  &quot;presentation&quot;: {
+    &quot;$comment&quot;: &quot;At the gate the holder discloses flight + seat + group, not their name or PNR.&quot;,
+    &quot;discloses&quot;: [
+      &quot;carrier&quot;,
+      &quot;flight_number&quot;,
+      &quot;origin&quot;,
+      &quot;destination&quot;,
+      &quot;departure_time&quot;,
+      &quot;seat&quot;,
+      &quot;boarding_group&quot;
+    ]
+  },
+  &quot;combinedIssuance&quot;: &quot;&lt;issuer-signed-jwt&gt;~WyJnbGlkZS1icC1zYWx0LXBhc3NlbmdlcjAiLCJwYXNzZW5nZXJfbmFtZSIsIkFWRVJZL0pPUkRBTiJd~WyJnbGlkZS1icC1zYWx0LWNhcnJpZXIwMDEiLCJjYXJyaWVyIiwiR0EiXQ~WyJnbGlkZS1icC1zYWx0LWZsaWdodDAwMDEiLCJmbGlnaHRfbnVtYmVyIiwiR0E0MTciXQ~WyJnbGlkZS1icC1zYWx0LW9yaWdpbjAwMDEiLCJvcmlnaW4iLCJBUk4iXQ~WyJnbGlkZS1icC1zYWx0LWRlc3QwMDAwMSIsImRlc3RpbmF0aW9uIiwiTEhSIl0~WyJnbGlkZS1icC1zYWx0LWRlcHRpbWUwMSIsImRlcGFydHVyZV90aW1lIiwiMjAyNi0wNi0yMFQwOTo0NTowMCswMjowMCJd~WyJnbGlkZS1icC1zYWx0LXNlYXQwMDAwMSIsInNlYXQiLCIxNEMiXQ~WyJnbGlkZS1icC1zYWx0LWdyb3VwMDAwMSIsImJvYXJkaW5nX2dyb3VwIiwiQiJd~WyJnbGlkZS1icC1zYWx0LXBucjAwMDAwMSIsInBuciIsIlg0RjJRSiJd~&quot;
+}</code></pre> </figure>  <details class="card px-4 py-2 text-sm text-white/70"> <summary class="cursor-pointer">VC Type Metadata</summary> <div class="mt-3"><figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">sd-jwt-vc/vct-metadata.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;SD-JWT VC Type Metadata for Boarding Pass. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.&#34;,
+  &#34;vct&#34;: &#34;https://schemas.glideidentity.app/vct/boarding-pass&#34;,
+  &#34;name&#34;: &#34;Boarding Pass&#34;,
+  &#34;description&#34;: &#34;A flight boarding pass: passenger, carrier, flight, route, departure, seat, boarding group, and disclosable PNR.&#34;,
+  &#34;display&#34;: [
+    {
+      &#34;lang&#34;: &#34;en-US&#34;,
+      &#34;name&#34;: &#34;Boarding Pass&#34;,
+      &#34;description&#34;: &#34;Your verifiable boarding pass.&#34;
+    }
+  ],
+  &#34;claims&#34;: [
+    {
+      &#34;path&#34;: [&#34;passenger_name&#34;],
+      &#34;sd&#34;: &#34;always&#34;,
+      &#34;display&#34;: [
+        {
+          &#34;lang&#34;: &#34;en-US&#34;,
+          &#34;label&#34;: &#34;Passenger&#34;,
+          &#34;description&#34;: &#34;Identifying; keep selectively disclosable.&#34;
+        }
+      ]
+    },
+    {
+      &#34;path&#34;: [&#34;carrier&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Carrier&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;flight_number&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Flight&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;origin&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;From&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;destination&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;To&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;departure_time&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Departs&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;seat&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Seat&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;boarding_group&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Group&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;pnr&#34;],
+      &#34;sd&#34;: &#34;always&#34;,
+      &#34;display&#34;: [
+        {
+          &#34;lang&#34;: &#34;en-US&#34;,
+          &#34;label&#34;: &#34;Booking ref (PNR)&#34;,
+          &#34;description&#34;: &#34;Sensitive booking key; keep selectively disclosable.&#34;
+        }
+      ]
+    }
+  ],
+  &#34;schema_uri&#34;: &#34;https://schemas.glideidentity.app/schemas/boarding-pass.schema.json&#34;
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;SD-JWT VC Type Metadata for Boarding Pass. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.&quot;,
+  &quot;vct&quot;: &quot;https://schemas.glideidentity.app/vct/boarding-pass&quot;,
+  &quot;name&quot;: &quot;Boarding Pass&quot;,
+  &quot;description&quot;: &quot;A flight boarding pass: passenger, carrier, flight, route, departure, seat, boarding group, and disclosable PNR.&quot;,
+  &quot;display&quot;: [
+    {
+      &quot;lang&quot;: &quot;en-US&quot;,
+      &quot;name&quot;: &quot;Boarding Pass&quot;,
+      &quot;description&quot;: &quot;Your verifiable boarding pass.&quot;
+    }
+  ],
+  &quot;claims&quot;: [
+    {
+      &quot;path&quot;: [&quot;passenger_name&quot;],
+      &quot;sd&quot;: &quot;always&quot;,
+      &quot;display&quot;: [
+        {
+          &quot;lang&quot;: &quot;en-US&quot;,
+          &quot;label&quot;: &quot;Passenger&quot;,
+          &quot;description&quot;: &quot;Identifying; keep selectively disclosable.&quot;
+        }
+      ]
+    },
+    {
+      &quot;path&quot;: [&quot;carrier&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Carrier&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;flight_number&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Flight&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;origin&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;From&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;destination&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;To&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;departure_time&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Departs&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;seat&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Seat&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;boarding_group&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Group&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;pnr&quot;],
+      &quot;sd&quot;: &quot;always&quot;,
+      &quot;display&quot;: [
+        {
+          &quot;lang&quot;: &quot;en-US&quot;,
+          &quot;label&quot;: &quot;Booking ref (PNR)&quot;,
+          &quot;description&quot;: &quot;Sensitive booking key; keep selectively disclosable.&quot;
+        }
+      ]
+    }
+  ],
+  &quot;schema_uri&quot;: &quot;https://schemas.glideidentity.app/schemas/boarding-pass.schema.json&quot;
+}</code></pre> </figure> </div> </details> </div> </div> </div>  </div> </section> <section class="mt-12"> <h2 class="text-2xl">JSON Schema</h2> <p class="mt-2 text-sm text-white/60">
+The shared claim set both formats validate against (Draft 2020-12).
+</p> <div class="mt-4"> <figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">schema.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$schema&#34;: &#34;https://json-schema.org/draft/2020-12/schema&#34;,
+  &#34;$id&#34;: &#34;https://schemas.glideidentity.app/schemas/boarding-pass.schema.json&#34;,
+  &#34;$comment&#34;: &#34;Claim set for Boarding Pass. IATA codes validated by pattern. JSON Schema Draft 2020-12.&#34;,
+  &#34;title&#34;: &#34;Boarding Pass claim set&#34;,
+  &#34;type&#34;: &#34;object&#34;,
+  &#34;properties&#34;: {
+    &#34;passenger_name&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;examples&#34;: [&#34;AVERY/JORDAN&#34;]
+    },
+    &#34;carrier&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;pattern&#34;: &#34;^[A-Z0-9]{2}$&#34;,
+      &#34;description&#34;: &#34;IATA airline designator (2 chars).&#34;,
+      &#34;examples&#34;: [&#34;GA&#34;]
+    },
+    &#34;flight_number&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;pattern&#34;: &#34;^[A-Z0-9]{2}[0-9]{1,4}$&#34;,
+      &#34;description&#34;: &#34;Carrier code + numeric flight number.&#34;,
+      &#34;examples&#34;: [&#34;GA417&#34;]
+    },
+    &#34;origin&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;format&#34;: &#34;iata-airport&#34;,
+      &#34;description&#34;: &#34;IATA airport code of departure.&#34;,
+      &#34;examples&#34;: [&#34;ARN&#34;]
+    },
+    &#34;destination&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;format&#34;: &#34;iata-airport&#34;,
+      &#34;description&#34;: &#34;IATA airport code of arrival.&#34;,
+      &#34;examples&#34;: [&#34;LHR&#34;]
+    },
+    &#34;departure_time&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;format&#34;: &#34;date-time&#34;,
+      &#34;description&#34;: &#34;Scheduled departure (local time with offset).&#34;
+    },
+    &#34;seat&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;examples&#34;: [&#34;14C&#34;]
+    },
+    &#34;boarding_group&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;examples&#34;: [&#34;B&#34;]
+    },
+    &#34;pnr&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;description&#34;: &#34;Passenger Name Record / booking reference. Disclosable.&#34;,
+      &#34;examples&#34;: [&#34;X4F2QJ&#34;]
+    }
+  },
+  &#34;required&#34;: [
+    &#34;passenger_name&#34;,
+    &#34;carrier&#34;,
+    &#34;flight_number&#34;,
+    &#34;origin&#34;,
+    &#34;destination&#34;,
+    &#34;departure_time&#34;
+  ],
+  &#34;additionalProperties&#34;: false
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$schema&quot;: &quot;https://json-schema.org/draft/2020-12/schema&quot;,
+  &quot;$id&quot;: &quot;https://schemas.glideidentity.app/schemas/boarding-pass.schema.json&quot;,
+  &quot;$comment&quot;: &quot;Claim set for Boarding Pass. IATA codes validated by pattern. JSON Schema Draft 2020-12.&quot;,
+  &quot;title&quot;: &quot;Boarding Pass claim set&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;passenger_name&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;examples&quot;: [&quot;AVERY/JORDAN&quot;]
+    },
+    &quot;carrier&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;pattern&quot;: &quot;^[A-Z0-9]{2}$&quot;,
+      &quot;description&quot;: &quot;IATA airline designator (2 chars).&quot;,
+      &quot;examples&quot;: [&quot;GA&quot;]
+    },
+    &quot;flight_number&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;pattern&quot;: &quot;^[A-Z0-9]{2}[0-9]{1,4}$&quot;,
+      &quot;description&quot;: &quot;Carrier code + numeric flight number.&quot;,
+      &quot;examples&quot;: [&quot;GA417&quot;]
+    },
+    &quot;origin&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;format&quot;: &quot;iata-airport&quot;,
+      &quot;description&quot;: &quot;IATA airport code of departure.&quot;,
+      &quot;examples&quot;: [&quot;ARN&quot;]
+    },
+    &quot;destination&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;format&quot;: &quot;iata-airport&quot;,
+      &quot;description&quot;: &quot;IATA airport code of arrival.&quot;,
+      &quot;examples&quot;: [&quot;LHR&quot;]
+    },
+    &quot;departure_time&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;format&quot;: &quot;date-time&quot;,
+      &quot;description&quot;: &quot;Scheduled departure (local time with offset).&quot;
+    },
+    &quot;seat&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;examples&quot;: [&quot;14C&quot;]
+    },
+    &quot;boarding_group&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;examples&quot;: [&quot;B&quot;]
+    },
+    &quot;pnr&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Passenger Name Record / booking reference. Disclosable.&quot;,
+      &quot;examples&quot;: [&quot;X4F2QJ&quot;]
+    }
+  },
+  &quot;required&quot;: [
+    &quot;passenger_name&quot;,
+    &quot;carrier&quot;,
+    &quot;flight_number&quot;,
+    &quot;origin&quot;,
+    &quot;destination&quot;,
+    &quot;departure_time&quot;
+  ],
+  &quot;additionalProperties&quot;: false
+}</code></pre> </figure>  </div> </section>  </main> <footer class="border-t border-white/10"> <div class="mx-auto max-w-6xl px-6 py-8 text-sm text-white/50"> <p>
+Glide Identity credential schemas · Apache-2.0 · W3C VC 2.0 + SD-JWT VC (draft-16).
+          Examples use fake data.
+</p> </div> </footer> </body></html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Bank ID · Glide Schemas</title><meta name="description" content="Bank-issued identity credential with verified KYC level and jurisdiction. Carries a national-ID linkage flag, never the national ID itself."><link rel="icon" type="image/svg+xml" href="/credential-schemas/logo.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/credential-schemas/_astro/index.Ba5BVslr.css"><script type="module" src="/credential-schemas/_astro/hoisted.D4-KJleG.js"></script></head> <body> <header class="sticky top-0 z-20 border-b border-white/10 bg-brand-900/70 backdrop-blur"> <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"> <a href="/credential-schemas/" class="flex items-center gap-3"> <img src="/credential-schemas/logo.svg" alt="Glide Identity" class="h-7 w-7"> <span class="font-heading text-white">Glide <span class="text-white/60">Schemas</span></span> </a> <nav class="flex items-center gap-1 text-sm"> <a href="/credential-schemas/" class="rounded-lg px-3 py-1.5 text-white/70 hover:text-white"> Home </a><a href="/credential-schemas/registry" class="rounded-lg px-3 py-1.5 text-white bg-white/10"> Schemas </a><a href="/credential-schemas/docs" class="rounded-lg px-3 py-1.5 text-white/70 hover:text-white"> Developer docs </a> </nav> </div> </header> <main class="mx-auto max-w-6xl px-6 py-12">  <a href="/credential-schemas/registry" class="text-sm text-white/60 hover:text-white">← All schemas</a> <header class="mt-4"> <h1 class="text-3xl">Bank ID</h1> <p class="mt-3 max-w-3xl text-white/70">Bank-issued identity credential with verified KYC level and jurisdiction. Carries a national-ID linkage flag, never the national ID itself.</p> <div class="mt-4 grid gap-2 text-sm sm:grid-cols-2"> <div class="card px-4 py-3"> <div class="text-xs uppercase tracking-wide text-white/40">SD-JWT VC vct</div> <div class="mt-1 break-all font-grotesk accent">https://schemas.glideidentity.app/vct/bank-id</div> </div> <div class="card px-4 py-3"> <div class="text-xs uppercase tracking-wide text-white/40">JSON-LD @context</div> <div class="mt-1 break-all font-grotesk text-white/80">https://schemas.glideidentity.app/contexts/bank-id.jsonld</div> </div> </div> </header> <section class="mt-10"> <h2 class="text-2xl">Claims</h2> <div class="card mt-4 overflow-x-auto"> <table class="w-full text-left text-sm"> <thead class="border-b border-white/10 text-white/60"> <tr> <th class="px-4 py-3 font-medium">Claim</th> <th class="px-4 py-3 font-medium">Type</th> <th class="px-4 py-3 font-medium">Required</th> <th class="px-4 py-3 font-medium">Selectively disclosable</th> <th class="px-4 py-3 font-medium">Notes</th> </tr> </thead> <tbody> <tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">issuing_institution</td> <td class="px-4 py-3 text-white/70">string</td> <td class="px-4 py-3 text-white/70">Yes</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">Name of the issuing financial institution.</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">account_holder_name</td> <td class="px-4 py-3 text-white/70">string</td> <td class="px-4 py-3 text-white/70">Yes</td> <td class="px-4 py-3"> <span class="chip">always</span> </td> <td class="px-4 py-3 text-white/60">Verified legal name of the account holder.</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">kyc_level</td> <td class="px-4 py-3 text-white/70">enum(basic | standard | enhanced)</td> <td class="px-4 py-3 text-white/70">Yes</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">Verified Know-Your-Customer assurance level.</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">jurisdiction</td> <td class="px-4 py-3 text-white/70">string</td> <td class="px-4 py-3 text-white/70">Yes</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">ISO 3166-1 alpha-2 country code of the regulating jurisdiction.</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">national_id_linked</td> <td class="px-4 py-3 text-white/70">boolean</td> <td class="px-4 py-3 text-white/70">No</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">Whether a national ID was verified and linked at the bank. The national ID itself is NEVER included.</td> </tr> </tbody> </table> </div> <p class="mt-2 text-xs text-white/40">
+Auto-derived from <code>schema.json</code> + SD-JWT VC type metadata. <code>always</code> =
+      issuer MUST make selectively disclosable; <code>allowed</code> = MAY; <code>—</code> = not
+      individually disclosable.
+</p> </section> <section class="mt-12"> <h2 class="text-2xl">Examples</h2> <p class="mt-2 text-sm text-white/60">Both representations of the same fake credential.</p> <div class="mt-4"> <div class="format-tabs" data-format="jsonld"> <div class="mb-4 inline-flex rounded-xl border border-white/15 p-1 text-sm"> <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="jsonld" type="button">
+W3C VC 2.0 (JSON-LD)
+</button> <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="sdjwt" type="button">
+SD-JWT VC
+</button> <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="both" type="button">
+Side by side
+</button> </div> <div class="grid gap-6 md:grid-cols-2"> <div class="fmt-pane space-y-3" data-pane="jsonld"> <h3 class="text-sm text-white/70">W3C VC 2.0 — example credential</h3> <figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">jsonld/example.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;Example W3C VC 2.0 Bank ID credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).&#34;,
+  &#34;@context&#34;: [
+    &#34;https://www.w3.org/ns/credentials/v2&#34;,
+    &#34;https://schemas.glideidentity.app/contexts/bank-id.jsonld&#34;
+  ],
+  &#34;type&#34;: [&#34;VerifiableCredential&#34;, &#34;BankIdCredential&#34;],
+  &#34;issuer&#34;: &#34;https://id.firstmeridian.example&#34;,
+  &#34;validFrom&#34;: &#34;2026-01-20T10:00:00Z&#34;,
+  &#34;validUntil&#34;: &#34;2029-01-20T10:00:00Z&#34;,
+  &#34;credentialSubject&#34;: {
+    &#34;id&#34;: &#34;did:example:holder-bank-0001&#34;,
+    &#34;issuing_institution&#34;: &#34;First Meridian Bank&#34;,
+    &#34;account_holder_name&#34;: &#34;Jordan Avery&#34;,
+    &#34;kyc_level&#34;: &#34;enhanced&#34;,
+    &#34;jurisdiction&#34;: &#34;SE&#34;,
+    &#34;national_id_linked&#34;: true
+  }
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;Example W3C VC 2.0 Bank ID credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).&quot;,
+  &quot;@context&quot;: [
+    &quot;https://www.w3.org/ns/credentials/v2&quot;,
+    &quot;https://schemas.glideidentity.app/contexts/bank-id.jsonld&quot;
+  ],
+  &quot;type&quot;: [&quot;VerifiableCredential&quot;, &quot;BankIdCredential&quot;],
+  &quot;issuer&quot;: &quot;https://id.firstmeridian.example&quot;,
+  &quot;validFrom&quot;: &quot;2026-01-20T10:00:00Z&quot;,
+  &quot;validUntil&quot;: &quot;2029-01-20T10:00:00Z&quot;,
+  &quot;credentialSubject&quot;: {
+    &quot;id&quot;: &quot;did:example:holder-bank-0001&quot;,
+    &quot;issuing_institution&quot;: &quot;First Meridian Bank&quot;,
+    &quot;account_holder_name&quot;: &quot;Jordan Avery&quot;,
+    &quot;kyc_level&quot;: &quot;enhanced&quot;,
+    &quot;jurisdiction&quot;: &quot;SE&quot;,
+    &quot;national_id_linked&quot;: true
+  }
+}</code></pre> </figure>  <details class="card px-4 py-2 text-sm text-white/70"> <summary class="cursor-pointer">JSON-LD @context</summary> <div class="mt-3"><figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">jsonld/context.jsonld</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;Glide Identity — Bank ID JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.&#34;,
+  &#34;@context&#34;: {
+    &#34;@protected&#34;: true,
+    &#34;BankIdCredential&#34;: &#34;https://schemas.glideidentity.app/contexts/bank-id.jsonld#BankIdCredential&#34;,
+    &#34;glide&#34;: &#34;https://schemas.glideidentity.app/vocab#&#34;,
+    &#34;issuing_institution&#34;: {
+      &#34;@id&#34;: &#34;glide:issuing_institution&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34;
+    },
+    &#34;account_holder_name&#34;: {
+      &#34;@id&#34;: &#34;glide:account_holder_name&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34;
+    },
+    &#34;kyc_level&#34;: { &#34;@id&#34;: &#34;glide:kyc_level&#34;, &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34; },
+    &#34;jurisdiction&#34;: {
+      &#34;@id&#34;: &#34;glide:jurisdiction&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34;
+    },
+    &#34;national_id_linked&#34;: {
+      &#34;@id&#34;: &#34;glide:national_id_linked&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#boolean&#34;
+    }
+  }
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;Glide Identity — Bank ID JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.&quot;,
+  &quot;@context&quot;: {
+    &quot;@protected&quot;: true,
+    &quot;BankIdCredential&quot;: &quot;https://schemas.glideidentity.app/contexts/bank-id.jsonld#BankIdCredential&quot;,
+    &quot;glide&quot;: &quot;https://schemas.glideidentity.app/vocab#&quot;,
+    &quot;issuing_institution&quot;: {
+      &quot;@id&quot;: &quot;glide:issuing_institution&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot;
+    },
+    &quot;account_holder_name&quot;: {
+      &quot;@id&quot;: &quot;glide:account_holder_name&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot;
+    },
+    &quot;kyc_level&quot;: { &quot;@id&quot;: &quot;glide:kyc_level&quot;, &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot; },
+    &quot;jurisdiction&quot;: {
+      &quot;@id&quot;: &quot;glide:jurisdiction&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot;
+    },
+    &quot;national_id_linked&quot;: {
+      &quot;@id&quot;: &quot;glide:national_id_linked&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#boolean&quot;
+    }
+  }
+}</code></pre> </figure> </div> </details> </div> <div class="fmt-pane space-y-3" data-pane="sdjwt"> <h3 class="text-sm text-white/70">SD-JWT VC — decoded payload + disclosures</h3> <figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">sd-jwt-vc/example.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;Decoded SD-JWT VC for Bank ID (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Run `pnpm seal` to populate digests/_sd/combinedIssuance.&#34;,
+  &#34;spec&#34;: &#34;draft-ietf-oauth-sd-jwt-vc-16&#34;,
+  &#34;sealed&#34;: true,
+  &#34;issuerSignedPayload&#34;: {
+    &#34;iss&#34;: &#34;https://id.firstmeridian.example&#34;,
+    &#34;vct&#34;: &#34;https://schemas.glideidentity.app/vct/bank-id&#34;,
+    &#34;iat&#34;: 1768903200,
+    &#34;exp&#34;: 1863511200,
+    &#34;cnf&#34;: {
+      &#34;jwk&#34;: {
+        &#34;kty&#34;: &#34;EC&#34;,
+        &#34;crv&#34;: &#34;P-256&#34;,
+        &#34;x&#34;: &#34;TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc&#34;,
+        &#34;y&#34;: &#34;ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ&#34;
+      }
+    },
+    &#34;_sd_alg&#34;: &#34;sha-256&#34;,
+    &#34;_sd&#34;: [
+      &#34;B6hcH_TWhJ2KTFgfkOSy00vEV0kEtXNVK8XWSdzNE54&#34;,
+      &#34;MHnopf5c9-J2ZxGNJepY66xaoAPe8Y3c0PAStZj8ymQ&#34;,
+      &#34;ji81rSeKLYZ7J1vWiFY28fpN1hKAb7umsKUc-6-mqVM&#34;,
+      &#34;pL_azo5pcd8SeK4ahzUNKkc3AEHVfmPLqKzyohLUF3I&#34;,
+      &#34;xOcalakukHoN_dDgN2Wxe0b1ECSWLxiRCQkN6IESzjs&#34;
+    ]
+  },
+  &#34;disclosures&#34;: [
+    {
+      &#34;salt&#34;: &#34;glide-bank-salt-inst0001&#34;,
+      &#34;claim&#34;: &#34;issuing_institution&#34;,
+      &#34;value&#34;: &#34;First Meridian Bank&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1iYW5rLXNhbHQtaW5zdDAwMDEiLCJpc3N1aW5nX2luc3RpdHV0aW9uIiwiRmlyc3QgTWVyaWRpYW4gQmFuayJd&#34;,
+      &#34;digest&#34;: &#34;ji81rSeKLYZ7J1vWiFY28fpN1hKAb7umsKUc-6-mqVM&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-bank-salt-holder01&#34;,
+      &#34;claim&#34;: &#34;account_holder_name&#34;,
+      &#34;value&#34;: &#34;Jordan Avery&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1iYW5rLXNhbHQtaG9sZGVyMDEiLCJhY2NvdW50X2hvbGRlcl9uYW1lIiwiSm9yZGFuIEF2ZXJ5Il0&#34;,
+      &#34;digest&#34;: &#34;B6hcH_TWhJ2KTFgfkOSy00vEV0kEtXNVK8XWSdzNE54&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-bank-salt-kyc00001&#34;,
+      &#34;claim&#34;: &#34;kyc_level&#34;,
+      &#34;value&#34;: &#34;enhanced&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1iYW5rLXNhbHQta3ljMDAwMDEiLCJreWNfbGV2ZWwiLCJlbmhhbmNlZCJd&#34;,
+      &#34;digest&#34;: &#34;xOcalakukHoN_dDgN2Wxe0b1ECSWLxiRCQkN6IESzjs&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-bank-salt-juris001&#34;,
+      &#34;claim&#34;: &#34;jurisdiction&#34;,
+      &#34;value&#34;: &#34;SE&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1iYW5rLXNhbHQtanVyaXMwMDEiLCJqdXJpc2RpY3Rpb24iLCJTRSJd&#34;,
+      &#34;digest&#34;: &#34;MHnopf5c9-J2ZxGNJepY66xaoAPe8Y3c0PAStZj8ymQ&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-bank-salt-natidlnk&#34;,
+      &#34;claim&#34;: &#34;national_id_linked&#34;,
+      &#34;value&#34;: true,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1iYW5rLXNhbHQtbmF0aWRsbmsiLCJuYXRpb25hbF9pZF9saW5rZWQiLHRydWVd&#34;,
+      &#34;digest&#34;: &#34;pL_azo5pcd8SeK4ahzUNKkc3AEHVfmPLqKzyohLUF3I&#34;
+    }
+  ],
+  &#34;presentation&#34;: {
+    &#34;$comment&#34;: &#34;Holder proves enhanced KYC in SE without revealing their name.&#34;,
+    &#34;discloses&#34;: [
+      &#34;issuing_institution&#34;,
+      &#34;kyc_level&#34;,
+      &#34;jurisdiction&#34;
+    ]
+  },
+  &#34;combinedIssuance&#34;: &#34;<issuer-signed-jwt>~WyJnbGlkZS1iYW5rLXNhbHQtaW5zdDAwMDEiLCJpc3N1aW5nX2luc3RpdHV0aW9uIiwiRmlyc3QgTWVyaWRpYW4gQmFuayJd~WyJnbGlkZS1iYW5rLXNhbHQtaG9sZGVyMDEiLCJhY2NvdW50X2hvbGRlcl9uYW1lIiwiSm9yZGFuIEF2ZXJ5Il0~WyJnbGlkZS1iYW5rLXNhbHQta3ljMDAwMDEiLCJreWNfbGV2ZWwiLCJlbmhhbmNlZCJd~WyJnbGlkZS1iYW5rLXNhbHQtanVyaXMwMDEiLCJqdXJpc2RpY3Rpb24iLCJTRSJd~WyJnbGlkZS1iYW5rLXNhbHQtbmF0aWRsbmsiLCJuYXRpb25hbF9pZF9saW5rZWQiLHRydWVd~&#34;
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;Decoded SD-JWT VC for Bank ID (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Run `pnpm seal` to populate digests/_sd/combinedIssuance.&quot;,
+  &quot;spec&quot;: &quot;draft-ietf-oauth-sd-jwt-vc-16&quot;,
+  &quot;sealed&quot;: true,
+  &quot;issuerSignedPayload&quot;: {
+    &quot;iss&quot;: &quot;https://id.firstmeridian.example&quot;,
+    &quot;vct&quot;: &quot;https://schemas.glideidentity.app/vct/bank-id&quot;,
+    &quot;iat&quot;: 1768903200,
+    &quot;exp&quot;: 1863511200,
+    &quot;cnf&quot;: {
+      &quot;jwk&quot;: {
+        &quot;kty&quot;: &quot;EC&quot;,
+        &quot;crv&quot;: &quot;P-256&quot;,
+        &quot;x&quot;: &quot;TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc&quot;,
+        &quot;y&quot;: &quot;ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ&quot;
+      }
+    },
+    &quot;_sd_alg&quot;: &quot;sha-256&quot;,
+    &quot;_sd&quot;: [
+      &quot;B6hcH_TWhJ2KTFgfkOSy00vEV0kEtXNVK8XWSdzNE54&quot;,
+      &quot;MHnopf5c9-J2ZxGNJepY66xaoAPe8Y3c0PAStZj8ymQ&quot;,
+      &quot;ji81rSeKLYZ7J1vWiFY28fpN1hKAb7umsKUc-6-mqVM&quot;,
+      &quot;pL_azo5pcd8SeK4ahzUNKkc3AEHVfmPLqKzyohLUF3I&quot;,
+      &quot;xOcalakukHoN_dDgN2Wxe0b1ECSWLxiRCQkN6IESzjs&quot;
+    ]
+  },
+  &quot;disclosures&quot;: [
+    {
+      &quot;salt&quot;: &quot;glide-bank-salt-inst0001&quot;,
+      &quot;claim&quot;: &quot;issuing_institution&quot;,
+      &quot;value&quot;: &quot;First Meridian Bank&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1iYW5rLXNhbHQtaW5zdDAwMDEiLCJpc3N1aW5nX2luc3RpdHV0aW9uIiwiRmlyc3QgTWVyaWRpYW4gQmFuayJd&quot;,
+      &quot;digest&quot;: &quot;ji81rSeKLYZ7J1vWiFY28fpN1hKAb7umsKUc-6-mqVM&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-bank-salt-holder01&quot;,
+      &quot;claim&quot;: &quot;account_holder_name&quot;,
+      &quot;value&quot;: &quot;Jordan Avery&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1iYW5rLXNhbHQtaG9sZGVyMDEiLCJhY2NvdW50X2hvbGRlcl9uYW1lIiwiSm9yZGFuIEF2ZXJ5Il0&quot;,
+      &quot;digest&quot;: &quot;B6hcH_TWhJ2KTFgfkOSy00vEV0kEtXNVK8XWSdzNE54&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-bank-salt-kyc00001&quot;,
+      &quot;claim&quot;: &quot;kyc_level&quot;,
+      &quot;value&quot;: &quot;enhanced&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1iYW5rLXNhbHQta3ljMDAwMDEiLCJreWNfbGV2ZWwiLCJlbmhhbmNlZCJd&quot;,
+      &quot;digest&quot;: &quot;xOcalakukHoN_dDgN2Wxe0b1ECSWLxiRCQkN6IESzjs&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-bank-salt-juris001&quot;,
+      &quot;claim&quot;: &quot;jurisdiction&quot;,
+      &quot;value&quot;: &quot;SE&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1iYW5rLXNhbHQtanVyaXMwMDEiLCJqdXJpc2RpY3Rpb24iLCJTRSJd&quot;,
+      &quot;digest&quot;: &quot;MHnopf5c9-J2ZxGNJepY66xaoAPe8Y3c0PAStZj8ymQ&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-bank-salt-natidlnk&quot;,
+      &quot;claim&quot;: &quot;national_id_linked&quot;,
+      &quot;value&quot;: true,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1iYW5rLXNhbHQtbmF0aWRsbmsiLCJuYXRpb25hbF9pZF9saW5rZWQiLHRydWVd&quot;,
+      &quot;digest&quot;: &quot;pL_azo5pcd8SeK4ahzUNKkc3AEHVfmPLqKzyohLUF3I&quot;
+    }
+  ],
+  &quot;presentation&quot;: {
+    &quot;$comment&quot;: &quot;Holder proves enhanced KYC in SE without revealing their name.&quot;,
+    &quot;discloses&quot;: [
+      &quot;issuing_institution&quot;,
+      &quot;kyc_level&quot;,
+      &quot;jurisdiction&quot;
+    ]
+  },
+  &quot;combinedIssuance&quot;: &quot;&lt;issuer-signed-jwt&gt;~WyJnbGlkZS1iYW5rLXNhbHQtaW5zdDAwMDEiLCJpc3N1aW5nX2luc3RpdHV0aW9uIiwiRmlyc3QgTWVyaWRpYW4gQmFuayJd~WyJnbGlkZS1iYW5rLXNhbHQtaG9sZGVyMDEiLCJhY2NvdW50X2hvbGRlcl9uYW1lIiwiSm9yZGFuIEF2ZXJ5Il0~WyJnbGlkZS1iYW5rLXNhbHQta3ljMDAwMDEiLCJreWNfbGV2ZWwiLCJlbmhhbmNlZCJd~WyJnbGlkZS1iYW5rLXNhbHQtanVyaXMwMDEiLCJqdXJpc2RpY3Rpb24iLCJTRSJd~WyJnbGlkZS1iYW5rLXNhbHQtbmF0aWRsbmsiLCJuYXRpb25hbF9pZF9saW5rZWQiLHRydWVd~&quot;
+}</code></pre> </figure>  <details class="card px-4 py-2 text-sm text-white/70"> <summary class="cursor-pointer">VC Type Metadata</summary> <div class="mt-3"><figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">sd-jwt-vc/vct-metadata.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;SD-JWT VC Type Metadata for Bank ID. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.&#34;,
+  &#34;vct&#34;: &#34;https://schemas.glideidentity.app/vct/bank-id&#34;,
+  &#34;name&#34;: &#34;Bank ID&#34;,
+  &#34;description&#34;: &#34;Bank-issued identity credential with verified KYC level and jurisdiction. Carries a national-ID linkage flag, never the national ID itself.&#34;,
+  &#34;display&#34;: [
+    {
+      &#34;lang&#34;: &#34;en-US&#34;,
+      &#34;name&#34;: &#34;Bank ID&#34;,
+      &#34;description&#34;: &#34;A KYC-backed identity issued by your bank.&#34;
+    }
+  ],
+  &#34;claims&#34;: [
+    {
+      &#34;path&#34;: [&#34;issuing_institution&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Issuing bank&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;account_holder_name&#34;],
+      &#34;sd&#34;: &#34;always&#34;,
+      &#34;display&#34;: [
+        {
+          &#34;lang&#34;: &#34;en-US&#34;,
+          &#34;label&#34;: &#34;Account holder&#34;,
+          &#34;description&#34;: &#34;Identifying; keep selectively disclosable.&#34;
+        }
+      ]
+    },
+    {
+      &#34;path&#34;: [&#34;kyc_level&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;KYC level&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;jurisdiction&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Jurisdiction&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;national_id_linked&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;National ID linked&#34; }]
+    }
+  ],
+  &#34;schema_uri&#34;: &#34;https://schemas.glideidentity.app/schemas/bank-id.schema.json&#34;
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;SD-JWT VC Type Metadata for Bank ID. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.&quot;,
+  &quot;vct&quot;: &quot;https://schemas.glideidentity.app/vct/bank-id&quot;,
+  &quot;name&quot;: &quot;Bank ID&quot;,
+  &quot;description&quot;: &quot;Bank-issued identity credential with verified KYC level and jurisdiction. Carries a national-ID linkage flag, never the national ID itself.&quot;,
+  &quot;display&quot;: [
+    {
+      &quot;lang&quot;: &quot;en-US&quot;,
+      &quot;name&quot;: &quot;Bank ID&quot;,
+      &quot;description&quot;: &quot;A KYC-backed identity issued by your bank.&quot;
+    }
+  ],
+  &quot;claims&quot;: [
+    {
+      &quot;path&quot;: [&quot;issuing_institution&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Issuing bank&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;account_holder_name&quot;],
+      &quot;sd&quot;: &quot;always&quot;,
+      &quot;display&quot;: [
+        {
+          &quot;lang&quot;: &quot;en-US&quot;,
+          &quot;label&quot;: &quot;Account holder&quot;,
+          &quot;description&quot;: &quot;Identifying; keep selectively disclosable.&quot;
+        }
+      ]
+    },
+    {
+      &quot;path&quot;: [&quot;kyc_level&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;KYC level&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;jurisdiction&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Jurisdiction&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;national_id_linked&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;National ID linked&quot; }]
+    }
+  ],
+  &quot;schema_uri&quot;: &quot;https://schemas.glideidentity.app/schemas/bank-id.schema.json&quot;
+}</code></pre> </figure> </div> </details> </div> </div> </div>  </div> </section> <section class="mt-12"> <h2 class="text-2xl">JSON Schema</h2> <p class="mt-2 text-sm text-white/60">
+The shared claim set both formats validate against (Draft 2020-12).
+</p> <div class="mt-4"> <figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">schema.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$schema&#34;: &#34;https://json-schema.org/draft/2020-12/schema&#34;,
+  &#34;$id&#34;: &#34;https://schemas.glideidentity.app/schemas/bank-id.schema.json&#34;,
+  &#34;$comment&#34;: &#34;Claim set for Bank ID. Carries a national-ID *linkage flag* only — never the national ID itself. JSON Schema Draft 2020-12.&#34;,
+  &#34;title&#34;: &#34;Bank ID claim set&#34;,
+  &#34;type&#34;: &#34;object&#34;,
+  &#34;properties&#34;: {
+    &#34;issuing_institution&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;description&#34;: &#34;Name of the issuing financial institution.&#34;,
+      &#34;examples&#34;: [&#34;First Meridian Bank&#34;]
+    },
+    &#34;account_holder_name&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;description&#34;: &#34;Verified legal name of the account holder.&#34;,
+      &#34;examples&#34;: [&#34;Jordan Avery&#34;]
+    },
+    &#34;kyc_level&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;enum&#34;: [&#34;basic&#34;, &#34;standard&#34;, &#34;enhanced&#34;],
+      &#34;description&#34;: &#34;Verified Know-Your-Customer assurance level.&#34;
+    },
+    &#34;jurisdiction&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;pattern&#34;: &#34;^[A-Z]{2}$&#34;,
+      &#34;description&#34;: &#34;ISO 3166-1 alpha-2 country code of the regulating jurisdiction.&#34;,
+      &#34;examples&#34;: [&#34;SE&#34;]
+    },
+    &#34;national_id_linked&#34;: {
+      &#34;type&#34;: &#34;boolean&#34;,
+      &#34;description&#34;: &#34;Whether a national ID was verified and linked at the bank. The national ID itself is NEVER included.&#34;
+    }
+  },
+  &#34;required&#34;: [&#34;issuing_institution&#34;, &#34;account_holder_name&#34;, &#34;kyc_level&#34;, &#34;jurisdiction&#34;],
+  &#34;additionalProperties&#34;: false
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$schema&quot;: &quot;https://json-schema.org/draft/2020-12/schema&quot;,
+  &quot;$id&quot;: &quot;https://schemas.glideidentity.app/schemas/bank-id.schema.json&quot;,
+  &quot;$comment&quot;: &quot;Claim set for Bank ID. Carries a national-ID *linkage flag* only — never the national ID itself. JSON Schema Draft 2020-12.&quot;,
+  &quot;title&quot;: &quot;Bank ID claim set&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;issuing_institution&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Name of the issuing financial institution.&quot;,
+      &quot;examples&quot;: [&quot;First Meridian Bank&quot;]
+    },
+    &quot;account_holder_name&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Verified legal name of the account holder.&quot;,
+      &quot;examples&quot;: [&quot;Jordan Avery&quot;]
+    },
+    &quot;kyc_level&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;enum&quot;: [&quot;basic&quot;, &quot;standard&quot;, &quot;enhanced&quot;],
+      &quot;description&quot;: &quot;Verified Know-Your-Customer assurance level.&quot;
+    },
+    &quot;jurisdiction&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;pattern&quot;: &quot;^[A-Z]{2}$&quot;,
+      &quot;description&quot;: &quot;ISO 3166-1 alpha-2 country code of the regulating jurisdiction.&quot;,
+      &quot;examples&quot;: [&quot;SE&quot;]
+    },
+    &quot;national_id_linked&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;,
+      &quot;description&quot;: &quot;Whether a national ID was verified and linked at the bank. The national ID itself is NEVER included.&quot;
+    }
+  },
+  &quot;required&quot;: [&quot;issuing_institution&quot;, &quot;account_holder_name&quot;, &quot;kyc_level&quot;, &quot;jurisdiction&quot;],
+  &quot;additionalProperties&quot;: false
+}</code></pre> </figure>  </div> </section>  </main> <footer class="border-t border-white/10"> <div class="mx-auto max-w-6xl px-6 py-8 text-sm text-white/50"> <p>
+Glide Identity credential schemas · Apache-2.0 · W3C VC 2.0 + SD-JWT VC (draft-16).
+          Examples use fake data.
+</p> </div> </footer> </body></html>

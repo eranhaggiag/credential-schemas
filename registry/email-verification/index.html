@@ -1,0 +1,322 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Email Verification · Glide Schemas</title><meta name="description" content="Proof of control over an email address."><link rel="icon" type="image/svg+xml" href="/credential-schemas/logo.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/credential-schemas/_astro/index.Ba5BVslr.css"><script type="module" src="/credential-schemas/_astro/hoisted.D4-KJleG.js"></script></head> <body> <header class="sticky top-0 z-20 border-b border-white/10 bg-brand-900/70 backdrop-blur"> <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"> <a href="/credential-schemas/" class="flex items-center gap-3"> <img src="/credential-schemas/logo.svg" alt="Glide Identity" class="h-7 w-7"> <span class="font-heading text-white">Glide <span class="text-white/60">Schemas</span></span> </a> <nav class="flex items-center gap-1 text-sm"> <a href="/credential-schemas/" class="rounded-lg px-3 py-1.5 text-white/70 hover:text-white"> Home </a><a href="/credential-schemas/registry" class="rounded-lg px-3 py-1.5 text-white bg-white/10"> Schemas </a><a href="/credential-schemas/docs" class="rounded-lg px-3 py-1.5 text-white/70 hover:text-white"> Developer docs </a> </nav> </div> </header> <main class="mx-auto max-w-6xl px-6 py-12">  <a href="/credential-schemas/registry" class="text-sm text-white/60 hover:text-white">← All schemas</a> <header class="mt-4"> <h1 class="text-3xl">Email Verification</h1> <p class="mt-3 max-w-3xl text-white/70">Proof of control over an email address.</p> <div class="mt-4 grid gap-2 text-sm sm:grid-cols-2"> <div class="card px-4 py-3"> <div class="text-xs uppercase tracking-wide text-white/40">SD-JWT VC vct</div> <div class="mt-1 break-all font-grotesk accent">https://schemas.glideidentity.app/vct/email-verification</div> </div> <div class="card px-4 py-3"> <div class="text-xs uppercase tracking-wide text-white/40">JSON-LD @context</div> <div class="mt-1 break-all font-grotesk text-white/80">https://schemas.glideidentity.app/contexts/email-verification.jsonld</div> </div> </div> </header> <section class="mt-10"> <h2 class="text-2xl">Claims</h2> <div class="card mt-4 overflow-x-auto"> <table class="w-full text-left text-sm"> <thead class="border-b border-white/10 text-white/60"> <tr> <th class="px-4 py-3 font-medium">Claim</th> <th class="px-4 py-3 font-medium">Type</th> <th class="px-4 py-3 font-medium">Required</th> <th class="px-4 py-3 font-medium">Selectively disclosable</th> <th class="px-4 py-3 font-medium">Notes</th> </tr> </thead> <tbody> <tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">email</td> <td class="px-4 py-3 text-white/70">string &lt;email&gt;</td> <td class="px-4 py-3 text-white/70">Yes</td> <td class="px-4 py-3"> <span class="chip">always</span> </td> <td class="px-4 py-3 text-white/60">Verified email address.</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">verification_method</td> <td class="px-4 py-3 text-white/70">enum(link_click | otp | dkim_proof)</td> <td class="px-4 py-3 text-white/70">Yes</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">How control of the mailbox was proven.</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">verified_at</td> <td class="px-4 py-3 text-white/70">string &lt;date-time&gt;</td> <td class="px-4 py-3 text-white/70">Yes</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">When control was verified.</td> </tr> </tbody> </table> </div> <p class="mt-2 text-xs text-white/40">
+Auto-derived from <code>schema.json</code> + SD-JWT VC type metadata. <code>always</code> =
+      issuer MUST make selectively disclosable; <code>allowed</code> = MAY; <code>—</code> = not
+      individually disclosable.
+</p> </section> <section class="mt-12"> <h2 class="text-2xl">Examples</h2> <p class="mt-2 text-sm text-white/60">Both representations of the same fake credential.</p> <div class="mt-4"> <div class="format-tabs" data-format="jsonld"> <div class="mb-4 inline-flex rounded-xl border border-white/15 p-1 text-sm"> <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="jsonld" type="button">
+W3C VC 2.0 (JSON-LD)
+</button> <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="sdjwt" type="button">
+SD-JWT VC
+</button> <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="both" type="button">
+Side by side
+</button> </div> <div class="grid gap-6 md:grid-cols-2"> <div class="fmt-pane space-y-3" data-pane="jsonld"> <h3 class="text-sm text-white/70">W3C VC 2.0 — example credential</h3> <figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">jsonld/example.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;Example W3C VC 2.0 Email Verification credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).&#34;,
+  &#34;@context&#34;: [
+    &#34;https://www.w3.org/ns/credentials/v2&#34;,
+    &#34;https://schemas.glideidentity.app/contexts/email-verification.jsonld&#34;
+  ],
+  &#34;type&#34;: [&#34;VerifiableCredential&#34;, &#34;EmailVerificationCredential&#34;],
+  &#34;issuer&#34;: &#34;https://verify.glideidentity.app&#34;,
+  &#34;validFrom&#34;: &#34;2026-03-12T08:15:00Z&#34;,
+  &#34;validUntil&#34;: &#34;2026-09-12T08:15:00Z&#34;,
+  &#34;credentialSubject&#34;: {
+    &#34;id&#34;: &#34;did:example:holder-email-0001&#34;,
+    &#34;email&#34;: &#34;jordan.avery@example.com&#34;,
+    &#34;verification_method&#34;: &#34;link_click&#34;,
+    &#34;verified_at&#34;: &#34;2026-03-12T08:15:00Z&#34;
+  }
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;Example W3C VC 2.0 Email Verification credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).&quot;,
+  &quot;@context&quot;: [
+    &quot;https://www.w3.org/ns/credentials/v2&quot;,
+    &quot;https://schemas.glideidentity.app/contexts/email-verification.jsonld&quot;
+  ],
+  &quot;type&quot;: [&quot;VerifiableCredential&quot;, &quot;EmailVerificationCredential&quot;],
+  &quot;issuer&quot;: &quot;https://verify.glideidentity.app&quot;,
+  &quot;validFrom&quot;: &quot;2026-03-12T08:15:00Z&quot;,
+  &quot;validUntil&quot;: &quot;2026-09-12T08:15:00Z&quot;,
+  &quot;credentialSubject&quot;: {
+    &quot;id&quot;: &quot;did:example:holder-email-0001&quot;,
+    &quot;email&quot;: &quot;jordan.avery@example.com&quot;,
+    &quot;verification_method&quot;: &quot;link_click&quot;,
+    &quot;verified_at&quot;: &quot;2026-03-12T08:15:00Z&quot;
+  }
+}</code></pre> </figure>  <details class="card px-4 py-2 text-sm text-white/70"> <summary class="cursor-pointer">JSON-LD @context</summary> <div class="mt-3"><figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">jsonld/context.jsonld</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;Glide Identity — Email Verification JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.&#34;,
+  &#34;@context&#34;: {
+    &#34;@protected&#34;: true,
+    &#34;EmailVerificationCredential&#34;: &#34;https://schemas.glideidentity.app/contexts/email-verification.jsonld#EmailVerificationCredential&#34;,
+    &#34;glide&#34;: &#34;https://schemas.glideidentity.app/vocab#&#34;,
+    &#34;email&#34;: { &#34;@id&#34;: &#34;glide:email&#34;, &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34; },
+    &#34;verification_method&#34;: {
+      &#34;@id&#34;: &#34;glide:verification_method&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#string&#34;
+    },
+    &#34;verified_at&#34;: {
+      &#34;@id&#34;: &#34;glide:verified_at&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#dateTime&#34;
+    }
+  }
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;Glide Identity — Email Verification JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.&quot;,
+  &quot;@context&quot;: {
+    &quot;@protected&quot;: true,
+    &quot;EmailVerificationCredential&quot;: &quot;https://schemas.glideidentity.app/contexts/email-verification.jsonld#EmailVerificationCredential&quot;,
+    &quot;glide&quot;: &quot;https://schemas.glideidentity.app/vocab#&quot;,
+    &quot;email&quot;: { &quot;@id&quot;: &quot;glide:email&quot;, &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot; },
+    &quot;verification_method&quot;: {
+      &quot;@id&quot;: &quot;glide:verification_method&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#string&quot;
+    },
+    &quot;verified_at&quot;: {
+      &quot;@id&quot;: &quot;glide:verified_at&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#dateTime&quot;
+    }
+  }
+}</code></pre> </figure> </div> </details> </div> <div class="fmt-pane space-y-3" data-pane="sdjwt"> <h3 class="text-sm text-white/70">SD-JWT VC — decoded payload + disclosures</h3> <figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">sd-jwt-vc/example.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;Decoded SD-JWT VC for Email Verification (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Run `pnpm seal` to populate digests/_sd/combinedIssuance.&#34;,
+  &#34;spec&#34;: &#34;draft-ietf-oauth-sd-jwt-vc-16&#34;,
+  &#34;sealed&#34;: true,
+  &#34;issuerSignedPayload&#34;: {
+    &#34;iss&#34;: &#34;https://verify.glideidentity.app&#34;,
+    &#34;vct&#34;: &#34;https://schemas.glideidentity.app/vct/email-verification&#34;,
+    &#34;iat&#34;: 1773317700,
+    &#34;exp&#34;: 1789208100,
+    &#34;cnf&#34;: {
+      &#34;jwk&#34;: {
+        &#34;kty&#34;: &#34;EC&#34;,
+        &#34;crv&#34;: &#34;P-256&#34;,
+        &#34;x&#34;: &#34;TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc&#34;,
+        &#34;y&#34;: &#34;ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ&#34;
+      }
+    },
+    &#34;_sd_alg&#34;: &#34;sha-256&#34;,
+    &#34;_sd&#34;: [
+      &#34;B_ODYo_vqo0Ztb_beH7nUdPNRjW2s0Q4bdRqpFW80eo&#34;,
+      &#34;VINQha_gGaWuJiaEz1i6Pa9TbVTXyFNbP8o5sx1rG6I&#34;,
+      &#34;lY4BYUUyoPHjUBlJjYHmmPsXuJgOPMWjgna2eeppWX4&#34;
+    ]
+  },
+  &#34;disclosures&#34;: [
+    {
+      &#34;salt&#34;: &#34;glide-email-salt-addr01&#34;,
+      &#34;claim&#34;: &#34;email&#34;,
+      &#34;value&#34;: &#34;jordan.avery@example.com&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1lbWFpbC1zYWx0LWFkZHIwMSIsImVtYWlsIiwiam9yZGFuLmF2ZXJ5QGV4YW1wbGUuY29tIl0&#34;,
+      &#34;digest&#34;: &#34;lY4BYUUyoPHjUBlJjYHmmPsXuJgOPMWjgna2eeppWX4&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-email-salt-method&#34;,
+      &#34;claim&#34;: &#34;verification_method&#34;,
+      &#34;value&#34;: &#34;link_click&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1lbWFpbC1zYWx0LW1ldGhvZCIsInZlcmlmaWNhdGlvbl9tZXRob2QiLCJsaW5rX2NsaWNrIl0&#34;,
+      &#34;digest&#34;: &#34;B_ODYo_vqo0Ztb_beH7nUdPNRjW2s0Q4bdRqpFW80eo&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-email-salt-vat001&#34;,
+      &#34;claim&#34;: &#34;verified_at&#34;,
+      &#34;value&#34;: &#34;2026-03-12T08:15:00Z&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1lbWFpbC1zYWx0LXZhdDAwMSIsInZlcmlmaWVkX2F0IiwiMjAyNi0wMy0xMlQwODoxNTowMFoiXQ&#34;,
+      &#34;digest&#34;: &#34;VINQha_gGaWuJiaEz1i6Pa9TbVTXyFNbP8o5sx1rG6I&#34;
+    }
+  ],
+  &#34;presentation&#34;: {
+    &#34;$comment&#34;: &#34;Holder discloses only the verified email address.&#34;,
+    &#34;discloses&#34;: [
+      &#34;email&#34;
+    ]
+  },
+  &#34;combinedIssuance&#34;: &#34;<issuer-signed-jwt>~WyJnbGlkZS1lbWFpbC1zYWx0LWFkZHIwMSIsImVtYWlsIiwiam9yZGFuLmF2ZXJ5QGV4YW1wbGUuY29tIl0~WyJnbGlkZS1lbWFpbC1zYWx0LW1ldGhvZCIsInZlcmlmaWNhdGlvbl9tZXRob2QiLCJsaW5rX2NsaWNrIl0~WyJnbGlkZS1lbWFpbC1zYWx0LXZhdDAwMSIsInZlcmlmaWVkX2F0IiwiMjAyNi0wMy0xMlQwODoxNTowMFoiXQ~&#34;
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;Decoded SD-JWT VC for Email Verification (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Run `pnpm seal` to populate digests/_sd/combinedIssuance.&quot;,
+  &quot;spec&quot;: &quot;draft-ietf-oauth-sd-jwt-vc-16&quot;,
+  &quot;sealed&quot;: true,
+  &quot;issuerSignedPayload&quot;: {
+    &quot;iss&quot;: &quot;https://verify.glideidentity.app&quot;,
+    &quot;vct&quot;: &quot;https://schemas.glideidentity.app/vct/email-verification&quot;,
+    &quot;iat&quot;: 1773317700,
+    &quot;exp&quot;: 1789208100,
+    &quot;cnf&quot;: {
+      &quot;jwk&quot;: {
+        &quot;kty&quot;: &quot;EC&quot;,
+        &quot;crv&quot;: &quot;P-256&quot;,
+        &quot;x&quot;: &quot;TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc&quot;,
+        &quot;y&quot;: &quot;ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ&quot;
+      }
+    },
+    &quot;_sd_alg&quot;: &quot;sha-256&quot;,
+    &quot;_sd&quot;: [
+      &quot;B_ODYo_vqo0Ztb_beH7nUdPNRjW2s0Q4bdRqpFW80eo&quot;,
+      &quot;VINQha_gGaWuJiaEz1i6Pa9TbVTXyFNbP8o5sx1rG6I&quot;,
+      &quot;lY4BYUUyoPHjUBlJjYHmmPsXuJgOPMWjgna2eeppWX4&quot;
+    ]
+  },
+  &quot;disclosures&quot;: [
+    {
+      &quot;salt&quot;: &quot;glide-email-salt-addr01&quot;,
+      &quot;claim&quot;: &quot;email&quot;,
+      &quot;value&quot;: &quot;jordan.avery@example.com&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1lbWFpbC1zYWx0LWFkZHIwMSIsImVtYWlsIiwiam9yZGFuLmF2ZXJ5QGV4YW1wbGUuY29tIl0&quot;,
+      &quot;digest&quot;: &quot;lY4BYUUyoPHjUBlJjYHmmPsXuJgOPMWjgna2eeppWX4&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-email-salt-method&quot;,
+      &quot;claim&quot;: &quot;verification_method&quot;,
+      &quot;value&quot;: &quot;link_click&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1lbWFpbC1zYWx0LW1ldGhvZCIsInZlcmlmaWNhdGlvbl9tZXRob2QiLCJsaW5rX2NsaWNrIl0&quot;,
+      &quot;digest&quot;: &quot;B_ODYo_vqo0Ztb_beH7nUdPNRjW2s0Q4bdRqpFW80eo&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-email-salt-vat001&quot;,
+      &quot;claim&quot;: &quot;verified_at&quot;,
+      &quot;value&quot;: &quot;2026-03-12T08:15:00Z&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1lbWFpbC1zYWx0LXZhdDAwMSIsInZlcmlmaWVkX2F0IiwiMjAyNi0wMy0xMlQwODoxNTowMFoiXQ&quot;,
+      &quot;digest&quot;: &quot;VINQha_gGaWuJiaEz1i6Pa9TbVTXyFNbP8o5sx1rG6I&quot;
+    }
+  ],
+  &quot;presentation&quot;: {
+    &quot;$comment&quot;: &quot;Holder discloses only the verified email address.&quot;,
+    &quot;discloses&quot;: [
+      &quot;email&quot;
+    ]
+  },
+  &quot;combinedIssuance&quot;: &quot;&lt;issuer-signed-jwt&gt;~WyJnbGlkZS1lbWFpbC1zYWx0LWFkZHIwMSIsImVtYWlsIiwiam9yZGFuLmF2ZXJ5QGV4YW1wbGUuY29tIl0~WyJnbGlkZS1lbWFpbC1zYWx0LW1ldGhvZCIsInZlcmlmaWNhdGlvbl9tZXRob2QiLCJsaW5rX2NsaWNrIl0~WyJnbGlkZS1lbWFpbC1zYWx0LXZhdDAwMSIsInZlcmlmaWVkX2F0IiwiMjAyNi0wMy0xMlQwODoxNTowMFoiXQ~&quot;
+}</code></pre> </figure>  <details class="card px-4 py-2 text-sm text-white/70"> <summary class="cursor-pointer">VC Type Metadata</summary> <div class="mt-3"><figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">sd-jwt-vc/vct-metadata.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;SD-JWT VC Type Metadata for Email Verification. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.&#34;,
+  &#34;vct&#34;: &#34;https://schemas.glideidentity.app/vct/email-verification&#34;,
+  &#34;name&#34;: &#34;Email Verification&#34;,
+  &#34;description&#34;: &#34;Proof of control over an email address.&#34;,
+  &#34;display&#34;: [
+    {
+      &#34;lang&#34;: &#34;en-US&#34;,
+      &#34;name&#34;: &#34;Email Address&#34;,
+      &#34;description&#34;: &#34;A verified email address.&#34;
+    }
+  ],
+  &#34;claims&#34;: [
+    {
+      &#34;path&#34;: [&#34;email&#34;],
+      &#34;sd&#34;: &#34;always&#34;,
+      &#34;display&#34;: [
+        {
+          &#34;lang&#34;: &#34;en-US&#34;,
+          &#34;label&#34;: &#34;Email&#34;,
+          &#34;description&#34;: &#34;Identifying; keep selectively disclosable.&#34;
+        }
+      ]
+    },
+    {
+      &#34;path&#34;: [&#34;verification_method&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Method&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;verified_at&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Verified at&#34; }]
+    }
+  ],
+  &#34;schema_uri&#34;: &#34;https://schemas.glideidentity.app/schemas/email-verification.schema.json&#34;
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;SD-JWT VC Type Metadata for Email Verification. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.&quot;,
+  &quot;vct&quot;: &quot;https://schemas.glideidentity.app/vct/email-verification&quot;,
+  &quot;name&quot;: &quot;Email Verification&quot;,
+  &quot;description&quot;: &quot;Proof of control over an email address.&quot;,
+  &quot;display&quot;: [
+    {
+      &quot;lang&quot;: &quot;en-US&quot;,
+      &quot;name&quot;: &quot;Email Address&quot;,
+      &quot;description&quot;: &quot;A verified email address.&quot;
+    }
+  ],
+  &quot;claims&quot;: [
+    {
+      &quot;path&quot;: [&quot;email&quot;],
+      &quot;sd&quot;: &quot;always&quot;,
+      &quot;display&quot;: [
+        {
+          &quot;lang&quot;: &quot;en-US&quot;,
+          &quot;label&quot;: &quot;Email&quot;,
+          &quot;description&quot;: &quot;Identifying; keep selectively disclosable.&quot;
+        }
+      ]
+    },
+    {
+      &quot;path&quot;: [&quot;verification_method&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Method&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;verified_at&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Verified at&quot; }]
+    }
+  ],
+  &quot;schema_uri&quot;: &quot;https://schemas.glideidentity.app/schemas/email-verification.schema.json&quot;
+}</code></pre> </figure> </div> </details> </div> </div> </div>  </div> </section> <section class="mt-12"> <h2 class="text-2xl">JSON Schema</h2> <p class="mt-2 text-sm text-white/60">
+The shared claim set both formats validate against (Draft 2020-12).
+</p> <div class="mt-4"> <figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">schema.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$schema&#34;: &#34;https://json-schema.org/draft/2020-12/schema&#34;,
+  &#34;$id&#34;: &#34;https://schemas.glideidentity.app/schemas/email-verification.schema.json&#34;,
+  &#34;$comment&#34;: &#34;Claim set for Email Verification. JSON Schema Draft 2020-12.&#34;,
+  &#34;title&#34;: &#34;Email Verification claim set&#34;,
+  &#34;type&#34;: &#34;object&#34;,
+  &#34;properties&#34;: {
+    &#34;email&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;format&#34;: &#34;email&#34;,
+      &#34;description&#34;: &#34;Verified email address.&#34;,
+      &#34;examples&#34;: [&#34;jordan.avery@example.com&#34;]
+    },
+    &#34;verification_method&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;enum&#34;: [&#34;link_click&#34;, &#34;otp&#34;, &#34;dkim_proof&#34;],
+      &#34;description&#34;: &#34;How control of the mailbox was proven.&#34;
+    },
+    &#34;verified_at&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;format&#34;: &#34;date-time&#34;,
+      &#34;description&#34;: &#34;When control was verified.&#34;
+    }
+  },
+  &#34;required&#34;: [&#34;email&#34;, &#34;verification_method&#34;, &#34;verified_at&#34;],
+  &#34;additionalProperties&#34;: false
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$schema&quot;: &quot;https://json-schema.org/draft/2020-12/schema&quot;,
+  &quot;$id&quot;: &quot;https://schemas.glideidentity.app/schemas/email-verification.schema.json&quot;,
+  &quot;$comment&quot;: &quot;Claim set for Email Verification. JSON Schema Draft 2020-12.&quot;,
+  &quot;title&quot;: &quot;Email Verification claim set&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;email&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;format&quot;: &quot;email&quot;,
+      &quot;description&quot;: &quot;Verified email address.&quot;,
+      &quot;examples&quot;: [&quot;jordan.avery@example.com&quot;]
+    },
+    &quot;verification_method&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;enum&quot;: [&quot;link_click&quot;, &quot;otp&quot;, &quot;dkim_proof&quot;],
+      &quot;description&quot;: &quot;How control of the mailbox was proven.&quot;
+    },
+    &quot;verified_at&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;format&quot;: &quot;date-time&quot;,
+      &quot;description&quot;: &quot;When control was verified.&quot;
+    }
+  },
+  &quot;required&quot;: [&quot;email&quot;, &quot;verification_method&quot;, &quot;verified_at&quot;],
+  &quot;additionalProperties&quot;: false
+}</code></pre> </figure>  </div> </section>  </main> <footer class="border-t border-white/10"> <div class="mx-auto max-w-6xl px-6 py-8 text-sm text-white/50"> <p>
+Glide Identity credential schemas · Apache-2.0 · W3C VC 2.0 + SD-JWT VC (draft-16).
+          Examples use fake data.
+</p> </div> </footer> </body></html>

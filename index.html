@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Verifiable credential schemas, in two formats · Glide Schemas</title><meta name="description" content="Dual-format verifiable credential schemas (W3C VC 2.0 + SD-JWT VC) for Glide Identity."><link rel="icon" type="image/svg+xml" href="/credential-schemas/logo.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/credential-schemas/_astro/index.Ba5BVslr.css"></head> <body> <header class="sticky top-0 z-20 border-b border-white/10 bg-brand-900/70 backdrop-blur"> <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"> <a href="/credential-schemas/" class="flex items-center gap-3"> <img src="/credential-schemas/logo.svg" alt="Glide Identity" class="h-7 w-7"> <span class="font-heading text-white">Glide <span class="text-white/60">Schemas</span></span> </a> <nav class="flex items-center gap-1 text-sm"> <a href="/credential-schemas/" class="rounded-lg px-3 py-1.5 text-white bg-white/10"> Home </a><a href="/credential-schemas/registry" class="rounded-lg px-3 py-1.5 text-white/70 hover:text-white"> Schemas </a><a href="/credential-schemas/docs" class="rounded-lg px-3 py-1.5 text-white/70 hover:text-white"> Developer docs </a> </nav> </div> </header> <main class="mx-auto max-w-6xl px-6 py-12">  <section class="py-10"> <span class="chip">Dual-format · W3C VC 2.0 + SD-JWT VC</span> <h1 class="mt-6 max-w-3xl text-4xl leading-tight sm:text-5xl">
+One claim set. Two interoperable formats.
+<span class="accent">Selective disclosure</span> by design.
+</h1> <p class="mt-5 max-w-2xl text-lg text-white/70">
+A registry of <span class="numeral accent">8</span> verifiable credential types, each
+      published as a W3C Verifiable Credentials 2.0 JSON-LD credential <em>and</em> an IETF
+      SD-JWT VC — the format frozen into the EU Digital Identity Wallet ARF. The privacy-sensitive
+      claims are individually disclosable, so a holder reveals only what a verifier needs.
+</p> <div class="mt-8 flex flex-wrap gap-3"> <a class="btn btn-primary" href="/credential-schemas/registry">Browse the schemas</a> <a class="btn btn-ghost" href="/credential-schemas/docs">Developer docs</a> </div> </section> <section class="grid gap-6 py-8 md:grid-cols-3"> <div class="card p-6"> <div class="numeral text-3xl text-white">JSON-LD</div> <h3 class="mt-2 text-base">W3C VC 2.0</h3> <p class="mt-2 text-sm text-white/70">
+Linked-data credentials on the <code>credentials/v2</code> base context. Best for
+        linked-data ecosystems and semantic interop.
+</p> </div> <div class="card p-6"> <div class="numeral text-3xl text-white">SD-JWT VC</div> <h3 class="mt-2 text-base">draft-16 · RFC 9901</h3> <p class="mt-2 text-sm text-white/70">
+Compact, selectively disclosable JWTs. The EUDI Wallet / OID4VCI interop target — our
+        primary format.
+</p> </div> <div class="card p-6"> <div class="numeral text-3xl text-white">age_over_18</div> <h3 class="mt-2 text-base">Predicates, not birthdates</h3> <p class="mt-2 text-sm text-white/70">
+Prove a threshold without revealing the underlying data. Birthdate stays hidden behind a
+        boolean predicate.
+</p> </div> </section> <section class="py-8"> <h2 class="text-2xl">Why two formats?</h2> <p class="mt-3 max-w-3xl text-white/70">
+Different ecosystems converged on different containers. Rather than pick a side, every type
+      here is defined once as a JSON Schema claim set and rendered into both — so an issuer can
+      serve a linked-data verifier and an EUDI wallet from the same source of truth. The
+<a class="accent" href="/credential-schemas/docs">choosing-a-format guide</a> walks through when to reach for which.
+</p> </section>  </main> <footer class="border-t border-white/10"> <div class="mx-auto max-w-6xl px-6 py-8 text-sm text-white/50"> <p>
+Glide Identity credential schemas · Apache-2.0 · W3C VC 2.0 + SD-JWT VC (draft-16).
+          Examples use fake data.
+</p> </div> </footer> </body></html>

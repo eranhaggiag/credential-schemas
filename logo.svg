@@ -1,0 +1,12 @@
+<!-- TODO: Replace this placeholder with the official Glide Identity logo asset. Do not redraw the logo. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Glide Identity (placeholder logo)">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b2fa0" />
+      <stop offset="1" stop-color="#1e1a4d" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#g)" />
+  <circle cx="32" cy="32" r="13" fill="none" stroke="#01F59D" stroke-width="3" />
+  <path d="M32 19 a13 13 0 0 1 0 26" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.85" />
+</svg>

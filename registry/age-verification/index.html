@@ -1,0 +1,378 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Age Verification · Glide Schemas</title><meta name="description" content="Proves a holder's age via boolean age-over predicates and/or a selectively disclosable birthdate. Designed so a holder can present only a predicate (e.g. age_over_18) without revealing birthdate."><link rel="icon" type="image/svg+xml" href="/credential-schemas/logo.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/credential-schemas/_astro/index.Ba5BVslr.css"><script type="module" src="/credential-schemas/_astro/hoisted.D4-KJleG.js"></script></head> <body> <header class="sticky top-0 z-20 border-b border-white/10 bg-brand-900/70 backdrop-blur"> <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"> <a href="/credential-schemas/" class="flex items-center gap-3"> <img src="/credential-schemas/logo.svg" alt="Glide Identity" class="h-7 w-7"> <span class="font-heading text-white">Glide <span class="text-white/60">Schemas</span></span> </a> <nav class="flex items-center gap-1 text-sm"> <a href="/credential-schemas/" class="rounded-lg px-3 py-1.5 text-white/70 hover:text-white"> Home </a><a href="/credential-schemas/registry" class="rounded-lg px-3 py-1.5 text-white bg-white/10"> Schemas </a><a href="/credential-schemas/docs" class="rounded-lg px-3 py-1.5 text-white/70 hover:text-white"> Developer docs </a> </nav> </div> </header> <main class="mx-auto max-w-6xl px-6 py-12">  <a href="/credential-schemas/registry" class="text-sm text-white/60 hover:text-white">← All schemas</a> <header class="mt-4"> <h1 class="text-3xl">Age Verification</h1> <p class="mt-3 max-w-3xl text-white/70">Proves a holder&#39;s age via boolean age-over predicates and/or a selectively disclosable birthdate. Designed so a holder can present only a predicate (e.g. age_over_18) without revealing birthdate.</p> <div class="mt-4 grid gap-2 text-sm sm:grid-cols-2"> <div class="card px-4 py-3"> <div class="text-xs uppercase tracking-wide text-white/40">SD-JWT VC vct</div> <div class="mt-1 break-all font-grotesk accent">https://schemas.glideidentity.app/vct/age-verification</div> </div> <div class="card px-4 py-3"> <div class="text-xs uppercase tracking-wide text-white/40">JSON-LD @context</div> <div class="mt-1 break-all font-grotesk text-white/80">https://schemas.glideidentity.app/contexts/age-verification.jsonld</div> </div> </div> </header> <section class="mt-10"> <h2 class="text-2xl">Claims</h2> <div class="card mt-4 overflow-x-auto"> <table class="w-full text-left text-sm"> <thead class="border-b border-white/10 text-white/60"> <tr> <th class="px-4 py-3 font-medium">Claim</th> <th class="px-4 py-3 font-medium">Type</th> <th class="px-4 py-3 font-medium">Required</th> <th class="px-4 py-3 font-medium">Selectively disclosable</th> <th class="px-4 py-3 font-medium">Notes</th> </tr> </thead> <tbody> <tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">birthdate</td> <td class="px-4 py-3 text-white/70">string &lt;date&gt;</td> <td class="px-4 py-3 text-white/70">No</td> <td class="px-4 py-3"> <span class="chip">always</span> </td> <td class="px-4 py-3 text-white/60">Full date of birth (ISO 8601 full-date). PRIVACY: must never be mandatory-disclosed when an age-over predicate suffices.</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">age_over_13</td> <td class="px-4 py-3 text-white/70">boolean</td> <td class="px-4 py-3 text-white/70">No</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">Predicate: holder is at least 13 years old.</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">age_over_18</td> <td class="px-4 py-3 text-white/70">boolean</td> <td class="px-4 py-3 text-white/70">No</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">Predicate: holder is at least 18 years old.</td> </tr><tr class="border-b border-white/5 align-top"> <td class="px-4 py-3 font-grotesk text-white">age_over_21</td> <td class="px-4 py-3 text-white/70">boolean</td> <td class="px-4 py-3 text-white/70">No</td> <td class="px-4 py-3"> <span class="text-white/70">allowed</span> </td> <td class="px-4 py-3 text-white/60">Predicate: holder is at least 21 years old.</td> </tr> </tbody> </table> </div> <p class="mt-2 text-xs text-white/40">
+Auto-derived from <code>schema.json</code> + SD-JWT VC type metadata. <code>always</code> =
+      issuer MUST make selectively disclosable; <code>allowed</code> = MAY; <code>—</code> = not
+      individually disclosable.
+</p> </section> <section class="mt-12"> <h2 class="text-2xl">Examples</h2> <p class="mt-2 text-sm text-white/60">Both representations of the same fake credential.</p> <div class="mt-4"> <div class="format-tabs" data-format="jsonld"> <div class="mb-4 inline-flex rounded-xl border border-white/15 p-1 text-sm"> <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="jsonld" type="button">
+W3C VC 2.0 (JSON-LD)
+</button> <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="sdjwt" type="button">
+SD-JWT VC
+</button> <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="both" type="button">
+Side by side
+</button> </div> <div class="grid gap-6 md:grid-cols-2"> <div class="fmt-pane space-y-3" data-pane="jsonld"> <h3 class="text-sm text-white/70">W3C VC 2.0 — example credential</h3> <figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">jsonld/example.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;Example W3C VC 2.0 Age Verification credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).&#34;,
+  &#34;@context&#34;: [
+    &#34;https://www.w3.org/ns/credentials/v2&#34;,
+    &#34;https://schemas.glideidentity.app/contexts/age-verification.jsonld&#34;
+  ],
+  &#34;type&#34;: [&#34;VerifiableCredential&#34;, &#34;AgeVerificationCredential&#34;],
+  &#34;issuer&#34;: &#34;https://issuer.glideidentity.app&#34;,
+  &#34;validFrom&#34;: &#34;2026-01-15T09:00:00Z&#34;,
+  &#34;validUntil&#34;: &#34;2027-01-15T09:00:00Z&#34;,
+  &#34;credentialSubject&#34;: {
+    &#34;id&#34;: &#34;did:example:holder-age-0001&#34;,
+    &#34;birthdate&#34;: &#34;2000-05-17&#34;,
+    &#34;age_over_13&#34;: true,
+    &#34;age_over_18&#34;: true,
+    &#34;age_over_21&#34;: true
+  }
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;Example W3C VC 2.0 Age Verification credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).&quot;,
+  &quot;@context&quot;: [
+    &quot;https://www.w3.org/ns/credentials/v2&quot;,
+    &quot;https://schemas.glideidentity.app/contexts/age-verification.jsonld&quot;
+  ],
+  &quot;type&quot;: [&quot;VerifiableCredential&quot;, &quot;AgeVerificationCredential&quot;],
+  &quot;issuer&quot;: &quot;https://issuer.glideidentity.app&quot;,
+  &quot;validFrom&quot;: &quot;2026-01-15T09:00:00Z&quot;,
+  &quot;validUntil&quot;: &quot;2027-01-15T09:00:00Z&quot;,
+  &quot;credentialSubject&quot;: {
+    &quot;id&quot;: &quot;did:example:holder-age-0001&quot;,
+    &quot;birthdate&quot;: &quot;2000-05-17&quot;,
+    &quot;age_over_13&quot;: true,
+    &quot;age_over_18&quot;: true,
+    &quot;age_over_21&quot;: true
+  }
+}</code></pre> </figure>  <details class="card px-4 py-2 text-sm text-white/70"> <summary class="cursor-pointer">JSON-LD @context</summary> <div class="mt-3"><figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">jsonld/context.jsonld</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;Glide Identity — Age Verification JSON-LD context. Targets W3C Verifiable Credentials Data Model 2.0 (W3C Recommendation, 15 May 2025). Use alongside the base context https://www.w3.org/ns/credentials/v2.&#34;,
+  &#34;@context&#34;: {
+    &#34;@protected&#34;: true,
+    &#34;AgeVerificationCredential&#34;: &#34;https://schemas.glideidentity.app/contexts/age-verification.jsonld#AgeVerificationCredential&#34;,
+    &#34;glide&#34;: &#34;https://schemas.glideidentity.app/vocab#&#34;,
+    &#34;birthdate&#34;: {
+      &#34;@id&#34;: &#34;glide:birthdate&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#date&#34;
+    },
+    &#34;age_over_13&#34;: {
+      &#34;@id&#34;: &#34;glide:age_over_13&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#boolean&#34;
+    },
+    &#34;age_over_18&#34;: {
+      &#34;@id&#34;: &#34;glide:age_over_18&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#boolean&#34;
+    },
+    &#34;age_over_21&#34;: {
+      &#34;@id&#34;: &#34;glide:age_over_21&#34;,
+      &#34;@type&#34;: &#34;http://www.w3.org/2001/XMLSchema#boolean&#34;
+    }
+  }
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;Glide Identity — Age Verification JSON-LD context. Targets W3C Verifiable Credentials Data Model 2.0 (W3C Recommendation, 15 May 2025). Use alongside the base context https://www.w3.org/ns/credentials/v2.&quot;,
+  &quot;@context&quot;: {
+    &quot;@protected&quot;: true,
+    &quot;AgeVerificationCredential&quot;: &quot;https://schemas.glideidentity.app/contexts/age-verification.jsonld#AgeVerificationCredential&quot;,
+    &quot;glide&quot;: &quot;https://schemas.glideidentity.app/vocab#&quot;,
+    &quot;birthdate&quot;: {
+      &quot;@id&quot;: &quot;glide:birthdate&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#date&quot;
+    },
+    &quot;age_over_13&quot;: {
+      &quot;@id&quot;: &quot;glide:age_over_13&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#boolean&quot;
+    },
+    &quot;age_over_18&quot;: {
+      &quot;@id&quot;: &quot;glide:age_over_18&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#boolean&quot;
+    },
+    &quot;age_over_21&quot;: {
+      &quot;@id&quot;: &quot;glide:age_over_21&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#boolean&quot;
+    }
+  }
+}</code></pre> </figure> </div> </details> </div> <div class="fmt-pane space-y-3" data-pane="sdjwt"> <h3 class="text-sm text-white/70">SD-JWT VC — decoded payload + disclosures</h3> <figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">sd-jwt-vc/example.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;Decoded SD-JWT VC for Age Verification (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Authored fields are `issuerSignedPayload` (minus `_sd`), and `disclosures` as {salt, claim, value}. Run `pnpm seal` to populate each disclosure's `encoded`/`digest`, the payload `_sd` array, and `combinedIssuance`. The `presentation` block shows a holder revealing only age_over_18.&#34;,
+  &#34;spec&#34;: &#34;draft-ietf-oauth-sd-jwt-vc-16&#34;,
+  &#34;sealed&#34;: true,
+  &#34;issuerSignedPayload&#34;: {
+    &#34;iss&#34;: &#34;https://issuer.glideidentity.app&#34;,
+    &#34;vct&#34;: &#34;https://schemas.glideidentity.app/vct/age-verification&#34;,
+    &#34;iat&#34;: 1768467600,
+    &#34;exp&#34;: 1800003600,
+    &#34;cnf&#34;: {
+      &#34;jwk&#34;: {
+        &#34;kty&#34;: &#34;EC&#34;,
+        &#34;crv&#34;: &#34;P-256&#34;,
+        &#34;x&#34;: &#34;TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc&#34;,
+        &#34;y&#34;: &#34;ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ&#34;
+      }
+    },
+    &#34;_sd_alg&#34;: &#34;sha-256&#34;,
+    &#34;_sd&#34;: [
+      &#34;7xdrF95eLyS-8_6HW9a88fnxsj8_WExG-TML0KXOpqQ&#34;,
+      &#34;InoemIiiopYgUpNPlCvoVRRIsTarc1F7QhRmpoGCL40&#34;,
+      &#34;b3Rc6zzsYQpLy_MFt0I5DgMp6Kju42Oi6dvR54ilB5Q&#34;,
+      &#34;cwzTad4Oauql4z9U6lNathbZmXFYUHAYTGfRs6_efx4&#34;
+    ]
+  },
+  &#34;disclosures&#34;: [
+    {
+      &#34;salt&#34;: &#34;glide-age-salt-birthdate0&#34;,
+      &#34;claim&#34;: &#34;birthdate&#34;,
+      &#34;value&#34;: &#34;2000-05-17&#34;,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1hZ2Utc2FsdC1iaXJ0aGRhdGUwIiwiYmlydGhkYXRlIiwiMjAwMC0wNS0xNyJd&#34;,
+      &#34;digest&#34;: &#34;InoemIiiopYgUpNPlCvoVRRIsTarc1F7QhRmpoGCL40&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-age-salt-over13-0001&#34;,
+      &#34;claim&#34;: &#34;age_over_13&#34;,
+      &#34;value&#34;: true,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1hZ2Utc2FsdC1vdmVyMTMtMDAwMSIsImFnZV9vdmVyXzEzIix0cnVlXQ&#34;,
+      &#34;digest&#34;: &#34;cwzTad4Oauql4z9U6lNathbZmXFYUHAYTGfRs6_efx4&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-age-salt-over18-0001&#34;,
+      &#34;claim&#34;: &#34;age_over_18&#34;,
+      &#34;value&#34;: true,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1hZ2Utc2FsdC1vdmVyMTgtMDAwMSIsImFnZV9vdmVyXzE4Iix0cnVlXQ&#34;,
+      &#34;digest&#34;: &#34;7xdrF95eLyS-8_6HW9a88fnxsj8_WExG-TML0KXOpqQ&#34;
+    },
+    {
+      &#34;salt&#34;: &#34;glide-age-salt-over21-0001&#34;,
+      &#34;claim&#34;: &#34;age_over_21&#34;,
+      &#34;value&#34;: true,
+      &#34;encoded&#34;: &#34;WyJnbGlkZS1hZ2Utc2FsdC1vdmVyMjEtMDAwMSIsImFnZV9vdmVyXzIxIix0cnVlXQ&#34;,
+      &#34;digest&#34;: &#34;b3Rc6zzsYQpLy_MFt0I5DgMp6Kju42Oi6dvR54ilB5Q&#34;
+    }
+  ],
+  &#34;presentation&#34;: {
+    &#34;$comment&#34;: &#34;Holder presents ONLY age_over_18 — birthdate and other predicates stay hidden.&#34;,
+    &#34;discloses&#34;: [
+      &#34;age_over_18&#34;
+    ]
+  },
+  &#34;combinedIssuance&#34;: &#34;<issuer-signed-jwt>~WyJnbGlkZS1hZ2Utc2FsdC1iaXJ0aGRhdGUwIiwiYmlydGhkYXRlIiwiMjAwMC0wNS0xNyJd~WyJnbGlkZS1hZ2Utc2FsdC1vdmVyMTMtMDAwMSIsImFnZV9vdmVyXzEzIix0cnVlXQ~WyJnbGlkZS1hZ2Utc2FsdC1vdmVyMTgtMDAwMSIsImFnZV9vdmVyXzE4Iix0cnVlXQ~WyJnbGlkZS1hZ2Utc2FsdC1vdmVyMjEtMDAwMSIsImFnZV9vdmVyXzIxIix0cnVlXQ~&#34;
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;Decoded SD-JWT VC for Age Verification (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Authored fields are `issuerSignedPayload` (minus `_sd`), and `disclosures` as {salt, claim, value}. Run `pnpm seal` to populate each disclosure&#39;s `encoded`/`digest`, the payload `_sd` array, and `combinedIssuance`. The `presentation` block shows a holder revealing only age_over_18.&quot;,
+  &quot;spec&quot;: &quot;draft-ietf-oauth-sd-jwt-vc-16&quot;,
+  &quot;sealed&quot;: true,
+  &quot;issuerSignedPayload&quot;: {
+    &quot;iss&quot;: &quot;https://issuer.glideidentity.app&quot;,
+    &quot;vct&quot;: &quot;https://schemas.glideidentity.app/vct/age-verification&quot;,
+    &quot;iat&quot;: 1768467600,
+    &quot;exp&quot;: 1800003600,
+    &quot;cnf&quot;: {
+      &quot;jwk&quot;: {
+        &quot;kty&quot;: &quot;EC&quot;,
+        &quot;crv&quot;: &quot;P-256&quot;,
+        &quot;x&quot;: &quot;TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc&quot;,
+        &quot;y&quot;: &quot;ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ&quot;
+      }
+    },
+    &quot;_sd_alg&quot;: &quot;sha-256&quot;,
+    &quot;_sd&quot;: [
+      &quot;7xdrF95eLyS-8_6HW9a88fnxsj8_WExG-TML0KXOpqQ&quot;,
+      &quot;InoemIiiopYgUpNPlCvoVRRIsTarc1F7QhRmpoGCL40&quot;,
+      &quot;b3Rc6zzsYQpLy_MFt0I5DgMp6Kju42Oi6dvR54ilB5Q&quot;,
+      &quot;cwzTad4Oauql4z9U6lNathbZmXFYUHAYTGfRs6_efx4&quot;
+    ]
+  },
+  &quot;disclosures&quot;: [
+    {
+      &quot;salt&quot;: &quot;glide-age-salt-birthdate0&quot;,
+      &quot;claim&quot;: &quot;birthdate&quot;,
+      &quot;value&quot;: &quot;2000-05-17&quot;,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1hZ2Utc2FsdC1iaXJ0aGRhdGUwIiwiYmlydGhkYXRlIiwiMjAwMC0wNS0xNyJd&quot;,
+      &quot;digest&quot;: &quot;InoemIiiopYgUpNPlCvoVRRIsTarc1F7QhRmpoGCL40&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-age-salt-over13-0001&quot;,
+      &quot;claim&quot;: &quot;age_over_13&quot;,
+      &quot;value&quot;: true,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1hZ2Utc2FsdC1vdmVyMTMtMDAwMSIsImFnZV9vdmVyXzEzIix0cnVlXQ&quot;,
+      &quot;digest&quot;: &quot;cwzTad4Oauql4z9U6lNathbZmXFYUHAYTGfRs6_efx4&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-age-salt-over18-0001&quot;,
+      &quot;claim&quot;: &quot;age_over_18&quot;,
+      &quot;value&quot;: true,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1hZ2Utc2FsdC1vdmVyMTgtMDAwMSIsImFnZV9vdmVyXzE4Iix0cnVlXQ&quot;,
+      &quot;digest&quot;: &quot;7xdrF95eLyS-8_6HW9a88fnxsj8_WExG-TML0KXOpqQ&quot;
+    },
+    {
+      &quot;salt&quot;: &quot;glide-age-salt-over21-0001&quot;,
+      &quot;claim&quot;: &quot;age_over_21&quot;,
+      &quot;value&quot;: true,
+      &quot;encoded&quot;: &quot;WyJnbGlkZS1hZ2Utc2FsdC1vdmVyMjEtMDAwMSIsImFnZV9vdmVyXzIxIix0cnVlXQ&quot;,
+      &quot;digest&quot;: &quot;b3Rc6zzsYQpLy_MFt0I5DgMp6Kju42Oi6dvR54ilB5Q&quot;
+    }
+  ],
+  &quot;presentation&quot;: {
+    &quot;$comment&quot;: &quot;Holder presents ONLY age_over_18 — birthdate and other predicates stay hidden.&quot;,
+    &quot;discloses&quot;: [
+      &quot;age_over_18&quot;
+    ]
+  },
+  &quot;combinedIssuance&quot;: &quot;&lt;issuer-signed-jwt&gt;~WyJnbGlkZS1hZ2Utc2FsdC1iaXJ0aGRhdGUwIiwiYmlydGhkYXRlIiwiMjAwMC0wNS0xNyJd~WyJnbGlkZS1hZ2Utc2FsdC1vdmVyMTMtMDAwMSIsImFnZV9vdmVyXzEzIix0cnVlXQ~WyJnbGlkZS1hZ2Utc2FsdC1vdmVyMTgtMDAwMSIsImFnZV9vdmVyXzE4Iix0cnVlXQ~WyJnbGlkZS1hZ2Utc2FsdC1vdmVyMjEtMDAwMSIsImFnZV9vdmVyXzIxIix0cnVlXQ~&quot;
+}</code></pre> </figure>  <details class="card px-4 py-2 text-sm text-white/70"> <summary class="cursor-pointer">VC Type Metadata</summary> <div class="mt-3"><figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">sd-jwt-vc/vct-metadata.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$comment&#34;: &#34;SD-JWT VC Type Metadata for Age Verification. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), built on RFC 9901. The `sd` values follow draft-16 §claims: 'always' = issuer MUST make selectively disclosable, 'allowed' = MAY, 'never' = MUST NOT.&#34;,
+  &#34;vct&#34;: &#34;https://schemas.glideidentity.app/vct/age-verification&#34;,
+  &#34;name&#34;: &#34;Age Verification&#34;,
+  &#34;description&#34;: &#34;Proves a holder's age via boolean age-over predicates and/or a selectively disclosable birthdate. Designed so a holder can present only a predicate (e.g. age_over_18) without revealing birthdate.&#34;,
+  &#34;display&#34;: [
+    {
+      &#34;lang&#34;: &#34;en-US&#34;,
+      &#34;name&#34;: &#34;Age Verification&#34;,
+      &#34;description&#34;: &#34;Prove you are over an age threshold without revealing your birthdate.&#34;
+    }
+  ],
+  &#34;claims&#34;: [
+    {
+      &#34;path&#34;: [&#34;birthdate&#34;],
+      &#34;sd&#34;: &#34;always&#34;,
+      &#34;display&#34;: [
+        {
+          &#34;lang&#34;: &#34;en-US&#34;,
+          &#34;label&#34;: &#34;Date of birth&#34;,
+          &#34;description&#34;: &#34;Never required when an age-over predicate satisfies the verifier.&#34;
+        }
+      ]
+    },
+    {
+      &#34;path&#34;: [&#34;age_over_13&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Over 13&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;age_over_18&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Over 18&#34; }]
+    },
+    {
+      &#34;path&#34;: [&#34;age_over_21&#34;],
+      &#34;sd&#34;: &#34;allowed&#34;,
+      &#34;display&#34;: [{ &#34;lang&#34;: &#34;en-US&#34;, &#34;label&#34;: &#34;Over 21&#34; }]
+    }
+  ],
+  &#34;schema_uri&#34;: &#34;https://schemas.glideidentity.app/schemas/age-verification.schema.json&#34;
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$comment&quot;: &quot;SD-JWT VC Type Metadata for Age Verification. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), built on RFC 9901. The `sd` values follow draft-16 §claims: &#39;always&#39; = issuer MUST make selectively disclosable, &#39;allowed&#39; = MAY, &#39;never&#39; = MUST NOT.&quot;,
+  &quot;vct&quot;: &quot;https://schemas.glideidentity.app/vct/age-verification&quot;,
+  &quot;name&quot;: &quot;Age Verification&quot;,
+  &quot;description&quot;: &quot;Proves a holder&#39;s age via boolean age-over predicates and/or a selectively disclosable birthdate. Designed so a holder can present only a predicate (e.g. age_over_18) without revealing birthdate.&quot;,
+  &quot;display&quot;: [
+    {
+      &quot;lang&quot;: &quot;en-US&quot;,
+      &quot;name&quot;: &quot;Age Verification&quot;,
+      &quot;description&quot;: &quot;Prove you are over an age threshold without revealing your birthdate.&quot;
+    }
+  ],
+  &quot;claims&quot;: [
+    {
+      &quot;path&quot;: [&quot;birthdate&quot;],
+      &quot;sd&quot;: &quot;always&quot;,
+      &quot;display&quot;: [
+        {
+          &quot;lang&quot;: &quot;en-US&quot;,
+          &quot;label&quot;: &quot;Date of birth&quot;,
+          &quot;description&quot;: &quot;Never required when an age-over predicate satisfies the verifier.&quot;
+        }
+      ]
+    },
+    {
+      &quot;path&quot;: [&quot;age_over_13&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Over 13&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;age_over_18&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Over 18&quot; }]
+    },
+    {
+      &quot;path&quot;: [&quot;age_over_21&quot;],
+      &quot;sd&quot;: &quot;allowed&quot;,
+      &quot;display&quot;: [{ &quot;lang&quot;: &quot;en-US&quot;, &quot;label&quot;: &quot;Over 21&quot; }]
+    }
+  ],
+  &quot;schema_uri&quot;: &quot;https://schemas.glideidentity.app/schemas/age-verification.schema.json&quot;
+}</code></pre> </figure> </div> </details> </div> </div> </div>  </div> </section> <section class="mt-12"> <h2 class="text-2xl">JSON Schema</h2> <p class="mt-2 text-sm text-white/60">
+The shared claim set both formats validate against (Draft 2020-12).
+</p> <div class="mt-4"> <figure class="card overflow-hidden"> <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50"> <span class="font-grotesk">schema.json</span> <button class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10" type="button" data-code="{
+  &#34;$schema&#34;: &#34;https://json-schema.org/draft/2020-12/schema&#34;,
+  &#34;$id&#34;: &#34;https://schemas.glideidentity.app/schemas/age-verification.schema.json&#34;,
+  &#34;$comment&#34;: &#34;Claim set for the Age Verification credential. Shared by the W3C VC 2.0 (credentialSubject) and SD-JWT VC (disclosed payload) representations. JSON Schema Draft 2020-12.&#34;,
+  &#34;title&#34;: &#34;Age Verification claim set&#34;,
+  &#34;type&#34;: &#34;object&#34;,
+  &#34;properties&#34;: {
+    &#34;birthdate&#34;: {
+      &#34;type&#34;: &#34;string&#34;,
+      &#34;format&#34;: &#34;date&#34;,
+      &#34;description&#34;: &#34;Full date of birth (ISO 8601 full-date). PRIVACY: must never be mandatory-disclosed when an age-over predicate suffices.&#34;,
+      &#34;examples&#34;: [&#34;2000-05-17&#34;]
+    },
+    &#34;age_over_13&#34;: {
+      &#34;type&#34;: &#34;boolean&#34;,
+      &#34;description&#34;: &#34;Predicate: holder is at least 13 years old.&#34;
+    },
+    &#34;age_over_18&#34;: {
+      &#34;type&#34;: &#34;boolean&#34;,
+      &#34;description&#34;: &#34;Predicate: holder is at least 18 years old.&#34;
+    },
+    &#34;age_over_21&#34;: {
+      &#34;type&#34;: &#34;boolean&#34;,
+      &#34;description&#34;: &#34;Predicate: holder is at least 21 years old.&#34;
+    }
+  },
+  &#34;anyOf&#34;: [
+    { &#34;required&#34;: [&#34;age_over_13&#34;] },
+    { &#34;required&#34;: [&#34;age_over_18&#34;] },
+    { &#34;required&#34;: [&#34;age_over_21&#34;] },
+    { &#34;required&#34;: [&#34;birthdate&#34;] }
+  ],
+  &#34;additionalProperties&#34;: false
+}">
+Copy
+</button> </figcaption> <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{
+  &quot;$schema&quot;: &quot;https://json-schema.org/draft/2020-12/schema&quot;,
+  &quot;$id&quot;: &quot;https://schemas.glideidentity.app/schemas/age-verification.schema.json&quot;,
+  &quot;$comment&quot;: &quot;Claim set for the Age Verification credential. Shared by the W3C VC 2.0 (credentialSubject) and SD-JWT VC (disclosed payload) representations. JSON Schema Draft 2020-12.&quot;,
+  &quot;title&quot;: &quot;Age Verification claim set&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;birthdate&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;format&quot;: &quot;date&quot;,
+      &quot;description&quot;: &quot;Full date of birth (ISO 8601 full-date). PRIVACY: must never be mandatory-disclosed when an age-over predicate suffices.&quot;,
+      &quot;examples&quot;: [&quot;2000-05-17&quot;]
+    },
+    &quot;age_over_13&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;,
+      &quot;description&quot;: &quot;Predicate: holder is at least 13 years old.&quot;
+    },
+    &quot;age_over_18&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;,
+      &quot;description&quot;: &quot;Predicate: holder is at least 18 years old.&quot;
+    },
+    &quot;age_over_21&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;,
+      &quot;description&quot;: &quot;Predicate: holder is at least 21 years old.&quot;
+    }
+  },
+  &quot;anyOf&quot;: [
+    { &quot;required&quot;: [&quot;age_over_13&quot;] },
+    { &quot;required&quot;: [&quot;age_over_18&quot;] },
+    { &quot;required&quot;: [&quot;age_over_21&quot;] },
+    { &quot;required&quot;: [&quot;birthdate&quot;] }
+  ],
+  &quot;additionalProperties&quot;: false
+}</code></pre> </figure>  </div> </section>  </main> <footer class="border-t border-white/10"> <div class="mx-auto max-w-6xl px-6 py-8 text-sm text-white/50"> <p>
+Glide Identity credential schemas · Apache-2.0 · W3C VC 2.0 + SD-JWT VC (draft-16).
+          Examples use fake data.
+</p> </div> </footer> </body></html>

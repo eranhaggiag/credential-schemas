@@ -1,0 +1,1 @@
+document.addEventListener("click",async e=>{const t=e.target?.closest(".copy-btn");if(!t)return;const n=t.dataset.code??"";try{await navigator.clipboard.writeText(n);const c=t.textContent;t.textContent="Copied",t.classList.add("text-brand-accent"),setTimeout(()=>{t.textContent=c,t.classList.remove("text-brand-accent")},1200)}catch{t.textContent="Press ⌘C"}});
