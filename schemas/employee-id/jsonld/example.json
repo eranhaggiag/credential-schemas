@@ -1,0 +1,19 @@
+{
+  "$comment": "Example W3C VC 2.0 Employee ID credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).",
+  "@context": [
+    "https://www.w3.org/ns/credentials/v2",
+    "https://schemas.glideidentity.app/contexts/employee-id.jsonld"
+  ],
+  "type": ["VerifiableCredential", "EmployeeIdCredential"],
+  "issuer": "https://hr.globex.example",
+  "validFrom": "2026-01-15T09:00:00Z",
+  "validUntil": "2028-01-15T09:00:00Z",
+  "credentialSubject": {
+    "id": "did:example:holder-emp-0001",
+    "employer": "Globex Corporation",
+    "employee_id": "GBX-48217",
+    "job_title": "Staff Software Engineer",
+    "department": "Platform Engineering",
+    "employment_status": "active"
+  }
+}

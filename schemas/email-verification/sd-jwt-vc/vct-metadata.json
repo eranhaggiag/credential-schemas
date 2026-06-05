@@ -1,0 +1,37 @@
+{
+  "$comment": "SD-JWT VC Type Metadata for Email Verification. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.",
+  "vct": "https://schemas.glideidentity.app/vct/email-verification",
+  "name": "Email Verification",
+  "description": "Proof of control over an email address.",
+  "display": [
+    {
+      "lang": "en-US",
+      "name": "Email Address",
+      "description": "A verified email address."
+    }
+  ],
+  "claims": [
+    {
+      "path": ["email"],
+      "sd": "always",
+      "display": [
+        {
+          "lang": "en-US",
+          "label": "Email",
+          "description": "Identifying; keep selectively disclosable."
+        }
+      ]
+    },
+    {
+      "path": ["verification_method"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Method" }]
+    },
+    {
+      "path": ["verified_at"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Verified at" }]
+    }
+  ],
+  "schema_uri": "https://schemas.glideidentity.app/schemas/email-verification.schema.json"
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.glideidentity.app/schemas/email-verification.schema.json",
+  "$comment": "Claim set for Email Verification. JSON Schema Draft 2020-12.",
+  "title": "Email Verification claim set",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Verified email address.",
+      "examples": ["jordan.avery@example.com"]
+    },
+    "verification_method": {
+      "type": "string",
+      "enum": ["link_click", "otp", "dkim_proof"],
+      "description": "How control of the mailbox was proven."
+    },
+    "verified_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When control was verified."
+    }
+  },
+  "required": ["email", "verification_method", "verified_at"],
+  "additionalProperties": false
+}

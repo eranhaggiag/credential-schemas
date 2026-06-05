@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.glideidentity.app/schemas/bank-id.schema.json",
+  "$comment": "Claim set for Bank ID. Carries a national-ID *linkage flag* only — never the national ID itself. JSON Schema Draft 2020-12.",
+  "title": "Bank ID claim set",
+  "type": "object",
+  "properties": {
+    "issuing_institution": {
+      "type": "string",
+      "description": "Name of the issuing financial institution.",
+      "examples": ["First Meridian Bank"]
+    },
+    "account_holder_name": {
+      "type": "string",
+      "description": "Verified legal name of the account holder.",
+      "examples": ["Jordan Avery"]
+    },
+    "kyc_level": {
+      "type": "string",
+      "enum": ["basic", "standard", "enhanced"],
+      "description": "Verified Know-Your-Customer assurance level."
+    },
+    "jurisdiction": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$",
+      "description": "ISO 3166-1 alpha-2 country code of the regulating jurisdiction.",
+      "examples": ["SE"]
+    },
+    "national_id_linked": {
+      "type": "boolean",
+      "description": "Whether a national ID was verified and linked at the bank. The national ID itself is NEVER included."
+    }
+  },
+  "required": ["issuing_institution", "account_holder_name", "kyc_level", "jurisdiction"],
+  "additionalProperties": false
+}

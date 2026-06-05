@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.glideidentity.app/schemas/education-certificate.schema.json",
+  "$comment": "Claim set for Education Certificate. JSON Schema Draft 2020-12.",
+  "title": "Education Certificate claim set",
+  "type": "object",
+  "properties": {
+    "institution": {
+      "type": "string",
+      "description": "Awarding institution.",
+      "examples": ["Northbridge University"]
+    },
+    "credential_name": {
+      "type": "string",
+      "description": "Degree / credential name.",
+      "examples": ["Bachelor of Science"]
+    },
+    "field_of_study": {
+      "type": "string",
+      "examples": ["Computer Science"]
+    },
+    "award_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the credential was awarded."
+    },
+    "grade": {
+      "type": "string",
+      "description": "Final grade / classification. Optional and disclosable.",
+      "examples": ["First Class Honours"]
+    },
+    "accreditation_body": {
+      "type": "string",
+      "description": "Body that accredits the institution / programme.",
+      "examples": ["Northbridge National Accreditation Council"]
+    }
+  },
+  "required": ["institution", "credential_name", "award_date"],
+  "additionalProperties": false
+}

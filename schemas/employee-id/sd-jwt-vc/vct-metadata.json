@@ -1,0 +1,41 @@
+{
+  "$comment": "SD-JWT VC Type Metadata for Employee ID. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.",
+  "vct": "https://schemas.glideidentity.app/vct/employee-id",
+  "name": "Employee ID",
+  "description": "Employer-issued workforce credential: employer, employee ID, role, department, and employment status.",
+  "display": [
+    {
+      "lang": "en-US",
+      "name": "Employee ID",
+      "description": "Your workplace identity credential."
+    }
+  ],
+  "claims": [
+    {
+      "path": ["employer"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Employer" }]
+    },
+    {
+      "path": ["employee_id"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Employee ID" }]
+    },
+    {
+      "path": ["job_title"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Title" }]
+    },
+    {
+      "path": ["department"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Department" }]
+    },
+    {
+      "path": ["employment_status"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Status" }]
+    }
+  ],
+  "schema_uri": "https://schemas.glideidentity.app/schemas/employee-id.schema.json"
+}

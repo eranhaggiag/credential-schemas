@@ -1,0 +1,73 @@
+{
+  "$comment": "SD-JWT VC Type Metadata for Boarding Pass. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.",
+  "vct": "https://schemas.glideidentity.app/vct/boarding-pass",
+  "name": "Boarding Pass",
+  "description": "A flight boarding pass: passenger, carrier, flight, route, departure, seat, boarding group, and disclosable PNR.",
+  "display": [
+    {
+      "lang": "en-US",
+      "name": "Boarding Pass",
+      "description": "Your verifiable boarding pass."
+    }
+  ],
+  "claims": [
+    {
+      "path": ["passenger_name"],
+      "sd": "always",
+      "display": [
+        {
+          "lang": "en-US",
+          "label": "Passenger",
+          "description": "Identifying; keep selectively disclosable."
+        }
+      ]
+    },
+    {
+      "path": ["carrier"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Carrier" }]
+    },
+    {
+      "path": ["flight_number"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Flight" }]
+    },
+    {
+      "path": ["origin"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "From" }]
+    },
+    {
+      "path": ["destination"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "To" }]
+    },
+    {
+      "path": ["departure_time"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Departs" }]
+    },
+    {
+      "path": ["seat"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Seat" }]
+    },
+    {
+      "path": ["boarding_group"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Group" }]
+    },
+    {
+      "path": ["pnr"],
+      "sd": "always",
+      "display": [
+        {
+          "lang": "en-US",
+          "label": "Booking ref (PNR)",
+          "description": "Sensitive booking key; keep selectively disclosable."
+        }
+      ]
+    }
+  ],
+  "schema_uri": "https://schemas.glideidentity.app/schemas/boarding-pass.schema.json"
+}

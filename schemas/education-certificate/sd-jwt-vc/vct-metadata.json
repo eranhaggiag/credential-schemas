@@ -1,0 +1,52 @@
+{
+  "$comment": "SD-JWT VC Type Metadata for Education Certificate. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.",
+  "vct": "https://schemas.glideidentity.app/vct/education-certificate",
+  "name": "Education Certificate",
+  "description": "An academic credential: institution, degree, field of study, award date, optional grade, and accreditation body.",
+  "display": [
+    {
+      "lang": "en-US",
+      "name": "Education Certificate",
+      "description": "A verifiable academic credential."
+    }
+  ],
+  "claims": [
+    {
+      "path": ["institution"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Institution" }]
+    },
+    {
+      "path": ["credential_name"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Credential" }]
+    },
+    {
+      "path": ["field_of_study"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Field of study" }]
+    },
+    {
+      "path": ["award_date"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Award date" }]
+    },
+    {
+      "path": ["grade"],
+      "sd": "always",
+      "display": [
+        {
+          "lang": "en-US",
+          "label": "Grade",
+          "description": "Optional; keep selectively disclosable."
+        }
+      ]
+    },
+    {
+      "path": ["accreditation_body"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Accreditation body" }]
+    }
+  ],
+  "schema_uri": "https://schemas.glideidentity.app/schemas/education-certificate.schema.json"
+}

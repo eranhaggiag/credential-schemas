@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.glideidentity.app/schemas/boarding-pass.schema.json",
+  "$comment": "Claim set for Boarding Pass. IATA codes validated by pattern. JSON Schema Draft 2020-12.",
+  "title": "Boarding Pass claim set",
+  "type": "object",
+  "properties": {
+    "passenger_name": {
+      "type": "string",
+      "examples": ["AVERY/JORDAN"]
+    },
+    "carrier": {
+      "type": "string",
+      "pattern": "^[A-Z0-9]{2}$",
+      "description": "IATA airline designator (2 chars).",
+      "examples": ["GA"]
+    },
+    "flight_number": {
+      "type": "string",
+      "pattern": "^[A-Z0-9]{2}[0-9]{1,4}$",
+      "description": "Carrier code + numeric flight number.",
+      "examples": ["GA417"]
+    },
+    "origin": {
+      "type": "string",
+      "format": "iata-airport",
+      "description": "IATA airport code of departure.",
+      "examples": ["ARN"]
+    },
+    "destination": {
+      "type": "string",
+      "format": "iata-airport",
+      "description": "IATA airport code of arrival.",
+      "examples": ["LHR"]
+    },
+    "departure_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Scheduled departure (local time with offset)."
+    },
+    "seat": {
+      "type": "string",
+      "examples": ["14C"]
+    },
+    "boarding_group": {
+      "type": "string",
+      "examples": ["B"]
+    },
+    "pnr": {
+      "type": "string",
+      "description": "Passenger Name Record / booking reference. Disclosable.",
+      "examples": ["X4F2QJ"]
+    }
+  },
+  "required": [
+    "passenger_name",
+    "carrier",
+    "flight_number",
+    "origin",
+    "destination",
+    "departure_time"
+  ],
+  "additionalProperties": false
+}

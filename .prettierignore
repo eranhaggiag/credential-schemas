@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+pnpm-lock.yaml
+
+# Generated artifacts — canonical form is the script output, checked for determinism in CI.
+schemas/registry.json
+schemas/**/sd-jwt-vc/example.json

@@ -1,0 +1,55 @@
+{
+  "$comment": "Decoded SD-JWT VC for Email Verification (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Run `pnpm seal` to populate digests/_sd/combinedIssuance.",
+  "spec": "draft-ietf-oauth-sd-jwt-vc-16",
+  "sealed": true,
+  "issuerSignedPayload": {
+    "iss": "https://verify.glideidentity.app",
+    "vct": "https://schemas.glideidentity.app/vct/email-verification",
+    "iat": 1773317700,
+    "exp": 1789208100,
+    "cnf": {
+      "jwk": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc",
+        "y": "ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ"
+      }
+    },
+    "_sd_alg": "sha-256",
+    "_sd": [
+      "B_ODYo_vqo0Ztb_beH7nUdPNRjW2s0Q4bdRqpFW80eo",
+      "VINQha_gGaWuJiaEz1i6Pa9TbVTXyFNbP8o5sx1rG6I",
+      "lY4BYUUyoPHjUBlJjYHmmPsXuJgOPMWjgna2eeppWX4"
+    ]
+  },
+  "disclosures": [
+    {
+      "salt": "glide-email-salt-addr01",
+      "claim": "email",
+      "value": "jordan.avery@example.com",
+      "encoded": "WyJnbGlkZS1lbWFpbC1zYWx0LWFkZHIwMSIsImVtYWlsIiwiam9yZGFuLmF2ZXJ5QGV4YW1wbGUuY29tIl0",
+      "digest": "lY4BYUUyoPHjUBlJjYHmmPsXuJgOPMWjgna2eeppWX4"
+    },
+    {
+      "salt": "glide-email-salt-method",
+      "claim": "verification_method",
+      "value": "link_click",
+      "encoded": "WyJnbGlkZS1lbWFpbC1zYWx0LW1ldGhvZCIsInZlcmlmaWNhdGlvbl9tZXRob2QiLCJsaW5rX2NsaWNrIl0",
+      "digest": "B_ODYo_vqo0Ztb_beH7nUdPNRjW2s0Q4bdRqpFW80eo"
+    },
+    {
+      "salt": "glide-email-salt-vat001",
+      "claim": "verified_at",
+      "value": "2026-03-12T08:15:00Z",
+      "encoded": "WyJnbGlkZS1lbWFpbC1zYWx0LXZhdDAwMSIsInZlcmlmaWVkX2F0IiwiMjAyNi0wMy0xMlQwODoxNTowMFoiXQ",
+      "digest": "VINQha_gGaWuJiaEz1i6Pa9TbVTXyFNbP8o5sx1rG6I"
+    }
+  ],
+  "presentation": {
+    "$comment": "Holder discloses only the verified email address.",
+    "discloses": [
+      "email"
+    ]
+  },
+  "combinedIssuance": "<issuer-signed-jwt>~WyJnbGlkZS1lbWFpbC1zYWx0LWFkZHIwMSIsImVtYWlsIiwiam9yZGFuLmF2ZXJ5QGV4YW1wbGUuY29tIl0~WyJnbGlkZS1lbWFpbC1zYWx0LW1ldGhvZCIsInZlcmlmaWNhdGlvbl9tZXRob2QiLCJsaW5rX2NsaWNrIl0~WyJnbGlkZS1lbWFpbC1zYWx0LXZhdDAwMSIsInZlcmlmaWVkX2F0IiwiMjAyNi0wMy0xMlQwODoxNTowMFoiXQ~"
+}

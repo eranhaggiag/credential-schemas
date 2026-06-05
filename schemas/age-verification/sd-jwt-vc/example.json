@@ -1,0 +1,63 @@
+{
+  "$comment": "Decoded SD-JWT VC for Age Verification (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Authored fields are `issuerSignedPayload` (minus `_sd`), and `disclosures` as {salt, claim, value}. Run `pnpm seal` to populate each disclosure's `encoded`/`digest`, the payload `_sd` array, and `combinedIssuance`. The `presentation` block shows a holder revealing only age_over_18.",
+  "spec": "draft-ietf-oauth-sd-jwt-vc-16",
+  "sealed": true,
+  "issuerSignedPayload": {
+    "iss": "https://issuer.glideidentity.app",
+    "vct": "https://schemas.glideidentity.app/vct/age-verification",
+    "iat": 1768467600,
+    "exp": 1800003600,
+    "cnf": {
+      "jwk": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc",
+        "y": "ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ"
+      }
+    },
+    "_sd_alg": "sha-256",
+    "_sd": [
+      "7xdrF95eLyS-8_6HW9a88fnxsj8_WExG-TML0KXOpqQ",
+      "InoemIiiopYgUpNPlCvoVRRIsTarc1F7QhRmpoGCL40",
+      "b3Rc6zzsYQpLy_MFt0I5DgMp6Kju42Oi6dvR54ilB5Q",
+      "cwzTad4Oauql4z9U6lNathbZmXFYUHAYTGfRs6_efx4"
+    ]
+  },
+  "disclosures": [
+    {
+      "salt": "glide-age-salt-birthdate0",
+      "claim": "birthdate",
+      "value": "2000-05-17",
+      "encoded": "WyJnbGlkZS1hZ2Utc2FsdC1iaXJ0aGRhdGUwIiwiYmlydGhkYXRlIiwiMjAwMC0wNS0xNyJd",
+      "digest": "InoemIiiopYgUpNPlCvoVRRIsTarc1F7QhRmpoGCL40"
+    },
+    {
+      "salt": "glide-age-salt-over13-0001",
+      "claim": "age_over_13",
+      "value": true,
+      "encoded": "WyJnbGlkZS1hZ2Utc2FsdC1vdmVyMTMtMDAwMSIsImFnZV9vdmVyXzEzIix0cnVlXQ",
+      "digest": "cwzTad4Oauql4z9U6lNathbZmXFYUHAYTGfRs6_efx4"
+    },
+    {
+      "salt": "glide-age-salt-over18-0001",
+      "claim": "age_over_18",
+      "value": true,
+      "encoded": "WyJnbGlkZS1hZ2Utc2FsdC1vdmVyMTgtMDAwMSIsImFnZV9vdmVyXzE4Iix0cnVlXQ",
+      "digest": "7xdrF95eLyS-8_6HW9a88fnxsj8_WExG-TML0KXOpqQ"
+    },
+    {
+      "salt": "glide-age-salt-over21-0001",
+      "claim": "age_over_21",
+      "value": true,
+      "encoded": "WyJnbGlkZS1hZ2Utc2FsdC1vdmVyMjEtMDAwMSIsImFnZV9vdmVyXzIxIix0cnVlXQ",
+      "digest": "b3Rc6zzsYQpLy_MFt0I5DgMp6Kju42Oi6dvR54ilB5Q"
+    }
+  ],
+  "presentation": {
+    "$comment": "Holder presents ONLY age_over_18 — birthdate and other predicates stay hidden.",
+    "discloses": [
+      "age_over_18"
+    ]
+  },
+  "combinedIssuance": "<issuer-signed-jwt>~WyJnbGlkZS1hZ2Utc2FsdC1iaXJ0aGRhdGUwIiwiYmlydGhkYXRlIiwiMjAwMC0wNS0xNyJd~WyJnbGlkZS1hZ2Utc2FsdC1vdmVyMTMtMDAwMSIsImFnZV9vdmVyXzEzIix0cnVlXQ~WyJnbGlkZS1hZ2Utc2FsdC1vdmVyMTgtMDAwMSIsImFnZV9vdmVyXzE4Iix0cnVlXQ~WyJnbGlkZS1hZ2Utc2FsdC1vdmVyMjEtMDAwMSIsImFnZV9vdmVyXzIxIix0cnVlXQ~"
+}

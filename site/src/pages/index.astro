@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+import { getRegistry } from '../lib/content';
+
+const registry = getRegistry();
+const base = import.meta.env.BASE_URL;
+const registryHref = `${base}registry`.replace(/\/\//g, '/');
+const docsHref = `${base}docs`.replace(/\/\//g, '/');
+const count = registry.credentials.length;
+---
+
+<Base title="Verifiable credential schemas, in two formats">
+  <section class="py-10">
+    <span class="chip">Dual-format · W3C VC 2.0 + SD-JWT VC</span>
+    <h1 class="mt-6 max-w-3xl text-4xl leading-tight sm:text-5xl">
+      One claim set. Two interoperable formats.
+      <span class="accent">Selective disclosure</span> by design.
+    </h1>
+    <p class="mt-5 max-w-2xl text-lg text-white/70">
+      A registry of <span class="numeral accent">{count}</span> verifiable credential types, each
+      published as a W3C Verifiable Credentials 2.0 JSON-LD credential <em>and</em> an IETF
+      SD-JWT VC — the format frozen into the EU Digital Identity Wallet ARF. The privacy-sensitive
+      claims are individually disclosable, so a holder reveals only what a verifier needs.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a class="btn btn-primary" href={registryHref}>Browse the schemas</a>
+      <a class="btn btn-ghost" href={docsHref}>Developer docs</a>
+    </div>
+  </section>
+
+  <section class="grid gap-6 py-8 md:grid-cols-3">
+    <div class="card p-6">
+      <div class="numeral text-3xl text-white">JSON-LD</div>
+      <h3 class="mt-2 text-base">W3C VC 2.0</h3>
+      <p class="mt-2 text-sm text-white/70">
+        Linked-data credentials on the <code>credentials/v2</code> base context. Best for
+        linked-data ecosystems and semantic interop.
+      </p>
+    </div>
+    <div class="card p-6">
+      <div class="numeral text-3xl text-white">SD-JWT VC</div>
+      <h3 class="mt-2 text-base">draft-16 · RFC 9901</h3>
+      <p class="mt-2 text-sm text-white/70">
+        Compact, selectively disclosable JWTs. The EUDI Wallet / OID4VCI interop target — our
+        primary format.
+      </p>
+    </div>
+    <div class="card p-6">
+      <div class="numeral text-3xl text-white">age_over_18</div>
+      <h3 class="mt-2 text-base">Predicates, not birthdates</h3>
+      <p class="mt-2 text-sm text-white/70">
+        Prove a threshold without revealing the underlying data. Birthdate stays hidden behind a
+        boolean predicate.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-8">
+    <h2 class="text-2xl">Why two formats?</h2>
+    <p class="mt-3 max-w-3xl text-white/70">
+      Different ecosystems converged on different containers. Rather than pick a side, every type
+      here is defined once as a JSON Schema claim set and rendered into both — so an issuer can
+      serve a linked-data verifier and an EUDI wallet from the same source of truth. The
+      <a class="accent" href={docsHref}>choosing-a-format guide</a> walks through when to reach for which.
+    </p>
+  </section>
+</Base>

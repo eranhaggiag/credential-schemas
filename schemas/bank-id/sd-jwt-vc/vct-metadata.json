@@ -1,0 +1,47 @@
+{
+  "$comment": "SD-JWT VC Type Metadata for Bank ID. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.",
+  "vct": "https://schemas.glideidentity.app/vct/bank-id",
+  "name": "Bank ID",
+  "description": "Bank-issued identity credential with verified KYC level and jurisdiction. Carries a national-ID linkage flag, never the national ID itself.",
+  "display": [
+    {
+      "lang": "en-US",
+      "name": "Bank ID",
+      "description": "A KYC-backed identity issued by your bank."
+    }
+  ],
+  "claims": [
+    {
+      "path": ["issuing_institution"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Issuing bank" }]
+    },
+    {
+      "path": ["account_holder_name"],
+      "sd": "always",
+      "display": [
+        {
+          "lang": "en-US",
+          "label": "Account holder",
+          "description": "Identifying; keep selectively disclosable."
+        }
+      ]
+    },
+    {
+      "path": ["kyc_level"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "KYC level" }]
+    },
+    {
+      "path": ["jurisdiction"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Jurisdiction" }]
+    },
+    {
+      "path": ["national_id_linked"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "National ID linked" }]
+    }
+  ],
+  "schema_uri": "https://schemas.glideidentity.app/schemas/bank-id.schema.json"
+}

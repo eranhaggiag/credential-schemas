@@ -1,0 +1,81 @@
+{
+  "$comment": "Decoded SD-JWT VC for Education Certificate (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Run `pnpm seal` to populate digests/_sd/combinedIssuance.",
+  "spec": "draft-ietf-oauth-sd-jwt-vc-16",
+  "sealed": true,
+  "issuerSignedPayload": {
+    "iss": "https://registrar.northbridge.example",
+    "vct": "https://schemas.glideidentity.app/vct/education-certificate",
+    "iat": 1721001600,
+    "cnf": {
+      "jwk": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc",
+        "y": "ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ"
+      }
+    },
+    "_sd_alg": "sha-256",
+    "_sd": [
+      "35sk89psjzqRB6nY_9zdt7nHplmausEAVo0vpoAVW0w",
+      "XvA6SzEyDhWrmp8qAXm2AZMV4ZXrgnHz5HuKunvEU_Y",
+      "_3qrGGh4NHZYySir43uYbZWg2m6-ttTYwtsDM3CWH8g",
+      "jSecF2HJr6GlQtSS1Ls6s6DKCz0cmsj73efFwZsO83s",
+      "tw4lIv_LJUCYwKABmqa23-bVkU6SZyt0y9a5V9nKzGE",
+      "v5z4pe9M5xcIKg3jM9TpqfefPBur3AUWBQKSmUeUpb4"
+    ]
+  },
+  "disclosures": [
+    {
+      "salt": "glide-edu-salt-inst00001",
+      "claim": "institution",
+      "value": "Northbridge University",
+      "encoded": "WyJnbGlkZS1lZHUtc2FsdC1pbnN0MDAwMDEiLCJpbnN0aXR1dGlvbiIsIk5vcnRoYnJpZGdlIFVuaXZlcnNpdHkiXQ",
+      "digest": "v5z4pe9M5xcIKg3jM9TpqfefPBur3AUWBQKSmUeUpb4"
+    },
+    {
+      "salt": "glide-edu-salt-credname0",
+      "claim": "credential_name",
+      "value": "Bachelor of Science",
+      "encoded": "WyJnbGlkZS1lZHUtc2FsdC1jcmVkbmFtZTAiLCJjcmVkZW50aWFsX25hbWUiLCJCYWNoZWxvciBvZiBTY2llbmNlIl0",
+      "digest": "_3qrGGh4NHZYySir43uYbZWg2m6-ttTYwtsDM3CWH8g"
+    },
+    {
+      "salt": "glide-edu-salt-field0001",
+      "claim": "field_of_study",
+      "value": "Computer Science",
+      "encoded": "WyJnbGlkZS1lZHUtc2FsdC1maWVsZDAwMDEiLCJmaWVsZF9vZl9zdHVkeSIsIkNvbXB1dGVyIFNjaWVuY2UiXQ",
+      "digest": "tw4lIv_LJUCYwKABmqa23-bVkU6SZyt0y9a5V9nKzGE"
+    },
+    {
+      "salt": "glide-edu-salt-award001",
+      "claim": "award_date",
+      "value": "2024-07-12",
+      "encoded": "WyJnbGlkZS1lZHUtc2FsdC1hd2FyZDAwMSIsImF3YXJkX2RhdGUiLCIyMDI0LTA3LTEyIl0",
+      "digest": "35sk89psjzqRB6nY_9zdt7nHplmausEAVo0vpoAVW0w"
+    },
+    {
+      "salt": "glide-edu-salt-grade001",
+      "claim": "grade",
+      "value": "First Class Honours",
+      "encoded": "WyJnbGlkZS1lZHUtc2FsdC1ncmFkZTAwMSIsImdyYWRlIiwiRmlyc3QgQ2xhc3MgSG9ub3VycyJd",
+      "digest": "jSecF2HJr6GlQtSS1Ls6s6DKCz0cmsj73efFwZsO83s"
+    },
+    {
+      "salt": "glide-edu-salt-accred01",
+      "claim": "accreditation_body",
+      "value": "Northbridge National Accreditation Council",
+      "encoded": "WyJnbGlkZS1lZHUtc2FsdC1hY2NyZWQwMSIsImFjY3JlZGl0YXRpb25fYm9keSIsIk5vcnRoYnJpZGdlIE5hdGlvbmFsIEFjY3JlZGl0YXRpb24gQ291bmNpbCJd",
+      "digest": "XvA6SzEyDhWrmp8qAXm2AZMV4ZXrgnHz5HuKunvEU_Y"
+    }
+  ],
+  "presentation": {
+    "$comment": "Holder proves the degree and field without revealing their grade.",
+    "discloses": [
+      "institution",
+      "credential_name",
+      "field_of_study",
+      "award_date"
+    ]
+  },
+  "combinedIssuance": "<issuer-signed-jwt>~WyJnbGlkZS1lZHUtc2FsdC1pbnN0MDAwMDEiLCJpbnN0aXR1dGlvbiIsIk5vcnRoYnJpZGdlIFVuaXZlcnNpdHkiXQ~WyJnbGlkZS1lZHUtc2FsdC1jcmVkbmFtZTAiLCJjcmVkZW50aWFsX25hbWUiLCJCYWNoZWxvciBvZiBTY2llbmNlIl0~WyJnbGlkZS1lZHUtc2FsdC1maWVsZDAwMDEiLCJmaWVsZF9vZl9zdHVkeSIsIkNvbXB1dGVyIFNjaWVuY2UiXQ~WyJnbGlkZS1lZHUtc2FsdC1hd2FyZDAwMSIsImF3YXJkX2RhdGUiLCIyMDI0LTA3LTEyIl0~WyJnbGlkZS1lZHUtc2FsdC1ncmFkZTAwMSIsImdyYWRlIiwiRmlyc3QgQ2xhc3MgSG9ub3VycyJd~WyJnbGlkZS1lZHUtc2FsdC1hY2NyZWQwMSIsImFjY3JlZGl0YXRpb25fYm9keSIsIk5vcnRoYnJpZGdlIE5hdGlvbmFsIEFjY3JlZGl0YXRpb24gQ291bmNpbCJd~"
+}

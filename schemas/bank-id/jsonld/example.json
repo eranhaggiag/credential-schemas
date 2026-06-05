@@ -1,0 +1,19 @@
+{
+  "$comment": "Example W3C VC 2.0 Bank ID credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).",
+  "@context": [
+    "https://www.w3.org/ns/credentials/v2",
+    "https://schemas.glideidentity.app/contexts/bank-id.jsonld"
+  ],
+  "type": ["VerifiableCredential", "BankIdCredential"],
+  "issuer": "https://id.firstmeridian.example",
+  "validFrom": "2026-01-20T10:00:00Z",
+  "validUntil": "2029-01-20T10:00:00Z",
+  "credentialSubject": {
+    "id": "did:example:holder-bank-0001",
+    "issuing_institution": "First Meridian Bank",
+    "account_holder_name": "Jordan Avery",
+    "kyc_level": "enhanced",
+    "jurisdiction": "SE",
+    "national_id_linked": true
+  }
+}

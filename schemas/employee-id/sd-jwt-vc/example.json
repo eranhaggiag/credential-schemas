@@ -1,0 +1,72 @@
+{
+  "$comment": "Decoded SD-JWT VC for Employee ID (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Run `pnpm seal` to populate digests/_sd/combinedIssuance.",
+  "spec": "draft-ietf-oauth-sd-jwt-vc-16",
+  "sealed": true,
+  "issuerSignedPayload": {
+    "iss": "https://hr.globex.example",
+    "vct": "https://schemas.glideidentity.app/vct/employee-id",
+    "iat": 1768467600,
+    "exp": 1831539600,
+    "cnf": {
+      "jwk": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc",
+        "y": "ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ"
+      }
+    },
+    "_sd_alg": "sha-256",
+    "_sd": [
+      "0_nPbgxjldT4HFIA38cxmhctgi5NDlWr-WuqfAl_eSM",
+      "5JpF5jcSo3W9wJyJjJefeFVnpKyxz8U3c0i6XPba72M",
+      "HPmaM2IeS8vEaRg121PrUgR0TYz5cgY4i-3r5F7wX-E",
+      "PvmkU1ralkQrw8-XpKFWEhIZb0DdoQPmTG3GhqZFG6s",
+      "bXm6daAIyPwT6WPxRz0KG5WoGE_UVitfzfBGwplhOOI"
+    ]
+  },
+  "disclosures": [
+    {
+      "salt": "glide-emp-salt-employer00",
+      "claim": "employer",
+      "value": "Globex Corporation",
+      "encoded": "WyJnbGlkZS1lbXAtc2FsdC1lbXBsb3llcjAwIiwiZW1wbG95ZXIiLCJHbG9iZXggQ29ycG9yYXRpb24iXQ",
+      "digest": "5JpF5jcSo3W9wJyJjJefeFVnpKyxz8U3c0i6XPba72M"
+    },
+    {
+      "salt": "glide-emp-salt-empid00001",
+      "claim": "employee_id",
+      "value": "GBX-48217",
+      "encoded": "WyJnbGlkZS1lbXAtc2FsdC1lbXBpZDAwMDAxIiwiZW1wbG95ZWVfaWQiLCJHQlgtNDgyMTciXQ",
+      "digest": "0_nPbgxjldT4HFIA38cxmhctgi5NDlWr-WuqfAl_eSM"
+    },
+    {
+      "salt": "glide-emp-salt-title00001",
+      "claim": "job_title",
+      "value": "Staff Software Engineer",
+      "encoded": "WyJnbGlkZS1lbXAtc2FsdC10aXRsZTAwMDAxIiwiam9iX3RpdGxlIiwiU3RhZmYgU29mdHdhcmUgRW5naW5lZXIiXQ",
+      "digest": "PvmkU1ralkQrw8-XpKFWEhIZb0DdoQPmTG3GhqZFG6s"
+    },
+    {
+      "salt": "glide-emp-salt-dept000001",
+      "claim": "department",
+      "value": "Platform Engineering",
+      "encoded": "WyJnbGlkZS1lbXAtc2FsdC1kZXB0MDAwMDAxIiwiZGVwYXJ0bWVudCIsIlBsYXRmb3JtIEVuZ2luZWVyaW5nIl0",
+      "digest": "bXm6daAIyPwT6WPxRz0KG5WoGE_UVitfzfBGwplhOOI"
+    },
+    {
+      "salt": "glide-emp-salt-status0001",
+      "claim": "employment_status",
+      "value": "active",
+      "encoded": "WyJnbGlkZS1lbXAtc2FsdC1zdGF0dXMwMDAxIiwiZW1wbG95bWVudF9zdGF0dXMiLCJhY3RpdmUiXQ",
+      "digest": "HPmaM2IeS8vEaRg121PrUgR0TYz5cgY4i-3r5F7wX-E"
+    }
+  ],
+  "presentation": {
+    "$comment": "Holder proves they currently work at Globex without revealing employee_id or department.",
+    "discloses": [
+      "employer",
+      "employment_status"
+    ]
+  },
+  "combinedIssuance": "<issuer-signed-jwt>~WyJnbGlkZS1lbXAtc2FsdC1lbXBsb3llcjAwIiwiZW1wbG95ZXIiLCJHbG9iZXggQ29ycG9yYXRpb24iXQ~WyJnbGlkZS1lbXAtc2FsdC1lbXBpZDAwMDAxIiwiZW1wbG95ZWVfaWQiLCJHQlgtNDgyMTciXQ~WyJnbGlkZS1lbXAtc2FsdC10aXRsZTAwMDAxIiwiam9iX3RpdGxlIiwiU3RhZmYgU29mdHdhcmUgRW5naW5lZXIiXQ~WyJnbGlkZS1lbXAtc2FsdC1kZXB0MDAwMDAxIiwiZGVwYXJ0bWVudCIsIlBsYXRmb3JtIEVuZ2luZWVyaW5nIl0~WyJnbGlkZS1lbXAtc2FsdC1zdGF0dXMwMDAxIiwiZW1wbG95bWVudF9zdGF0dXMiLCJhY3RpdmUiXQ~"
+}

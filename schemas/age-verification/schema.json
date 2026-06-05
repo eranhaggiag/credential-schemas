@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.glideidentity.app/schemas/age-verification.schema.json",
+  "$comment": "Claim set for the Age Verification credential. Shared by the W3C VC 2.0 (credentialSubject) and SD-JWT VC (disclosed payload) representations. JSON Schema Draft 2020-12.",
+  "title": "Age Verification claim set",
+  "type": "object",
+  "properties": {
+    "birthdate": {
+      "type": "string",
+      "format": "date",
+      "description": "Full date of birth (ISO 8601 full-date). PRIVACY: must never be mandatory-disclosed when an age-over predicate suffices.",
+      "examples": ["2000-05-17"]
+    },
+    "age_over_13": {
+      "type": "boolean",
+      "description": "Predicate: holder is at least 13 years old."
+    },
+    "age_over_18": {
+      "type": "boolean",
+      "description": "Predicate: holder is at least 18 years old."
+    },
+    "age_over_21": {
+      "type": "boolean",
+      "description": "Predicate: holder is at least 21 years old."
+    }
+  },
+  "anyOf": [
+    { "required": ["age_over_13"] },
+    { "required": ["age_over_18"] },
+    { "required": ["age_over_21"] },
+    { "required": ["birthdate"] }
+  ],
+  "additionalProperties": false
+}

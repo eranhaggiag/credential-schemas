@@ -1,0 +1,93 @@
+---
+import Base from '../../layouts/Base.astro';
+import CodeBlock from '../../components/CodeBlock.astro';
+import { snippet } from '../../lib/content';
+
+const base = import.meta.env.BASE_URL;
+const registryHref = `${base}registry`.replace(/\/\//g, '/');
+
+// Snippets are pulled from the runnable examples package so docs never drift from code.
+const issueSdJwt = snippet('packages/examples/src/issue-sd-jwt-vc.ts', 'issue');
+const present = snippet('packages/examples/src/selective-disclosure.ts', 'present');
+const verify = snippet('packages/examples/src/verify-sd-jwt-vc.ts', 'verify');
+const issueJsonLd = snippet('packages/examples/src/issue-jsonld.ts', 'issue-jsonld');
+---
+
+<Base title="Developer docs">
+  <h1 class="text-3xl">Developer docs</h1>
+  <p class="mt-3 max-w-3xl text-white/70">
+    How to issue and verify each format, present a subset of claims, and choose between them. Every
+    snippet below is extracted from the runnable <code>@glide/examples</code> package, so it stays
+    in sync with code.
+  </p>
+
+  <nav class="mt-6 flex flex-wrap gap-2 text-sm">
+    <a class="chip" href="#choosing">Choosing a format</a>
+    <a class="chip" href="#sd-jwt">Issue SD-JWT VC</a>
+    <a class="chip" href="#present">Selective disclosure</a>
+    <a class="chip" href="#verify">Verify</a>
+    <a class="chip" href="#jsonld">Issue JSON-LD</a>
+  </nav>
+
+  <section id="choosing" class="mt-12 scroll-mt-24">
+    <h2 class="text-2xl">Choosing a format</h2>
+    <div class="mt-4 grid gap-4 md:grid-cols-2">
+      <div class="card p-5">
+        <h3 class="text-base">Reach for <span class="accent">SD-JWT VC</span> when…</h3>
+        <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-white/70">
+          <li>You target the EUDI Wallet, OID4VCI, or OID4VP.</li>
+          <li>You need compact, selectively disclosable credentials out of the box.</li>
+          <li>You want predicate-style minimal disclosure (e.g. <code>age_over_18</code>).</li>
+        </ul>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-base">Reach for <span class="accent">W3C VC 2.0</span> when…</h3>
+        <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-white/70">
+          <li>You operate in a linked-data / JSON-LD ecosystem.</li>
+          <li>You need semantic interop and rich <code>@context</code> vocabularies.</li>
+          <li>You rely on Data Integrity proofs or existing VC 2.0 tooling.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="mt-4 text-sm text-white/60">
+      Both come from the same JSON Schema claim set, so you can issue either (or both) without
+      redefining your data. See the <a class="accent" href={registryHref}>registry</a> for each type.
+    </p>
+  </section>
+
+  <section id="sd-jwt" class="mt-12 scroll-mt-24">
+    <h2 class="text-2xl">Issue an SD-JWT VC</h2>
+    <p class="mt-2 text-sm text-white/60">
+      Split the claim set into always-visible claims and selectively disclosable Disclosures; the
+      payload carries only digests in <code>_sd</code> (RFC 9901).
+    </p>
+    <div class="mt-4"><CodeBlock code={issueSdJwt} lang="ts" filename="issue-sd-jwt-vc.ts" /></div>
+  </section>
+
+  <section id="present" class="mt-12 scroll-mt-24">
+    <h2 class="text-2xl">Present only what's needed</h2>
+    <p class="mt-2 text-sm text-white/60">
+      The holder keeps the issuer-signed payload and sends only the Disclosures they choose.
+      Withheld claims remain digests the verifier cannot reverse.
+    </p>
+    <div class="mt-4"><CodeBlock code={present} lang="ts" filename="selective-disclosure.ts" /></div>
+  </section>
+
+  <section id="verify" class="mt-12 scroll-mt-24">
+    <h2 class="text-2xl">Verify a presentation</h2>
+    <p class="mt-2 text-sm text-white/60">
+      Each presented Disclosure must hash to a digest in <code>_sd</code>. (A production verifier
+      also checks the issuer signature, <code>vct</code>, validity, and key binding.)
+    </p>
+    <div class="mt-4"><CodeBlock code={verify} lang="ts" filename="verify-sd-jwt-vc.ts" /></div>
+  </section>
+
+  <section id="jsonld" class="mt-12 scroll-mt-24">
+    <h2 class="text-2xl">Issue a W3C VC 2.0 (JSON-LD)</h2>
+    <p class="mt-2 text-sm text-white/60">
+      The same claims wrapped in the <code>credentials/v2</code> base context plus the type's
+      Glide context.
+    </p>
+    <div class="mt-4"><CodeBlock code={issueJsonLd} lang="ts" filename="issue-jsonld.ts" /></div>
+  </section>
+</Base>

@@ -1,0 +1,18 @@
+{
+  "$comment": "Example W3C VC 2.0 Age Verification credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).",
+  "@context": [
+    "https://www.w3.org/ns/credentials/v2",
+    "https://schemas.glideidentity.app/contexts/age-verification.jsonld"
+  ],
+  "type": ["VerifiableCredential", "AgeVerificationCredential"],
+  "issuer": "https://issuer.glideidentity.app",
+  "validFrom": "2026-01-15T09:00:00Z",
+  "validUntil": "2027-01-15T09:00:00Z",
+  "credentialSubject": {
+    "id": "did:example:holder-age-0001",
+    "birthdate": "2000-05-17",
+    "age_over_13": true,
+    "age_over_18": true,
+    "age_over_21": true
+  }
+}

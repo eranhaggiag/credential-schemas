@@ -1,0 +1,73 @@
+{
+  "$comment": "Decoded SD-JWT VC for Bank ID (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Run `pnpm seal` to populate digests/_sd/combinedIssuance.",
+  "spec": "draft-ietf-oauth-sd-jwt-vc-16",
+  "sealed": true,
+  "issuerSignedPayload": {
+    "iss": "https://id.firstmeridian.example",
+    "vct": "https://schemas.glideidentity.app/vct/bank-id",
+    "iat": 1768903200,
+    "exp": 1863511200,
+    "cnf": {
+      "jwk": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc",
+        "y": "ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ"
+      }
+    },
+    "_sd_alg": "sha-256",
+    "_sd": [
+      "B6hcH_TWhJ2KTFgfkOSy00vEV0kEtXNVK8XWSdzNE54",
+      "MHnopf5c9-J2ZxGNJepY66xaoAPe8Y3c0PAStZj8ymQ",
+      "ji81rSeKLYZ7J1vWiFY28fpN1hKAb7umsKUc-6-mqVM",
+      "pL_azo5pcd8SeK4ahzUNKkc3AEHVfmPLqKzyohLUF3I",
+      "xOcalakukHoN_dDgN2Wxe0b1ECSWLxiRCQkN6IESzjs"
+    ]
+  },
+  "disclosures": [
+    {
+      "salt": "glide-bank-salt-inst0001",
+      "claim": "issuing_institution",
+      "value": "First Meridian Bank",
+      "encoded": "WyJnbGlkZS1iYW5rLXNhbHQtaW5zdDAwMDEiLCJpc3N1aW5nX2luc3RpdHV0aW9uIiwiRmlyc3QgTWVyaWRpYW4gQmFuayJd",
+      "digest": "ji81rSeKLYZ7J1vWiFY28fpN1hKAb7umsKUc-6-mqVM"
+    },
+    {
+      "salt": "glide-bank-salt-holder01",
+      "claim": "account_holder_name",
+      "value": "Jordan Avery",
+      "encoded": "WyJnbGlkZS1iYW5rLXNhbHQtaG9sZGVyMDEiLCJhY2NvdW50X2hvbGRlcl9uYW1lIiwiSm9yZGFuIEF2ZXJ5Il0",
+      "digest": "B6hcH_TWhJ2KTFgfkOSy00vEV0kEtXNVK8XWSdzNE54"
+    },
+    {
+      "salt": "glide-bank-salt-kyc00001",
+      "claim": "kyc_level",
+      "value": "enhanced",
+      "encoded": "WyJnbGlkZS1iYW5rLXNhbHQta3ljMDAwMDEiLCJreWNfbGV2ZWwiLCJlbmhhbmNlZCJd",
+      "digest": "xOcalakukHoN_dDgN2Wxe0b1ECSWLxiRCQkN6IESzjs"
+    },
+    {
+      "salt": "glide-bank-salt-juris001",
+      "claim": "jurisdiction",
+      "value": "SE",
+      "encoded": "WyJnbGlkZS1iYW5rLXNhbHQtanVyaXMwMDEiLCJqdXJpc2RpY3Rpb24iLCJTRSJd",
+      "digest": "MHnopf5c9-J2ZxGNJepY66xaoAPe8Y3c0PAStZj8ymQ"
+    },
+    {
+      "salt": "glide-bank-salt-natidlnk",
+      "claim": "national_id_linked",
+      "value": true,
+      "encoded": "WyJnbGlkZS1iYW5rLXNhbHQtbmF0aWRsbmsiLCJuYXRpb25hbF9pZF9saW5rZWQiLHRydWVd",
+      "digest": "pL_azo5pcd8SeK4ahzUNKkc3AEHVfmPLqKzyohLUF3I"
+    }
+  ],
+  "presentation": {
+    "$comment": "Holder proves enhanced KYC in SE without revealing their name.",
+    "discloses": [
+      "issuing_institution",
+      "kyc_level",
+      "jurisdiction"
+    ]
+  },
+  "combinedIssuance": "<issuer-signed-jwt>~WyJnbGlkZS1iYW5rLXNhbHQtaW5zdDAwMDEiLCJpc3N1aW5nX2luc3RpdHV0aW9uIiwiRmlyc3QgTWVyaWRpYW4gQmFuayJd~WyJnbGlkZS1iYW5rLXNhbHQtaG9sZGVyMDEiLCJhY2NvdW50X2hvbGRlcl9uYW1lIiwiSm9yZGFuIEF2ZXJ5Il0~WyJnbGlkZS1iYW5rLXNhbHQta3ljMDAwMDEiLCJreWNfbGV2ZWwiLCJlbmhhbmNlZCJd~WyJnbGlkZS1iYW5rLXNhbHQtanVyaXMwMDEiLCJqdXJpc2RpY3Rpb24iLCJTRSJd~WyJnbGlkZS1iYW5rLXNhbHQtbmF0aWRsbmsiLCJuYXRpb25hbF9pZF9saW5rZWQiLHRydWVd~"
+}

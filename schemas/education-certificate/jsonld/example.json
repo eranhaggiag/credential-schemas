@@ -1,0 +1,19 @@
+{
+  "$comment": "Example W3C VC 2.0 Education Certificate credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).",
+  "@context": [
+    "https://www.w3.org/ns/credentials/v2",
+    "https://schemas.glideidentity.app/contexts/education-certificate.jsonld"
+  ],
+  "type": ["VerifiableCredential", "EducationCertificateCredential"],
+  "issuer": "https://registrar.northbridge.example",
+  "validFrom": "2024-07-15T00:00:00Z",
+  "credentialSubject": {
+    "id": "did:example:holder-edu-0001",
+    "institution": "Northbridge University",
+    "credential_name": "Bachelor of Science",
+    "field_of_study": "Computer Science",
+    "award_date": "2024-07-12",
+    "grade": "First Class Honours",
+    "accreditation_body": "Northbridge National Accreditation Council"
+  }
+}

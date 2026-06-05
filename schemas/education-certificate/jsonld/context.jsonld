@@ -1,0 +1,26 @@
+{
+  "$comment": "Glide Identity — Education Certificate JSON-LD context. Targets W3C VCDM 2.0 (15 May 2025). Use with https://www.w3.org/ns/credentials/v2.",
+  "@context": {
+    "@protected": true,
+    "EducationCertificateCredential": "https://schemas.glideidentity.app/contexts/education-certificate.jsonld#EducationCertificateCredential",
+    "glide": "https://schemas.glideidentity.app/vocab#",
+    "institution": {
+      "@id": "glide:institution",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "credential_name": {
+      "@id": "glide:credential_name",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "field_of_study": {
+      "@id": "glide:field_of_study",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "award_date": { "@id": "glide:award_date", "@type": "http://www.w3.org/2001/XMLSchema#date" },
+    "grade": { "@id": "glide:grade", "@type": "http://www.w3.org/2001/XMLSchema#string" },
+    "accreditation_body": {
+      "@id": "glide:accreditation_body",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    }
+  }
+}

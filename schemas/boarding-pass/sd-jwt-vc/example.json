@@ -1,0 +1,109 @@
+{
+  "$comment": "Decoded SD-JWT VC for Boarding Pass (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Run `pnpm seal` to populate digests/_sd/combinedIssuance.",
+  "spec": "draft-ietf-oauth-sd-jwt-vc-16",
+  "sealed": true,
+  "issuerSignedPayload": {
+    "iss": "https://checkin.glide-air.example",
+    "vct": "https://schemas.glideidentity.app/vct/boarding-pass",
+    "iat": 1781935200,
+    "exp": 1781955900,
+    "cnf": {
+      "jwk": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc",
+        "y": "ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ"
+      }
+    },
+    "_sd_alg": "sha-256",
+    "_sd": [
+      "245G3gUEVHp4PHn-2Wyafnjy-uhhIw5X2ey_pSBxKew",
+      "8Ae9N23Lj-IyxDu0BJAR7wyNTpoiK_tQ1QFjVsDJuW8",
+      "F83LZWiZeqytizbouilhLa-6NfE85nGZ-sagyVjQQ64",
+      "Oxwccs4L27Ds5rW8fvbilPbwbbCTFAj8uy9D_i2SfAM",
+      "RZq6npH-deUdTmkC77XGy13dx8IwZ-DYN5U33uMVhI0",
+      "hUQqj-3jF5KKwnVEjSLibPFNMIYRHZRP3A4l32DF2n0",
+      "mtGR87P2FznZfkKiXBLocGQD6lmOZqGSd2XzEc6krSs",
+      "mz-jnJs3eblAxj-WKo08Vp-IJdgp21BrW8TMZKPnlbU",
+      "p0VxvIO0plZqub6dKw0z83Yk2IwLOkOxTj3K8xf9G34"
+    ]
+  },
+  "disclosures": [
+    {
+      "salt": "glide-bp-salt-passenger0",
+      "claim": "passenger_name",
+      "value": "AVERY/JORDAN",
+      "encoded": "WyJnbGlkZS1icC1zYWx0LXBhc3NlbmdlcjAiLCJwYXNzZW5nZXJfbmFtZSIsIkFWRVJZL0pPUkRBTiJd",
+      "digest": "245G3gUEVHp4PHn-2Wyafnjy-uhhIw5X2ey_pSBxKew"
+    },
+    {
+      "salt": "glide-bp-salt-carrier001",
+      "claim": "carrier",
+      "value": "GA",
+      "encoded": "WyJnbGlkZS1icC1zYWx0LWNhcnJpZXIwMDEiLCJjYXJyaWVyIiwiR0EiXQ",
+      "digest": "mtGR87P2FznZfkKiXBLocGQD6lmOZqGSd2XzEc6krSs"
+    },
+    {
+      "salt": "glide-bp-salt-flight0001",
+      "claim": "flight_number",
+      "value": "GA417",
+      "encoded": "WyJnbGlkZS1icC1zYWx0LWZsaWdodDAwMDEiLCJmbGlnaHRfbnVtYmVyIiwiR0E0MTciXQ",
+      "digest": "8Ae9N23Lj-IyxDu0BJAR7wyNTpoiK_tQ1QFjVsDJuW8"
+    },
+    {
+      "salt": "glide-bp-salt-origin0001",
+      "claim": "origin",
+      "value": "ARN",
+      "encoded": "WyJnbGlkZS1icC1zYWx0LW9yaWdpbjAwMDEiLCJvcmlnaW4iLCJBUk4iXQ",
+      "digest": "mz-jnJs3eblAxj-WKo08Vp-IJdgp21BrW8TMZKPnlbU"
+    },
+    {
+      "salt": "glide-bp-salt-dest00001",
+      "claim": "destination",
+      "value": "LHR",
+      "encoded": "WyJnbGlkZS1icC1zYWx0LWRlc3QwMDAwMSIsImRlc3RpbmF0aW9uIiwiTEhSIl0",
+      "digest": "F83LZWiZeqytizbouilhLa-6NfE85nGZ-sagyVjQQ64"
+    },
+    {
+      "salt": "glide-bp-salt-deptime01",
+      "claim": "departure_time",
+      "value": "2026-06-20T09:45:00+02:00",
+      "encoded": "WyJnbGlkZS1icC1zYWx0LWRlcHRpbWUwMSIsImRlcGFydHVyZV90aW1lIiwiMjAyNi0wNi0yMFQwOTo0NTowMCswMjowMCJd",
+      "digest": "RZq6npH-deUdTmkC77XGy13dx8IwZ-DYN5U33uMVhI0"
+    },
+    {
+      "salt": "glide-bp-salt-seat00001",
+      "claim": "seat",
+      "value": "14C",
+      "encoded": "WyJnbGlkZS1icC1zYWx0LXNlYXQwMDAwMSIsInNlYXQiLCIxNEMiXQ",
+      "digest": "hUQqj-3jF5KKwnVEjSLibPFNMIYRHZRP3A4l32DF2n0"
+    },
+    {
+      "salt": "glide-bp-salt-group0001",
+      "claim": "boarding_group",
+      "value": "B",
+      "encoded": "WyJnbGlkZS1icC1zYWx0LWdyb3VwMDAwMSIsImJvYXJkaW5nX2dyb3VwIiwiQiJd",
+      "digest": "Oxwccs4L27Ds5rW8fvbilPbwbbCTFAj8uy9D_i2SfAM"
+    },
+    {
+      "salt": "glide-bp-salt-pnr000001",
+      "claim": "pnr",
+      "value": "X4F2QJ",
+      "encoded": "WyJnbGlkZS1icC1zYWx0LXBucjAwMDAwMSIsInBuciIsIlg0RjJRSiJd",
+      "digest": "p0VxvIO0plZqub6dKw0z83Yk2IwLOkOxTj3K8xf9G34"
+    }
+  ],
+  "presentation": {
+    "$comment": "At the gate the holder discloses flight + seat + group, not their name or PNR.",
+    "discloses": [
+      "carrier",
+      "flight_number",
+      "origin",
+      "destination",
+      "departure_time",
+      "seat",
+      "boarding_group"
+    ]
+  },
+  "combinedIssuance": "<issuer-signed-jwt>~WyJnbGlkZS1icC1zYWx0LXBhc3NlbmdlcjAiLCJwYXNzZW5nZXJfbmFtZSIsIkFWRVJZL0pPUkRBTiJd~WyJnbGlkZS1icC1zYWx0LWNhcnJpZXIwMDEiLCJjYXJyaWVyIiwiR0EiXQ~WyJnbGlkZS1icC1zYWx0LWZsaWdodDAwMDEiLCJmbGlnaHRfbnVtYmVyIiwiR0E0MTciXQ~WyJnbGlkZS1icC1zYWx0LW9yaWdpbjAwMDEiLCJvcmlnaW4iLCJBUk4iXQ~WyJnbGlkZS1icC1zYWx0LWRlc3QwMDAwMSIsImRlc3RpbmF0aW9uIiwiTEhSIl0~WyJnbGlkZS1icC1zYWx0LWRlcHRpbWUwMSIsImRlcGFydHVyZV90aW1lIiwiMjAyNi0wNi0yMFQwOTo0NTowMCswMjowMCJd~WyJnbGlkZS1icC1zYWx0LXNlYXQwMDAwMSIsInNlYXQiLCIxNEMiXQ~WyJnbGlkZS1icC1zYWx0LWdyb3VwMDAwMSIsImJvYXJkaW5nX2dyb3VwIiwiQiJd~WyJnbGlkZS1icC1zYWx0LXBucjAwMDAwMSIsInBuciIsIlg0RjJRSiJd~"
+}

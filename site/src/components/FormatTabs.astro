@@ -1,0 +1,67 @@
+---
+// Side-by-side / toggle view of the two representations. On wide screens both panes show;
+// the toggle filters on small screens and lets a reader focus one format.
+import CodeBlock from './CodeBlock.astro';
+
+interface Props {
+  jsonld: string;
+  jsonldContext: string;
+  sdJwt: string;
+  vctMetadata: string;
+}
+const { jsonld, jsonldContext, sdJwt, vctMetadata } = Astro.props;
+---
+
+<div class="format-tabs" data-format="jsonld">
+  <div class="mb-4 inline-flex rounded-xl border border-white/15 p-1 text-sm">
+    <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="jsonld" type="button">
+      W3C VC 2.0 (JSON-LD)
+    </button>
+    <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="sdjwt" type="button">
+      SD-JWT VC
+    </button>
+    <button class="fmt-btn rounded-lg px-3 py-1.5" data-target="both" type="button">
+      Side by side
+    </button>
+  </div>
+
+  <div class="grid gap-6 md:grid-cols-2">
+    <div class="fmt-pane space-y-3" data-pane="jsonld">
+      <h3 class="text-sm text-white/70">W3C VC 2.0 — example credential</h3>
+      <CodeBlock code={jsonld} filename="jsonld/example.json" />
+      <details class="card px-4 py-2 text-sm text-white/70">
+        <summary class="cursor-pointer">JSON-LD @context</summary>
+        <div class="mt-3"><CodeBlock code={jsonldContext} filename="jsonld/context.jsonld" /></div>
+      </details>
+    </div>
+
+    <div class="fmt-pane space-y-3" data-pane="sdjwt">
+      <h3 class="text-sm text-white/70">SD-JWT VC — decoded payload + disclosures</h3>
+      <CodeBlock code={sdJwt} filename="sd-jwt-vc/example.json" />
+      <details class="card px-4 py-2 text-sm text-white/70">
+        <summary class="cursor-pointer">VC Type Metadata</summary>
+        <div class="mt-3"><CodeBlock code={vctMetadata} filename="sd-jwt-vc/vct-metadata.json" /></div>
+      </details>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.format-tabs').forEach((root) => {
+    const btns = root.querySelectorAll<HTMLButtonElement>('.fmt-btn');
+    const panes = root.querySelectorAll<HTMLElement>('.fmt-pane');
+    const apply = (target: string) => {
+      btns.forEach((b) =>
+        b.classList.toggle('bg-white/10', b.dataset.target === target) ||
+        b.classList.toggle('text-white', b.dataset.target === target),
+      );
+      panes.forEach((p) => {
+        const show = target === 'both' || p.dataset.pane === (target === 'sdjwt' ? 'sdjwt' : 'jsonld');
+        p.classList.toggle('hidden', !show);
+      });
+      root.classList.toggle('md:grid-cols-2', target === 'both');
+    };
+    btns.forEach((b) => b.addEventListener('click', () => apply(b.dataset.target ?? 'both')));
+    apply('both'); // default: show both
+  });
+</script>

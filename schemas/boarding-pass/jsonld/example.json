@@ -1,0 +1,23 @@
+{
+  "$comment": "Example W3C VC 2.0 Boarding Pass credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).",
+  "@context": [
+    "https://www.w3.org/ns/credentials/v2",
+    "https://schemas.glideidentity.app/contexts/boarding-pass.jsonld"
+  ],
+  "type": ["VerifiableCredential", "BoardingPassCredential"],
+  "issuer": "https://checkin.glide-air.example",
+  "validFrom": "2026-06-20T06:00:00Z",
+  "validUntil": "2026-06-20T11:45:00Z",
+  "credentialSubject": {
+    "id": "did:example:holder-bp-0001",
+    "passenger_name": "AVERY/JORDAN",
+    "carrier": "GA",
+    "flight_number": "GA417",
+    "origin": "ARN",
+    "destination": "LHR",
+    "departure_time": "2026-06-20T09:45:00+02:00",
+    "seat": "14C",
+    "boarding_group": "B",
+    "pnr": "X4F2QJ"
+  }
+}

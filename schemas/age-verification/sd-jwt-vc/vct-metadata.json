@@ -1,0 +1,42 @@
+{
+  "$comment": "SD-JWT VC Type Metadata for Age Verification. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), built on RFC 9901. The `sd` values follow draft-16 §claims: 'always' = issuer MUST make selectively disclosable, 'allowed' = MAY, 'never' = MUST NOT.",
+  "vct": "https://schemas.glideidentity.app/vct/age-verification",
+  "name": "Age Verification",
+  "description": "Proves a holder's age via boolean age-over predicates and/or a selectively disclosable birthdate. Designed so a holder can present only a predicate (e.g. age_over_18) without revealing birthdate.",
+  "display": [
+    {
+      "lang": "en-US",
+      "name": "Age Verification",
+      "description": "Prove you are over an age threshold without revealing your birthdate."
+    }
+  ],
+  "claims": [
+    {
+      "path": ["birthdate"],
+      "sd": "always",
+      "display": [
+        {
+          "lang": "en-US",
+          "label": "Date of birth",
+          "description": "Never required when an age-over predicate satisfies the verifier."
+        }
+      ]
+    },
+    {
+      "path": ["age_over_13"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Over 13" }]
+    },
+    {
+      "path": ["age_over_18"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Over 18" }]
+    },
+    {
+      "path": ["age_over_21"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Over 21" }]
+    }
+  ],
+  "schema_uri": "https://schemas.glideidentity.app/schemas/age-verification.schema.json"
+}

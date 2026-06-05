@@ -1,0 +1,78 @@
+# CI + GitHub Pages deploy for the credential schema registry.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Lint (prettier)
+        run: pnpm lint
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Registry is up to date
+        run: |
+          pnpm build:registry
+          git diff --exit-code schemas/registry.json
+
+      - name: Examples are sealed
+        run: |
+          pnpm seal
+          git diff --exit-code schemas/**/sd-jwt-vc/example.json
+
+      - name: Validate examples against schemas
+        run: pnpm validate
+
+      - name: Run example lifecycle
+        run: pnpm --filter @glide/examples all
+
+      - name: Build site
+        run: pnpm build:site
+        env:
+          SITE_BASE: /
+          SITE_URL: https://glideidentity.github.io
+
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+
+  deploy:
+    # Deploy the built site to GitHub Pages on pushes to the default branch.
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

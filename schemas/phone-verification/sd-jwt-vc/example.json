@@ -1,0 +1,64 @@
+{
+  "$comment": "Decoded SD-JWT VC for Phone Number Verification (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Run `pnpm seal` to populate digests/_sd/combinedIssuance.",
+  "spec": "draft-ietf-oauth-sd-jwt-vc-16",
+  "sealed": true,
+  "issuerSignedPayload": {
+    "iss": "https://verify.glideidentity.app",
+    "vct": "https://schemas.glideidentity.app/vct/phone-verification",
+    "iat": 1773153000,
+    "exp": 1789043400,
+    "cnf": {
+      "jwk": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc",
+        "y": "ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ"
+      }
+    },
+    "_sd_alg": "sha-256",
+    "_sd": [
+      "ATqH-ZvPT8r2RvuGb1o1x4D79hJp415wjjJIcYLaBrU",
+      "Sl-uJrMj1cpAJIZ_HbRELouL0oKHElgvuySm1R9b1Pc",
+      "v7Qpsxm-YvJMEUOs8GvHbMtLdt33EXr3LYSiX_p5Gwo",
+      "zbYgsmTWWJuuAfWFEg3O0qEgXnbssw7bzA20yWZ2oNM"
+    ]
+  },
+  "disclosures": [
+    {
+      "salt": "glide-phone-salt-number0",
+      "claim": "phone_number",
+      "value": "+14155550142",
+      "encoded": "WyJnbGlkZS1waG9uZS1zYWx0LW51bWJlcjAiLCJwaG9uZV9udW1iZXIiLCIrMTQxNTU1NTAxNDIiXQ",
+      "digest": "zbYgsmTWWJuuAfWFEg3O0qEgXnbssw7bzA20yWZ2oNM"
+    },
+    {
+      "salt": "glide-phone-salt-method0",
+      "claim": "verification_method",
+      "value": "cryptographic_challenge",
+      "encoded": "WyJnbGlkZS1waG9uZS1zYWx0LW1ldGhvZDAiLCJ2ZXJpZmljYXRpb25fbWV0aG9kIiwiY3J5cHRvZ3JhcGhpY19jaGFsbGVuZ2UiXQ",
+      "digest": "ATqH-ZvPT8r2RvuGb1o1x4D79hJp415wjjJIcYLaBrU"
+    },
+    {
+      "salt": "glide-phone-salt-vat0001",
+      "claim": "verified_at",
+      "value": "2026-03-10T14:30:00Z",
+      "encoded": "WyJnbGlkZS1waG9uZS1zYWx0LXZhdDAwMDEiLCJ2ZXJpZmllZF9hdCIsIjIwMjYtMDMtMTBUMTQ6MzA6MDBaIl0",
+      "digest": "v7Qpsxm-YvJMEUOs8GvHbMtLdt33EXr3LYSiX_p5Gwo"
+    },
+    {
+      "salt": "glide-phone-salt-carrier",
+      "claim": "carrier_attested",
+      "value": true,
+      "encoded": "WyJnbGlkZS1waG9uZS1zYWx0LWNhcnJpZXIiLCJjYXJyaWVyX2F0dGVzdGVkIix0cnVlXQ",
+      "digest": "Sl-uJrMj1cpAJIZ_HbRELouL0oKHElgvuySm1R9b1Pc"
+    }
+  ],
+  "presentation": {
+    "$comment": "Holder discloses the verified phone number and that a carrier attested it.",
+    "discloses": [
+      "phone_number",
+      "carrier_attested"
+    ]
+  },
+  "combinedIssuance": "<issuer-signed-jwt>~WyJnbGlkZS1waG9uZS1zYWx0LW51bWJlcjAiLCJwaG9uZV9udW1iZXIiLCIrMTQxNTU1NTAxNDIiXQ~WyJnbGlkZS1waG9uZS1zYWx0LW1ldGhvZDAiLCJ2ZXJpZmljYXRpb25fbWV0aG9kIiwiY3J5cHRvZ3JhcGhpY19jaGFsbGVuZ2UiXQ~WyJnbGlkZS1waG9uZS1zYWx0LXZhdDAwMDEiLCJ2ZXJpZmllZF9hdCIsIjIwMjYtMDMtMTBUMTQ6MzA6MDBaIl0~WyJnbGlkZS1waG9uZS1zYWx0LWNhcnJpZXIiLCJjYXJyaWVyX2F0dGVzdGVkIix0cnVlXQ~"
+}

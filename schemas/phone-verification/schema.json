@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.glideidentity.app/schemas/phone-verification.schema.json",
+  "$comment": "Claim set for Phone Number Verification. Represents cryptographic proof of control, not a live OTP. JSON Schema Draft 2020-12.",
+  "title": "Phone Number Verification claim set",
+  "type": "object",
+  "properties": {
+    "phone_number": {
+      "type": "string",
+      "format": "e164",
+      "description": "Verified phone number in E.164 format.",
+      "examples": ["+14155550142"]
+    },
+    "verification_method": {
+      "type": "string",
+      "enum": ["sim_binding", "carrier_attestation", "cryptographic_challenge"],
+      "description": "How control of the number was proven."
+    },
+    "verified_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When control was verified."
+    },
+    "carrier_attested": {
+      "type": "boolean",
+      "description": "Whether the mobile carrier attested to the binding."
+    }
+  },
+  "required": ["phone_number", "verification_method", "verified_at"],
+  "additionalProperties": false
+}

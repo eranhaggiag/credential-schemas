@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.glideidentity.app/schemas/proof-of-employment.schema.json",
+  "$comment": "Claim set for Proof of Employment / Alumni ID. Deliberately omits salary/compensation — proves the employment relationship only. JSON Schema Draft 2020-12.",
+  "title": "Proof of Employment claim set",
+  "type": "object",
+  "properties": {
+    "employer": {
+      "type": "string",
+      "description": "Legal name of the employing organization.",
+      "examples": ["Globex Corporation"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["current", "former"],
+      "description": "Whether the holder is a current or former employee (alumni)."
+    },
+    "employment_start": {
+      "type": "string",
+      "format": "date",
+      "description": "Employment start date."
+    },
+    "employment_end": {
+      "type": "string",
+      "format": "date",
+      "description": "Employment end date. Present only when status is 'former'."
+    }
+  },
+  "required": ["employer", "status", "employment_start"],
+  "allOf": [
+    {
+      "$comment": "A former employee must have an end date.",
+      "if": { "properties": { "status": { "const": "former" } } },
+      "then": { "required": ["employment_end"] }
+    }
+  ],
+  "additionalProperties": false
+}

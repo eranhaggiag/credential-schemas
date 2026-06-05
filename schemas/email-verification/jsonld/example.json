@@ -1,0 +1,17 @@
+{
+  "$comment": "Example W3C VC 2.0 Email Verification credential. Fake data. Spec: W3C VCDM 2.0 (15 May 2025).",
+  "@context": [
+    "https://www.w3.org/ns/credentials/v2",
+    "https://schemas.glideidentity.app/contexts/email-verification.jsonld"
+  ],
+  "type": ["VerifiableCredential", "EmailVerificationCredential"],
+  "issuer": "https://verify.glideidentity.app",
+  "validFrom": "2026-03-12T08:15:00Z",
+  "validUntil": "2026-09-12T08:15:00Z",
+  "credentialSubject": {
+    "id": "did:example:holder-email-0001",
+    "email": "jordan.avery@example.com",
+    "verification_method": "link_click",
+    "verified_at": "2026-03-12T08:15:00Z"
+  }
+}

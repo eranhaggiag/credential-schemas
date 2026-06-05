@@ -1,0 +1,43 @@
+---
+interface Props {
+  code: string;
+  lang?: string;
+  filename?: string;
+}
+const { code, lang = 'json', filename } = Astro.props;
+---
+
+<figure class="card overflow-hidden">
+  <figcaption class="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-white/50">
+    <span class="font-grotesk">{filename ?? lang}</span>
+    <button
+      class="copy-btn rounded-md border border-white/15 px-2 py-0.5 text-white/70 hover:bg-white/10"
+      type="button"
+      data-code={code}
+    >
+      Copy
+    </button>
+  </figcaption>
+  <pre class="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed"><code>{code}</code></pre>
+</figure>
+
+<script>
+  // One delegated handler wires every copy button on the page (islands-free).
+  document.addEventListener('click', async (e) => {
+    const btn = (e.target as HTMLElement)?.closest('.copy-btn') as HTMLButtonElement | null;
+    if (!btn) return;
+    const code = btn.dataset.code ?? '';
+    try {
+      await navigator.clipboard.writeText(code);
+      const prev = btn.textContent;
+      btn.textContent = 'Copied';
+      btn.classList.add('text-brand-accent');
+      setTimeout(() => {
+        btn.textContent = prev;
+        btn.classList.remove('text-brand-accent');
+      }, 1200);
+    } catch {
+      btn.textContent = 'Press ⌘C';
+    }
+  });
+</script>

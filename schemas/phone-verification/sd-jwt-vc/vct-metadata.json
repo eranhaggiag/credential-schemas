@@ -1,0 +1,42 @@
+{
+  "$comment": "SD-JWT VC Type Metadata for Phone Number Verification. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.",
+  "vct": "https://schemas.glideidentity.app/vct/phone-verification",
+  "name": "Phone Number Verification",
+  "description": "Cryptographic proof of control over an E.164 phone number (not a live OTP).",
+  "display": [
+    {
+      "lang": "en-US",
+      "name": "Phone Number",
+      "description": "A verified, cryptographically-bound phone number."
+    }
+  ],
+  "claims": [
+    {
+      "path": ["phone_number"],
+      "sd": "always",
+      "display": [
+        {
+          "lang": "en-US",
+          "label": "Phone number",
+          "description": "Identifying; keep selectively disclosable."
+        }
+      ]
+    },
+    {
+      "path": ["verification_method"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Method" }]
+    },
+    {
+      "path": ["verified_at"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Verified at" }]
+    },
+    {
+      "path": ["carrier_attested"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Carrier attested" }]
+    }
+  ],
+  "schema_uri": "https://schemas.glideidentity.app/schemas/phone-verification.schema.json"
+}

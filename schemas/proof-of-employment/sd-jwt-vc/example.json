@@ -1,0 +1,64 @@
+{
+  "$comment": "Decoded SD-JWT VC for Proof of Employment (fake data). Spec: draft-ietf-oauth-sd-jwt-vc-16, RFC 9901. Run `pnpm seal` to populate digests/_sd/combinedIssuance.",
+  "spec": "draft-ietf-oauth-sd-jwt-vc-16",
+  "sealed": true,
+  "issuerSignedPayload": {
+    "iss": "https://hr.globex.example",
+    "vct": "https://schemas.glideidentity.app/vct/proof-of-employment",
+    "iat": 1769904000,
+    "exp": 1801440000,
+    "cnf": {
+      "jwk": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "TCAER19Zvu3OHF4j4W4vfSVoHIP1ILilDls7vCeGemc",
+        "y": "ZxjiWWbZMQGHVWKVQ4hbSIirsVfuecCE6t4jT9F2HZQ"
+      }
+    },
+    "_sd_alg": "sha-256",
+    "_sd": [
+      "AgdrOkazJtgPkNmuwn3qwbf7wm7PAcBbHibmlR2o3YQ",
+      "PNCnJloHCmiN0AS2uc9Kza6yT_Ted7vhb-6M2MyFs3U",
+      "Q_n62-kkPvH262_qnCW4tRfXpCb399mpZAmmyyYl8HA",
+      "dnh3dLqZk4OFpPUFKy45KfH5QZLjGt1iOusyi1J2Euw"
+    ]
+  },
+  "disclosures": [
+    {
+      "salt": "glide-poe-salt-employer00",
+      "claim": "employer",
+      "value": "Globex Corporation",
+      "encoded": "WyJnbGlkZS1wb2Utc2FsdC1lbXBsb3llcjAwIiwiZW1wbG95ZXIiLCJHbG9iZXggQ29ycG9yYXRpb24iXQ",
+      "digest": "PNCnJloHCmiN0AS2uc9Kza6yT_Ted7vhb-6M2MyFs3U"
+    },
+    {
+      "salt": "glide-poe-salt-status0001",
+      "claim": "status",
+      "value": "former",
+      "encoded": "WyJnbGlkZS1wb2Utc2FsdC1zdGF0dXMwMDAxIiwic3RhdHVzIiwiZm9ybWVyIl0",
+      "digest": "AgdrOkazJtgPkNmuwn3qwbf7wm7PAcBbHibmlR2o3YQ"
+    },
+    {
+      "salt": "glide-poe-salt-start00001",
+      "claim": "employment_start",
+      "value": "2019-06-03",
+      "encoded": "WyJnbGlkZS1wb2Utc2FsdC1zdGFydDAwMDAxIiwiZW1wbG95bWVudF9zdGFydCIsIjIwMTktMDYtMDMiXQ",
+      "digest": "dnh3dLqZk4OFpPUFKy45KfH5QZLjGt1iOusyi1J2Euw"
+    },
+    {
+      "salt": "glide-poe-salt-end0000001",
+      "claim": "employment_end",
+      "value": "2025-11-30",
+      "encoded": "WyJnbGlkZS1wb2Utc2FsdC1lbmQwMDAwMDAxIiwiZW1wbG95bWVudF9lbmQiLCIyMDI1LTExLTMwIl0",
+      "digest": "Q_n62-kkPvH262_qnCW4tRfXpCb399mpZAmmyyYl8HA"
+    }
+  ],
+  "presentation": {
+    "$comment": "Holder proves they are a former employee of Globex, revealing nothing about dates.",
+    "discloses": [
+      "employer",
+      "status"
+    ]
+  },
+  "combinedIssuance": "<issuer-signed-jwt>~WyJnbGlkZS1wb2Utc2FsdC1lbXBsb3llcjAwIiwiZW1wbG95ZXIiLCJHbG9iZXggQ29ycG9yYXRpb24iXQ~WyJnbGlkZS1wb2Utc2FsdC1zdGF0dXMwMDAxIiwic3RhdHVzIiwiZm9ybWVyIl0~WyJnbGlkZS1wb2Utc2FsdC1zdGFydDAwMDAxIiwiZW1wbG95bWVudF9zdGFydCIsIjIwMTktMDYtMDMiXQ~WyJnbGlkZS1wb2Utc2FsdC1lbmQwMDAwMDAxIiwiZW1wbG95bWVudF9lbmQiLCIyMDI1LTExLTMwIl0~"
+}

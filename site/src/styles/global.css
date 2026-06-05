@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-brand-900 text-slate-200 font-sans antialiased;
+    background-image: theme('backgroundImage.brand-gradient');
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  /* House style: headings weight 600, never 700. No decorative accent lines under titles. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-sans font-heading text-white tracking-tight;
+    font-weight: 600;
+  }
+
+  a {
+    @apply transition-colors;
+  }
+
+  code,
+  pre {
+    font-family: 'Space Grotesk', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+}
+
+@layer components {
+  .numeral {
+    @apply font-grotesk;
+    font-weight: 600;
+  }
+
+  .card {
+    @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm;
+  }
+
+  .accent {
+    color: theme('colors.brand.accent');
+  }
+
+  /* Accent used sparingly: thin ring / small chip, never a large fill. */
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs;
+    border-color: color-mix(in srgb, theme('colors.brand.accent') 40%, transparent);
+    color: theme('colors.brand.accent');
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium transition;
+  }
+
+  .btn-primary {
+    @apply text-brand-900;
+    background-color: theme('colors.brand.accent');
+  }
+
+  .btn-ghost {
+    @apply border border-white/15 text-white hover:bg-white/10;
+  }
+}

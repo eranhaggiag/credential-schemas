@@ -1,0 +1,74 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Dual-format verifiable credential schemas (W3C VC 2.0 + SD-JWT VC) for Glide Identity.' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const here = Astro.url.pathname.replace(/\/$/, '');
+
+const nav = [
+  { href: base, label: 'Home', match: '' },
+  { href: `${base}registry`.replace(/\/\//g, '/'), label: 'Schemas', match: 'registry' },
+  { href: `${base}docs`.replace(/\/\//g, '/'), label: 'Developer docs', match: 'docs' },
+];
+const isActive = (m: string) => (m === '' ? here === base.replace(/\/$/, '') : here.includes(m));
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · Glide Schemas</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={`${base}logo.svg`.replace(/\/\//g, '/')} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="sticky top-0 z-20 border-b border-white/10 bg-brand-900/70 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <a href={base} class="flex items-center gap-3">
+          <img src={`${base}logo.svg`.replace(/\/\//g, '/')} alt="Glide Identity" class="h-7 w-7" />
+          <span class="font-heading text-white">Glide <span class="text-white/60">Schemas</span></span>
+        </a>
+        <nav class="flex items-center gap-1 text-sm">
+          {
+            nav.map((n) => (
+              <a
+                href={n.href}
+                class:list={[
+                  'rounded-lg px-3 py-1.5',
+                  isActive(n.match) ? 'text-white bg-white/10' : 'text-white/70 hover:text-white',
+                ]}
+              >
+                {n.label}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-6 py-12">
+      <slot />
+    </main>
+
+    <footer class="border-t border-white/10">
+      <div class="mx-auto max-w-6xl px-6 py-8 text-sm text-white/50">
+        <p>
+          Glide Identity credential schemas · Apache-2.0 · W3C VC 2.0 + SD-JWT VC (draft-16).
+          Examples use fake data.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

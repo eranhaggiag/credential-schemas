@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.glideidentity.app/schemas/employee-id.schema.json",
+  "$comment": "Claim set for the Employee ID credential. Issuance/expiry are carried by the credential envelope (JSON-LD validFrom/validUntil; SD-JWT VC iat/exp), not duplicated here. JSON Schema Draft 2020-12.",
+  "title": "Employee ID claim set",
+  "type": "object",
+  "properties": {
+    "employer": {
+      "type": "string",
+      "description": "Legal name of the employing organization.",
+      "examples": ["Globex Corporation"]
+    },
+    "employee_id": {
+      "type": "string",
+      "description": "Employer-assigned identifier.",
+      "examples": ["GBX-48217"]
+    },
+    "job_title": {
+      "type": "string",
+      "description": "Role / title.",
+      "examples": ["Staff Software Engineer"]
+    },
+    "department": {
+      "type": "string",
+      "examples": ["Platform Engineering"]
+    },
+    "employment_status": {
+      "type": "string",
+      "enum": ["active", "on_leave", "suspended", "terminated"],
+      "description": "Current employment status."
+    }
+  },
+  "required": ["employer", "employee_id", "employment_status"],
+  "additionalProperties": false
+}

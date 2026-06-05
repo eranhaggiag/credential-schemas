@@ -1,0 +1,101 @@
+---
+import Base from '../../layouts/Base.astro';
+import CodeBlock from '../../components/CodeBlock.astro';
+import FormatTabs from '../../components/FormatTabs.astro';
+import { getRegistry, getDetail } from '../../lib/content';
+
+export function getStaticPaths() {
+  return getRegistry().credentials.map((c) => ({ params: { id: c.id } }));
+}
+
+const { id } = Astro.params;
+const detail = getDetail(id!);
+const { entry, claims } = detail;
+const base = import.meta.env.BASE_URL;
+const backHref = `${base}registry`.replace(/\/\//g, '/');
+
+const yes = (v: boolean) => (v ? 'Yes' : 'No');
+---
+
+<Base title={entry.name} description={entry.description}>
+  <a href={backHref} class="text-sm text-white/60 hover:text-white">← All schemas</a>
+
+  <header class="mt-4">
+    <h1 class="text-3xl">{entry.name}</h1>
+    <p class="mt-3 max-w-3xl text-white/70">{entry.description}</p>
+    <div class="mt-4 grid gap-2 text-sm sm:grid-cols-2">
+      <div class="card px-4 py-3">
+        <div class="text-xs uppercase tracking-wide text-white/40">SD-JWT VC vct</div>
+        <div class="mt-1 break-all font-grotesk accent">{entry.vct}</div>
+      </div>
+      <div class="card px-4 py-3">
+        <div class="text-xs uppercase tracking-wide text-white/40">JSON-LD @context</div>
+        <div class="mt-1 break-all font-grotesk text-white/80">{entry.context}</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="mt-10">
+    <h2 class="text-2xl">Claims</h2>
+    <div class="card mt-4 overflow-x-auto">
+      <table class="w-full text-left text-sm">
+        <thead class="border-b border-white/10 text-white/60">
+          <tr>
+            <th class="px-4 py-3 font-medium">Claim</th>
+            <th class="px-4 py-3 font-medium">Type</th>
+            <th class="px-4 py-3 font-medium">Required</th>
+            <th class="px-4 py-3 font-medium">Selectively disclosable</th>
+            <th class="px-4 py-3 font-medium">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            claims.map((c) => (
+              <tr class="border-b border-white/5 align-top">
+                <td class="px-4 py-3 font-grotesk text-white">{c.name}</td>
+                <td class="px-4 py-3 text-white/70">{c.type}</td>
+                <td class="px-4 py-3 text-white/70">{yes(c.required)}</td>
+                <td class="px-4 py-3">
+                  {c.disclosable === 'always' ? (
+                    <span class="chip">always</span>
+                  ) : (
+                    <span class="text-white/70">{c.disclosable}</span>
+                  )}
+                </td>
+                <td class="px-4 py-3 text-white/60">{c.notes}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-2 text-xs text-white/40">
+      Auto-derived from <code>schema.json</code> + SD-JWT VC type metadata. <code>always</code> =
+      issuer MUST make selectively disclosable; <code>allowed</code> = MAY; <code>—</code> = not
+      individually disclosable.
+    </p>
+  </section>
+
+  <section class="mt-12">
+    <h2 class="text-2xl">Examples</h2>
+    <p class="mt-2 text-sm text-white/60">Both representations of the same fake credential.</p>
+    <div class="mt-4">
+      <FormatTabs
+        jsonld={detail.jsonldExample}
+        jsonldContext={detail.jsonldContext}
+        sdJwt={detail.sdJwtExample}
+        vctMetadata={detail.vctMetadata}
+      />
+    </div>
+  </section>
+
+  <section class="mt-12">
+    <h2 class="text-2xl">JSON Schema</h2>
+    <p class="mt-2 text-sm text-white/60">
+      The shared claim set both formats validate against (Draft 2020-12).
+    </p>
+    <div class="mt-4">
+      <CodeBlock code={detail.schema} filename="schema.json" />
+    </div>
+  </section>
+</Base>

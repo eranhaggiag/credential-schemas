@@ -1,0 +1,36 @@
+{
+  "$comment": "SD-JWT VC Type Metadata for Proof of Employment / Alumni ID. Spec: draft-ietf-oauth-sd-jwt-vc-16 (24 Apr 2026), RFC 9901.",
+  "vct": "https://schemas.glideidentity.app/vct/proof-of-employment",
+  "name": "Proof of Employment",
+  "description": "Verifiable 'employed at' claim (current or former / alumni) without exposing salary or compensation.",
+  "display": [
+    {
+      "lang": "en-US",
+      "name": "Proof of Employment",
+      "description": "Prove you work (or worked) somewhere — no salary attached."
+    }
+  ],
+  "claims": [
+    {
+      "path": ["employer"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Employer" }]
+    },
+    {
+      "path": ["status"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Relationship" }]
+    },
+    {
+      "path": ["employment_start"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "Start date" }]
+    },
+    {
+      "path": ["employment_end"],
+      "sd": "allowed",
+      "display": [{ "lang": "en-US", "label": "End date" }]
+    }
+  ],
+  "schema_uri": "https://schemas.glideidentity.app/schemas/proof-of-employment.schema.json"
+}
