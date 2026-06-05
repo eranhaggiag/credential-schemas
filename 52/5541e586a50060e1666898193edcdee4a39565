@@ -1,0 +1,23 @@
+site/src/layouts/Base.astro
+  s_53624ce75637d0::t_ed2a9dae1625d4 40-41
+  s_53624ce75637d0::t_e62eaba8e54d2b 26
+  s_53624ce75637d0::t_b0c23cbfb53326 68
+README.md
+  s_53624ce75637d0::t_c49810b4437350 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "525541e586a50060e1666898193edcdee4a39565",
+  "prompts": {},
+  "sessions": {
+    "s_53624ce75637d0": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "6e99196d-a851-4960-9145-bd34be0200c9",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Eran Haggiag <eran@glideidentity.com>"
+    }
+  }
+}
