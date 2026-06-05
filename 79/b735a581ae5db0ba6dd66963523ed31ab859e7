@@ -1,0 +1,19 @@
+.github/workflows/ci.yml
+  s_f45110a26da0be::t_7199fa6989ad33 57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "79b735a581ae5db0ba6dd66963523ed31ab859e7",
+  "prompts": {},
+  "sessions": {
+    "s_f45110a26da0be": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f523a984-d1a4-4262-a8a5-db8274939965",
+        "model": "claude-opus-4-8-thinking-high"
+      },
+      "human_author": "Eran Haggiag <eran@glideidentity.com>"
+    }
+  }
+}
