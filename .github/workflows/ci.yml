@@ -53,7 +53,7 @@ jobs:
       - name: Build site
         run: pnpm build:site
         env:
-          SITE_BASE: /
+          SITE_BASE: /credential-schemas/
           SITE_URL: https://glideidentity.github.io
 
       - name: Upload Pages artifact
